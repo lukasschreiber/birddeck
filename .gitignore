@@ -17,6 +17,7 @@ node_modules/
 *.log
 
 # Temporary profiles and image caches
+/icons/
 temp/
 /src/cache/
 /src/output/

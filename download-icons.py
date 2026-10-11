@@ -1,9 +1,11 @@
 import os
 import json
 import requests
+from pathlib import Path
 
-JSON_PATH = "icons.json"
-OUT_DIR = "icons"
+BASE_DIR = Path(__file__).resolve().parent
+JSON_PATH = BASE_DIR / "icons.json"
+OUT_DIR = BASE_DIR / "icons"
 
 # I think the highest res is 2400 where the intrinsic size is returned
 BASE_URL = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/{asset_id}/640"
