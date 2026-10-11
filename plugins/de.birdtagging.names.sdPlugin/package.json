@@ -1,0 +1,9 @@
+{
+  "name": "birddeck-runtime",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.80",
+    "ws": "8.22.0"
+  }
+}

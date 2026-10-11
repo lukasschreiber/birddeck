@@ -1,4 +1,5 @@
 import uuid
+from copy import deepcopy
 from enum import Enum
 from typing import Dict
 
@@ -84,7 +85,7 @@ def generate_bird_action(
     bird_name: str, image_uuid: str, lightoom: str, uncertain: bool = False
 ) -> Dict:
     """Generate an action to show bird details."""
-    return {
+    action = {
         "ActionID": str(uuid.uuid4()),
         "Actions": [
             {
@@ -162,7 +163,7 @@ def generate_bird_action(
                                 "QTKeyCode": 33554431,
                                 "VKeyCode": -1,
                             },
-                            "isSendingEnter": True,
+                            "isSendingEnter": False,
                             "isTypingMode": False,
                             "pastedText": bird_name,
                         },
@@ -276,3 +277,21 @@ def generate_bird_action(
         ],
         "UUID": "com.elgato.streamdeck.multiactions.routine",
     }
+    steps = action['Actions'][0]['Actions']
+    focus_wait = deepcopy(steps[2])
+    focus_wait['ActionID'] = str(uuid.uuid4())
+    focus_wait['Settings']['delay'] = 500
+    submit = deepcopy(steps[3])
+    submit['ActionID'] = str(uuid.uuid4())
+    submit['States'] = [{'Title': 'Enter'}]
+    submit['Settings']['Hotkeys'][0].update(NativeCode=13, QTKeyCode=16777220, VKeyCode=13)
+    accept = deepcopy(submit)
+    accept['ActionID'] = str(uuid.uuid4())
+    accept['States'] = [{'Title': 'Tab'}]
+    accept['Settings']['Hotkeys'][0].update(NativeCode=9, QTKeyCode=16777217, VKeyCode=9)
+    accept_wait = deepcopy(steps[2])
+    accept_wait['ActionID'] = str(uuid.uuid4())
+    commit_wait = deepcopy(steps[2])
+    commit_wait['ActionID'] = str(uuid.uuid4())
+    action['Actions'][0]['Actions'] = [steps[0], focus_wait, steps[1], steps[2], accept, accept_wait, submit, commit_wait, steps[3]]
+    return action

@@ -48,6 +48,11 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
     image_uuid = profile_folder_id(str(uuid.uuid4()))
     save_key_image(action_image('lightroom'), page / 'Images' / f'{image_uuid}.png', pixels)
     tagging = generate_bird_action(entry['title'], image_uuid, lightroom, uncertain=uncertain)
+    if entry.get('_keyword_uuid'):
+        tagging.pop('Actions', None)
+        tagging.update(UUID='de.birdtagging.names.tag', Name='Tag Lightroom keyword',
+                       Plugin={'Name': 'Bird names', 'UUID': 'de.birdtagging.names', 'Version': '0.1.0.0'},
+                        Settings={'keywordUuid': entry['_keyword_uuid']})
     tagging['States'][0].update(Title='Tag', TitleAlignment='bottom')
     actions = {'0,0': generate_open_parent_folder_action()}
 

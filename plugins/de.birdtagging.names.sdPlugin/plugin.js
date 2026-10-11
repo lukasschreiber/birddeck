@@ -1,4 +1,4 @@
-/* Stream Deck's embedded browser supplies canvas and WebSocket; no runtime dependencies. */
+/* Rendering host supplies canvas, WebSocket, timers, and native tagging. */
 const keys = new Map();
 let socket;
 let timer;
@@ -77,6 +77,20 @@ window.connectElgatoStreamDeckSocket = function (port, uuid, registerEvent) {
   socket.onerror = stop;
   socket.onmessage = ({data}) => {
     const event = JSON.parse(data);
+    if (event.action === 'de.birdtagging.names.tag') {
+      if (event.event === 'keyDown') {
+        const settings = event.payload.settings || {};
+        BirdTagging.requestTag({catalog: settings.catalog, keywordId: settings.keywordId, keywordUuid: settings.keywordUuid}).then(result => {
+          if (!result.ok) throw new Error(result.error || 'Tagging failed');
+          send('showOk', event.context, {});
+        }).catch(error => {
+          console.error('BirdDeck tagging:', error);
+          send('showAlert', event.context, {});
+          send('logMessage', event.context, {message: String(error)});
+        });
+      }
+      return;
+    }
     const now = performance.now();
     if (event.event === 'willAppear') {
       const canvas = document.createElement('canvas');

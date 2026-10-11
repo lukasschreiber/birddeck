@@ -16,6 +16,9 @@ def package_plugin(config_path, output_dir, device_type=0):
     packer = shutil.which("streamdeck") or shutil.which("streamdeck.cmd")
     if not packer:
         raise ValueError("Stream Deck CLI is required to package: npm install -g @elgato/cli")
+    source = ROOT_DIR / 'plugins' / 'de.birdtagging.names.sdPlugin'
+    if not (source / 'node_modules' / '@napi-rs' / 'canvas').is_dir():
+        raise ValueError('Install plugin dependencies first: npm ci --omit=dev --prefix plugins/de.birdtagging.names.sdPlugin')
     profile = create_profile(config_path, output_dir)
     with TemporaryDirectory(prefix="bird-plugin-", dir=output_dir) as workspace:
         plugin = Path(workspace) / "de.birdtagging.names.sdPlugin"

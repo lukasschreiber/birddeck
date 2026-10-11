@@ -19,6 +19,8 @@ from paths import ROOT_DIR
 from country_flags import COUNTRIES, validate_country, flag_path
 from nabu_portraits import validate_nabu_url
 from name_key import validate_scientific_name
+from entry_identity import ensure_uuids
+from uuid import uuid4
 
 
 def render_preview(entry, icons, pixels=288):
@@ -111,6 +113,9 @@ class ConfigStore:
             if not adding and kind != target['type']:
                 raise ValueError('Existing entry types cannot be changed')
             item = {} if adding else target
+            if adding:
+                # Never accept a client's copied UUID for a new entry.
+                item['uuid'] = str(uuid4())
             item['type'] = kind
             if kind != 'uncertain':
                 title = values.get('title', '').strip()
@@ -192,6 +197,7 @@ class ConfigStore:
     def commit(self, candidate, selected):
         """Write a validated candidate atomically while the caller holds the lock."""
         validate_icons(candidate, self.icons)
+        ensure_uuids(candidate)
         stream = StringIO()
         self.yaml.dump(candidate, stream)
         content = stream.getvalue().encode('utf-8')

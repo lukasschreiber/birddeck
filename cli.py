@@ -26,19 +26,16 @@ def main(argv=None):
     edit.add_argument("--config", type=Path, default=ROOT_DIR / "config" / "config.yaml")
     edit.add_argument("--port", type=int, default=0, help="Local port (default: choose an available port).")
     edit.add_argument("--no-browser", action="store_true", help="Print the URL without opening a browser.")
-    anytag = commands.add_parser("anytag", help="Generate a catalog-specific Any Tag hierarchy update.")
-    anytag.add_argument("--config", type=Path, default=ROOT_DIR / "config" / "config.yaml")
-    anytag.add_argument("--catalog-keywords", type=Path, required=True, help="Fresh Any Tag Export Keywords CSV.")
-    anytag.add_argument("--output", type=Path, default=ROOT_DIR / "output" / "AnyTagKeywords.csv")
-    anytag.add_argument("--bind", action="store_true", help="Store matched catalog keyword IDs in YAML for future renames/moves.")
+    lightroom = commands.add_parser("lightroom-sync", help="Preview or apply the YAML hierarchy directly in Lightroom.")
+    lightroom.add_argument("--config", type=Path, default=ROOT_DIR / "config" / "config.yaml")
+    lightroom.add_argument("--apply", action="store_true", help="Apply changes; otherwise preview only.")
     args = parser.parse_args(argv)
 
     try:
         import yaml
-        if args.command == "anytag":
-            from anytag_keywords import generate_anytag
-            result = generate_anytag(args.config, args.catalog_keywords, args.output, args.bind)
-            print(f"Any Tag update ready: {result}")
+        if args.command == "lightroom-sync":
+            from lightroom_hierarchy import sync
+            sync(args.config, args.apply)
             return 0
         if args.command == "edit":
             from web_editor import run_editor

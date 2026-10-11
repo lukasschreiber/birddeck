@@ -10,14 +10,11 @@ properties:
 $defs:
   profile:
     type: object
-    required: [name, lightroom, model, size, items]
+    required: [uuid, name, lightroom, model, size, items]
     properties:
+      uuid: { $ref: "#/$defs/uuid" }
       name:
         type: string
-      anytag_id: { $ref: "#/$defs/anytag_id" }
-      anytag_catalog:
-        type: string
-        description: Catalog path from Any Tag Export Keywords; IDs are specific to this catalog.
       lightroom:
         type: string
       model:
@@ -44,6 +41,11 @@ $defs:
       - $ref: "#/$defs/group"
       - $ref: "#/$defs/bird"
       - $ref: "#/$defs/uncertain"
+
+  uuid:
+    type: string
+    pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
+    description: Permanent BirdDeck identity; keep on renames/moves, regenerate for copies.
 
   rotation:
     type: number
@@ -307,17 +309,12 @@ $defs:
       - "ZW"
     description: Optional two-letter country code from data/countries.json. Exotic entries show its flag at the bottom-left, behind the bird. Omit or leave empty for no flag.
 
-  anytag_id:
-    type: string
-    pattern: '^[0-9]+$'
-    description: Existing Lightroom keyword ID from Any Tag; retained across renames and moves.
-
   group:
     type: object
-    required: [type, title, items]
+    required: [uuid, type, title, items]
     properties:
+      uuid: { $ref: "#/$defs/uuid" }
       type: { const: group }
-      anytag_id: { $ref: "#/$defs/anytag_id" }
       title: { type: string }
       tag: { type: string }
       bg: { type: string }
@@ -333,10 +330,10 @@ $defs:
 
   bird:
     type: object
-    required: [type, title]
+    required: [uuid, type, title]
     properties:
+      uuid: { $ref: "#/$defs/uuid" }
       type: { const: bird }
-      anytag_id: { $ref: "#/$defs/anytag_id" }
       title: { type: string }
       english_name:
         type: string
@@ -359,8 +356,8 @@ $defs:
 
   uncertain:
     type: object
-    required: [type]
+    required: [uuid, type]
     properties:
+      uuid: { $ref: "#/$defs/uuid" }
       type: { const: uncertain }
-      anytag_id: { $ref: "#/$defs/anytag_id" }
     additionalProperties: false

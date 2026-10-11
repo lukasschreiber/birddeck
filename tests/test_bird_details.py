@@ -11,6 +11,18 @@ from gen_uuid import profile_folder_id
 
 
 class BirdDetailTests(unittest.TestCase):
+    def test_bound_keyword_uses_sdk_action_without_keyboard_macro(self):
+        with tempfile.TemporaryDirectory() as directory:
+            entry = {'title': 'Star', '_keyword_uuid': '00000000-0000-4000-8000-000000000001'}
+            page_id = create_bird_details(directory, entry, Image.new('RGB', (288, 288)), 72, '', 5)
+            manifest = Path(directory) / profile_folder_id(page_id) / 'manifest.json'
+            actions = json.loads(manifest.read_text())['Controllers'][0]['Actions']
+            tag = actions['0,1']
+            self.assertEqual(tag['UUID'], 'de.birdtagging.names.tag')
+            self.assertEqual(tag['Settings'], {'keywordUuid': entry['_keyword_uuid']})
+            self.assertNotIn('Actions', tag)
+            self.assertEqual(actions['4,1']['Settings']['pastedText'], 'Star')
+
     def test_name_key_is_display_only_and_scientific_name_is_optional(self):
         for scientific_name in ('', 'Pica serica'):
             with self.subTest(scientific_name=scientific_name), tempfile.TemporaryDirectory() as directory:

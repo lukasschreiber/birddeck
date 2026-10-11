@@ -6,11 +6,21 @@
   "Description": "Two synchronized scrolling bird names on a black key.",
   "Version": "0.1.0.0",
   "SDKVersion": 2,
-  "CodePath": "plugin.html",
+  "CodePath": "runtime.cjs",
+  "Nodejs": {"Version": "20"},
   "Icon": "icons/plugin",
   "OS": [{"Platform": "windows", "MinimumVersion": "10"}],
-  "Software": {"MinimumVersion": "6.5"},
+  "Software": {"MinimumVersion": "6.6"},
   "Actions": [{
+    "UUID": "de.birdtagging.names.tag",
+    "Name": "Tag Lightroom keyword",
+    "Icon": "icons/action",
+    "Controllers": ["Keypad"],
+    "UserTitleEnabled": true,
+    "SupportedInMultiActions": false,
+    "Tooltip": "Apply the configured catalog keyword ID to selected Lightroom photos.",
+    "States": [{"Image": "icons/key", "ShowTitle": true}]
+  }, {
     "UUID": "de.birdtagging.names.scroll",
     "Name": "Scrolling bird name",
     "Icon": "icons/action",

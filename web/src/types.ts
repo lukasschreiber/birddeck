@@ -1,6 +1,7 @@
 export type EntryType = "bird" | "group" | "uncertain";
 
 export interface Entry {
+  uuid?: string;
   type: EntryType;
   title?: string;
   icon?: string;
@@ -17,6 +18,7 @@ export interface Entry {
 }
 
 export interface Profile {
+  uuid?: string;
   title?: never;
   type?: never;
   name: string;

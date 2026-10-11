@@ -3,6 +3,7 @@ from tempfile import TemporaryDirectory
 import yaml
 import uuid
 import json
+import shutil
 from pathlib import Path
 from gen_uuid import profile_folder_id
 from gen_image import generate_image
@@ -26,6 +27,8 @@ from generate_lightroom_tags import generate_keywords
 def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR):
     """Build a profile without modifying other outputs or temporary files."""
     config_path = Path(config_path).resolve()
+    from entry_identity import ensure_file_uuids
+    ensure_file_uuids(config_path)
     output_dir = Path(output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(prefix="bird-profile-", dir=output_dir) as workspace:
@@ -33,6 +36,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
         with config_path.open("r", encoding="utf-8-sig") as f:
             config = yaml.safe_load(f)
             validate_icons(config)
+            from lightroom_hierarchy import attach_bindings
+            attach_bindings(config, config_path)
             pixels = image_size(config['profile'])
             render_pixels = max(288, pixels)
 
@@ -221,7 +226,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                         save_key_image(bird_image, bird_image_path, pixels)
 
                         detail_title = parent_name + ' (?)'
-                        detail_uuid = create_bird_details(profiles_folder, {'title': detail_title}, bird_image, pixels, config['profile']['lightroom'], config['profile']['size']['columns'], uncertain=True)
+                        detail_entry = {**entry, 'title': detail_title}
+                        detail_uuid = create_bird_details(profiles_folder, detail_entry, bird_image, pixels, config['profile']['lightroom'], config['profile']['size']['columns'], uncertain=True)
                         elements[f"{col},{row}"] = bird_folder_action(detail_uuid, bird_image_uuid, detail_title, uncertain=True)
 
                 # print(f"Generated {len(elements)} element(s) for page {page_uuid} at {page_folder}")
@@ -263,6 +269,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
         ))
         keyword_path = generate_keywords(config, output_dir)
         print(f"Keywords ready: {keyword_path}")
+        shutil.copytree(Path(__file__).resolve().parents[1] / 'plugins' / 'BirdDeckTagging.lrplugin',
+                        output_dir / 'BirdDeckTagging.lrplugin', dirs_exist_ok=True)
         return result
 
 

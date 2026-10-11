@@ -35,6 +35,25 @@ class WebEditorTests(unittest.TestCase):
         with urlopen(request) as response:
             return json.load(response)
 
+    def test_new_entries_get_unique_uuids_and_moves_keep_identity(self):
+        from uuid import UUID
+        result = self.request('/api/entry', {'revision': 0, 'action': 'update', 'path': [0, 0],
+            'entry': {'type': 'bird', 'title': 'Original'}})
+        original = result['config']['profile']['items'][0]['items'][0]['uuid']
+        identities = {original}
+        for revision, kind in enumerate(('bird', 'group', 'uncertain'), start=1):
+            result = self.request('/api/entry', {'revision': revision, 'action': 'add', 'path': [0],
+                'entry': {'type': kind, 'title': 'Copy', 'uuid': original}})
+            identity = result['config']['profile']['items'][0]['items'][-1]['uuid']
+            self.assertEqual(str(UUID(identity)), identity)
+            self.assertNotIn(identity, identities)
+            identities.add(identity)
+        result = self.request('/api/entry', {'revision': 4, 'action': 'update', 'path': [0, 0],
+            'destination': [], 'entry': {'type': 'bird', 'title': 'Renamed', 'uuid': 'invalid'}})
+        self.assertEqual(result['config']['profile']['items'][1]['uuid'], original)
+        persisted = self.request('/api/config')
+        self.assertEqual(persisted['config']['profile']['items'][1]['uuid'], original)
+
     def test_add_update_validation_and_conflicts(self):
         self.assertEqual(self.request('/api/config')['revision'], 0)
         body = {'revision': 0, 'action': 'update', 'path': [0, 0],
