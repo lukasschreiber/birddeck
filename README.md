@@ -76,6 +76,28 @@ Synchronization updates the hierarchy under `Vogel` and preserves photo
 assignments. Removed entries move to `_BirdDeck Obsolete`; they are not deleted.
 For a fresh catalog, open it and run the same synchronization commands.
 
+## Package the plugin with its profile
+
+Install the packaging tools once:
+
+```powershell
+npm install -g @elgato/cli
+npm ci --omit=dev --prefix plugins/de.birdtagging.names.sdPlugin
+```
+
+Build an installer containing the Stream Deck plugin and the current profile:
+
+```powershell
+uv run python cli.py package
+```
+
+Double-click `output/de.birdtagging.names.streamDeckPlugin` to install it and
+accept the bundled-profile installation prompt. The command rebuilds the
+profile from your configuration each time.
+
+On another computer, install `output/BirdDeckTagging.lrplugin` separately in
+Lightroom and run `lightroom-sync --apply` there to establish catalog bindings.
+
 ## Files to keep
 
 Back up `config/config.yaml` and `config/config.lightroom.json`.
