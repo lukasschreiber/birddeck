@@ -66,7 +66,7 @@ group, or uncertain entry. Entry types are fixed when updating existing entries
 so changing a group cannot accidentally remove its children.
 
 Icon IDs are validated against `data/icons.json`; partial IDs show matching
-suggestions. Birds require an icon, while groups can leave it empty. Unknown
+suggestions. Icons are optional. Bird folders omit the eBird button when no icon is set. Unknown
 icons are rejected by both the editor and profile creation.
 
 Choose **Save entry** to save the form to YAML. **Reset** discards the
@@ -100,3 +100,7 @@ ID mapping with `uv run python scripts/extract-icons.py`.
 
 Extract the example with `uv run python src/unzip.py`, or pass another profile
 path. Extracted files go to `output/extracted/`.
+
+Each bird opens a folder with Back and the existing Lightroom tagging action.
+When an icon code is set, the folder also includes a website action for
+`https://ebird.org/species/<icon-code>`. Uncertain entries omit this website action.

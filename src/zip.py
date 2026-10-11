@@ -4,7 +4,7 @@ import os
 def zip_profile(folder_path, output_dir, extension=".streamDeckProfile"):
     """
     Zip a folder into output_dir with the given extension.
-    Clears output_dir before creating the zip.
+    Includes explicit directory entries like Stream Deck's native exports.
     """
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
@@ -16,6 +16,10 @@ def zip_profile(folder_path, output_dir, extension=".streamDeckProfile"):
     # Create the zip
     with zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root, dirs, files in os.walk(folder_path):
+            for directory in sorted(dirs):
+                directory_path = os.path.join(root, directory)
+                arcname = os.path.relpath(directory_path, folder_path).replace('\\', '/') + '/'
+                zipf.write(directory_path, arcname)
             for file in files:
                 file_path = os.path.join(root, file)
                 arcname = os.path.relpath(file_path, folder_path)

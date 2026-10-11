@@ -108,7 +108,7 @@ class ConfigStore:
                     raise ValueError('A title is required')
                 item['title'] = title
                 icon = values.get('icon', '').strip()
-                if (kind == 'bird' and not icon) or (icon and icon not in self.icons):
+                if icon and icon not in self.icons:
                     raise ValueError('Choose an icon ID from data/icons.json')
                 if icon:
                     item['icon'] = icon

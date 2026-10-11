@@ -59,7 +59,7 @@ $defs:
 
   bird:
     type: object
-    required: [type, title, icon]
+    required: [type, title]
     properties:
       type: { const: bird }
       title: { type: string }

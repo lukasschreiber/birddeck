@@ -19,9 +19,7 @@ import { BackgroundSelector } from "./BackgroundSelector";
 export function EntryForm({ editor: e }: { editor: Editor }) {
   const icon = e.form.icon.trim();
   const validIcon =
-    e.form.type === "uncertain" ||
-    (!icon && e.form.type === "group") ||
-    Object.hasOwn(e.icons, icon);
+    e.form.type === "uncertain" || !icon || Object.hasOwn(e.icons, icon);
   return (
     <Paper variant="outlined" sx={{ p: 2 }} component="form" onSubmit={e.save}>
       <Stack spacing={2}>
@@ -106,7 +104,7 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
                     },
                   }}
                   label="Icon ID"
-                  required={e.form.type === "bird"}
+
                   error={!validIcon}
                   helperText={
                     icon
@@ -114,7 +112,7 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
                         ? "Icon found"
                         : "Choose an ID from data/icons.json"
                       : e.form.type === "bird"
-                        ? "An icon is required for birds."
+                        ? "Optional. Leave empty to omit the eBird action."
                         : "Optional for groups."
                   }
                 />

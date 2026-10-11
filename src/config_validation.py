@@ -13,8 +13,6 @@ def validate_icons(config, icons=None):
         for item in items:
             label = f"{parent} / {item.get('title', item.get('type', 'entry'))}"
             icon = item.get("icon", "")
-            if item.get("type") == "bird" and not icon:
-                raise ValueError(f"{label}: a bird requires an icon ID")
             if icon and icon not in icons:
                 raise ValueError(f"{label}: unknown icon ID '{icon}' (see data/icons.json)")
             if item.get("type") == "group":

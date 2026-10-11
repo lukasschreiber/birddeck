@@ -19,6 +19,8 @@ from pagination import paginate_elements, sort_elements
 from paths import CONFIG_DIR, IMAGE_DIR, OUTPUT_DIR
 from config_validation import validate_icons
 from profile_images import image_size, save_key_image
+from deduplicate_images import deduplicate_images
+from bird_details import create_bird_details, bird_folder_action
 
 def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR):
     """Build a profile without modifying other outputs or temporary files."""
@@ -196,11 +198,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                         )
                         save_key_image(bird_image, bird_image_path, pixels)
 
-                        elements[f"{col},{row}"] = generate_bird_action(
-                            bird_name=entry["title"],
-                            image_uuid=bird_image_uuid,
-                            lightoom=config["profile"]["lightroom"],
-                        )
+                        detail_uuid = create_bird_details(profiles_folder, entry, bird_image, pixels, config['profile']['lightroom'], config['profile']['size']['columns'])
+                        elements[f"{col},{row}"] = bird_folder_action(detail_uuid, bird_image_uuid, entry['title'])
 
                     elif entry["type"] == "uncertain":
                         bird_image = generate_image(
@@ -216,12 +215,9 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                         )
                         save_key_image(bird_image, bird_image_path, pixels)
 
-                        elements[f"{col},{row}"] = generate_bird_action(
-                            bird_name=parent_name + " (?)",
-                            image_uuid=bird_image_uuid,
-                            lightoom=config["profile"]["lightroom"],
-                            uncertain=True,
-                        )
+                        detail_title = parent_name + ' (?)'
+                        detail_uuid = create_bird_details(profiles_folder, {'title': detail_title}, bird_image, pixels, config['profile']['lightroom'], config['profile']['size']['columns'], uncertain=True)
+                        elements[f"{col},{row}"] = bird_folder_action(detail_uuid, bird_image_uuid, detail_title, uncertain=True)
 
                 # print(f"Generated {len(elements)} element(s) for page {page_uuid} at {page_folder}")
                 with open(
@@ -241,7 +237,7 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
 
             # create the main manifest.json
             manifest = {
-                "AppIdentifier": config["profile"]["lightroom"],
+                "AppIdentifier": "",
                 "Device": {"Model": config["profile"]["model"], "UUID": ""},
                 "Name": profile_name,
                 "Pages": {
@@ -255,6 +251,7 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
             with open(os.path.join(main_folder, "manifest.json"), "w", encoding="utf-8") as f:
                 json.dump(manifest, f, indent=4)
 
+        deduplicate_images(main_folder)
         return Path(zip_profile(
             os.path.join(temp_folder, profile_name.replace(" ", "")),
             str(output_dir),
