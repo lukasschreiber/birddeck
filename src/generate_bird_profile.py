@@ -161,6 +161,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
 
                         # Use current page folder for the folder image, not subpage folder
                         folder_image = generate_image(
+                            country=entry.get("country", ""),
+                            rotation=entry.get("rotation", 0),
                             ebird_id=entry.get("icon", ""),
                             exotic=entry.get("exotic", False),
                             favorite=entry.get("favorite", False),
@@ -185,6 +187,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
 
                     elif entry["type"] == "bird":
                         bird_image = generate_image(
+                            country=entry.get("country", ""),
+                            rotation=entry.get("rotation", 0),
                             ebird_id=entry.get("icon", ""),
                             exotic=entry.get("exotic", False),
                             favorite=entry.get("favorite", False),

@@ -11,28 +11,62 @@ import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
 import { TreeItem } from "@mui/x-tree-view/TreeItem";
 import type { Entry } from "../types";
 import type { Editor } from "../hooks/useProfileEditor";
+import { displayName } from "../displayName";
+import { sortEntries } from "../sortEntries";
+import { ImageThumbnail } from "./ImageThumbnail";
 
 const count = (items: Entry[]): number =>
   items.reduce((total, item) => total + 1 + count(item.items || []), 0);
 
 export function Sidebar({ editor }: { editor: Editor }) {
   const [query, setQuery] = useState("");
+  const [exoticOnly, setExoticOnly] = useState(false);
+  const [favoriteOnly, setFavoriteOnly] = useState(false);
   const search = query.trim().toLowerCase();
+  const filtering = !!search || exoticOnly || favoriteOnly;
 
   const matches = (entry: Entry): boolean =>
-    (entry.title || "Uncertain").toLowerCase().includes(search) ||
-    (entry.icon || "").includes(search) ||
+    ((!exoticOnly || !!entry.exotic) &&
+      (!favoriteOnly || !!entry.favorite) &&
+      ((entry.title || "Uncertain").toLowerCase().includes(search) ||
+        displayName(entry.title || "Uncertain")
+          .toLowerCase()
+          .includes(search) ||
+        (entry.icon || "").includes(search))) ||
     (entry.items || []).some(matches);
   const searchExpanded: string[] = ["root"];
 
   function render(items: Entry[], parent: number[] = []): React.ReactNode {
-    return items.map((entry, index) => {
-      if (search && !matches(entry)) return null;
+    return sortEntries(items).map(({ entry, index }) => {
+      if (filtering && !matches(entry)) return null;
       const path = [...parent, index];
       const id = path.join(".");
       if (entry.type === "group") searchExpanded.push(id);
       return (
-        <TreeItem key={id} itemId={id} label={entry.title || "Uncertain"}>
+        <TreeItem
+          key={id}
+          itemId={id}
+          label={
+            <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
+              {entry.icon && (
+                <ImageThumbnail kind="icon" value={entry.icon} size={24} />
+              )}
+              <Typography
+                variant="body2"
+                sx={{
+                  fontStyle: entry.type === "uncertain" ? "italic" : "normal",
+                  color: entry.favorite
+                    ? "#996600"
+                    : entry.exotic
+                      ? "text.secondary"
+                      : "text.primary",
+                }}
+              >
+                {displayName(entry.title || "Uncertain")}
+              </Typography>
+            </Stack>
+          }
+        >
           {entry.type === "group" ? render(entry.items || [], path) : null}
         </TreeItem>
       );
@@ -57,7 +91,7 @@ export function Sidebar({ editor }: { editor: Editor }) {
       <Stack spacing={1.5} sx={{ p: 2 }}>
         <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
           <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-            {editor.state?.config.profile.name || "BirdDeck"}
+            {displayName(editor.state?.config.profile.name || "BirdDeck")}
           </Typography>
           {editor.state && (
             <Chip
@@ -72,6 +106,24 @@ export function Sidebar({ editor }: { editor: Editor }) {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
+        <Stack direction="row" spacing={1}>
+          <Chip
+            size="small"
+            label="Exotic"
+            variant={exoticOnly ? "filled" : "outlined"}
+            color={exoticOnly ? "primary" : "default"}
+            aria-pressed={exoticOnly}
+            onClick={() => setExoticOnly((value) => !value)}
+          />
+          <Chip
+            size="small"
+            label="Favorite"
+            variant={favoriteOnly ? "filled" : "outlined"}
+            color={favoriteOnly ? "primary" : "default"}
+            aria-pressed={favoriteOnly}
+            onClick={() => setFavoriteOnly((value) => !value)}
+          />
+        </Stack>
       </Stack>
       <Divider />
       <Box
@@ -88,7 +140,7 @@ export function Sidebar({ editor }: { editor: Editor }) {
                 ? editor.selected.join(".")
                 : "root"
           }
-          expandedItems={search ? searchExpanded : editor.expanded}
+          expandedItems={filtering ? searchExpanded : editor.expanded}
           onExpandedItemsChange={(_, ids) => editor.setExpanded(ids)}
           onSelectedItemsChange={(_, id) => {
             if (id)

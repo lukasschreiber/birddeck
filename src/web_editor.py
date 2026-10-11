@@ -14,8 +14,9 @@ import webbrowser
 from urllib.parse import urlsplit, parse_qs
 
 from ruamel.yaml import YAML
-from config_validation import load_icons, validate_icons
+from config_validation import load_icons, validate_icons, validate_rotation
 from paths import ROOT_DIR
+from country_flags import COUNTRIES, validate_country, flag_path
 
 
 def render_preview(entry, icons, pixels=288):
@@ -37,7 +38,7 @@ def render_preview(entry, icons, pixels=288):
         if not image_path.is_relative_to((ROOT_DIR / 'assets').resolve()):
             raise ValueError('Preview background must be inside assets/')
     render_pixels = max(288, pixels)
-    image = generate_image(icon, background, (render_pixels, render_pixels), favorite=entry.get('favorite', False), exotic=entry.get('exotic', False), corner_radius=round(render_pixels * 40 / 288))
+    image = generate_image(icon, background, (render_pixels, render_pixels), favorite=entry.get('favorite', False), exotic=entry.get('exotic', False), corner_radius=round(render_pixels * 40 / 288), rotation=entry.get('rotation', 0), country=entry.get('country', ''))
     buffer = BytesIO()
     save_key_image(image, buffer, pixels)
     return buffer.getvalue()
@@ -87,11 +88,17 @@ class ConfigStore:
             candidate = deepcopy(self.config)
             path = request['path']
             adding = request.get('action') == 'add'
-            if request.get('action') not in ('add', 'update'):
+            if request.get('action') not in ('add', 'update', 'delete'):
                 raise ValueError('Unknown action')
             if not adding and not path:
                 raise ValueError('Select an entry to update')
             target = self.entry_at(candidate, path)
+            if request.get('action') == 'delete':
+                if target.get('items'):
+                    raise ValueError('Delete all children before deleting this entry')
+                parent = self.entry_at(candidate, path[:-1])
+                parent['items'].pop(path[-1])
+                return self.commit(candidate, path[:-1])
             values = request['entry']
             kind = values.get('type')
             if kind not in ('bird', 'group', 'uncertain'):
@@ -114,11 +121,21 @@ class ConfigStore:
                     item['icon'] = icon
                 else:
                     item.pop('icon', None)
+                rotation = validate_rotation(values.get('rotation', 0))
+                if rotation:
+                    item['rotation'] = rotation
+                else:
+                    item.pop('rotation', None)
                 for field in ('favorite', 'exotic'):
                     if values.get(field) is True:
                         item[field] = True
                     else:
                         item.pop(field, None)
+                country = validate_country(values.get('country', ''))
+                if country and item.get('exotic'):
+                    item['country'] = country
+                else:
+                    item.pop('country', None)
             if kind == 'group':
                 item.setdefault('items', [])
                 for field in ('tag', 'bg'):
@@ -131,23 +148,45 @@ class ConfigStore:
             if adding:
                 selected = [*path, len(target['items'])]
                 target['items'].append(item)
-            validate_icons(candidate, self.icons)
-            stream = StringIO()
-            self.yaml.dump(candidate, stream)
-            content = stream.getvalue().encode('utf-8')
-            temporary = None
-            try:
-                with NamedTemporaryFile(dir=self.path.parent, delete=False) as file:
-                    temporary = Path(file.name)
-                    file.write(content)
-                os.replace(temporary, self.path)
-            finally:
-                if temporary and temporary.exists():
-                    temporary.unlink()
-            self.config = candidate
-            self.original = content
-            self.revision += 1
-            return {**self.snapshot(), 'selected': selected}
+            elif 'destination' in request:
+                destination_path = request['destination']
+                destination = self.entry_at(candidate, destination_path)
+                if destination.get('type', 'group') != 'group':
+                    raise ValueError('Select a group as the destination')
+                if destination_path[:len(path)] == path:
+                    raise ValueError('An entry cannot be moved into itself or its children')
+                if destination_path != path[:-1]:
+                    source_parent = self.entry_at(candidate, path[:-1])
+                    source_parent['items'].pop(path[-1])
+                    # Removing a sibling can shift the destination's YAML path.
+                    adjusted = destination_path.copy()
+                    depth = len(path) - 1
+                    if len(adjusted) > depth and adjusted[:depth] == path[:-1] and adjusted[depth] > path[-1]:
+                        adjusted[depth] -= 1
+                    destination.setdefault('items', [])
+                    selected = [*adjusted, len(destination['items'])]
+                    destination['items'].append(item)
+            return self.commit(candidate, selected)
+
+    def commit(self, candidate, selected):
+        """Write a validated candidate atomically while the caller holds the lock."""
+        validate_icons(candidate, self.icons)
+        stream = StringIO()
+        self.yaml.dump(candidate, stream)
+        content = stream.getvalue().encode('utf-8')
+        temporary = None
+        try:
+            with NamedTemporaryFile(dir=self.path.parent, delete=False) as file:
+                temporary = Path(file.name)
+                file.write(content)
+            os.replace(temporary, self.path)
+        finally:
+            if temporary and temporary.exists():
+                temporary.unlink()
+        self.config = candidate
+        self.original = content
+        self.revision += 1
+        return {**self.snapshot(), 'selected': selected}
 
 
 def make_server(config_path, port=0):
@@ -177,6 +216,26 @@ def make_server(config_path, port=0):
         def do_GET(self):
             parsed = urlsplit(self.path)
             route = parsed.path
+            if route == '/api/countries':
+                if not self.authorized():
+                    self.respond(403, {'error': 'Unauthorized'})
+                    return
+                self.respond(200, COUNTRIES)
+                return
+            if route == '/api/flag-image':
+                query = parse_qs(parsed.query)
+                if not secrets.compare_digest(query.get('token', [''])[0], token):
+                    self.respond(403, {'error': 'Unauthorized'})
+                    return
+                try:
+                    code = validate_country(query.get('code', [''])[0])
+                    if not code:
+                        raise ValueError('Choose a country')
+                except ValueError as error:
+                    self.respond(400, {'error': str(error)})
+                    return
+                self.respond(200, flag_path(code).read_bytes(), 'image/png')
+                return
             if route == '/api/backgrounds':
                 if not self.authorized():
                     self.respond(403, {'error': 'Unauthorized'})

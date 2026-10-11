@@ -69,6 +69,16 @@ profile:
             - type: bird
               title: Beutelmeise
               icon: euptit1
+            - type: bird
+              title: Buntmeise
+              icon: vartit1
+              exotic: true
+              country: KR
+            - type: bird
+              title: Graukohlmeise
+              icon: cintit13
+              exotic: true
+              country: KR
         - type: group
           title: Fink
           icon: comcha
@@ -151,6 +161,14 @@ profile:
               title: Zwergschnäpper
               icon: rebfly
               exotic: true
+            - type: bird
+              title: Sprosser
+              icon: thrnig1
+            - type: bird
+              title: Spiegelrotschwanz
+              icon: daured1
+              exotic: true
+              country: KR
         - type: group
           title: Grasmücke
           icon: blackc1
@@ -167,6 +185,9 @@ profile:
             - type: bird
               title: Klappergrasmücke
               icon: leswhi4
+            - type: bird
+              title: Sperbergrasmücke
+              icon: barwar1
         - type: group
           title: Laubsänger
           icon: comchi1
@@ -180,6 +201,15 @@ profile:
             - type: bird
               title: Waldlaubsänger
               icon: woowar
+            - type: bird
+              title: Berglaubsänger
+              icon: webwar1
+            - type: bird
+              title: Gelbbrauen-Laubsänger
+              icon: yebwar3
+            - type: bird
+              title: Grünlaubsänger
+              icon: grewar3
         - type: group
           title: Lerche
           icon: skylar
@@ -207,6 +237,14 @@ profile:
             - type: bird
               title: Feldsperling
               icon: eutspa
+            - type: bird
+              title: Schneesperling
+              icon: whwsno1
+            - type: bird
+              title: Keniasperling
+              icon: kerspa2
+              exotic: true
+              country: TZ
         - type: group
           title: Schwirl
           icon: savwar1
@@ -217,6 +255,9 @@ profile:
             - type: bird
               title: Feldschwirl
               icon: cogwar1
+            - type: bird
+              title: Schlagschwirl
+              icon: eurwar2
         - type: group
           title: Ammer
           icon: yellow2
@@ -236,6 +277,15 @@ profile:
             - type: bird
               title: Zaunammer
               icon: cirbun1
+            - type: bird
+              title: Zippammer
+              icon: rocbun1
+            - type: bird
+              title: Schneeammer
+              icon: snobun
+            - type: bird
+              title: Spornammer
+              icon: laplon
         - type: bird
           title: Zaunkönig
           icon: winwre4
@@ -250,9 +300,6 @@ profile:
               title: Sommergoldhähnchen
               icon: firecr1
         - type: bird
-          title: Heckenbraunelle
-          icon: dunnoc1
-        - type: bird
           title: Kleiber
           icon: eurnut2
         - type: group
@@ -266,9 +313,6 @@ profile:
               title: Waldbaumläufer
               icon: eurtre1
         - type: bird
-          title: Star
-          icon: eursta
-        - type: bird
           title: Seidenschwanz
           icon: bohwax
         - type: bird
@@ -277,9 +321,6 @@ profile:
         - type: bird
           title: Pirol
           icon: eugori2
-        - type: bird
-          title: Neuntöter
-          icon: rebshr1
         - type: bird
           title: Kuckuck
           icon: comcuc
@@ -299,6 +340,17 @@ profile:
             - type: bird
               title: Mauersegler
               icon: comswi
+            - type: bird
+              title: Alpensegler
+              icon: alpswi1
+            - type: bird
+              title: Felsenschwalbe
+              icon: eurcrm1
+            - type: bird
+              title: Pazifiksegler
+              icon: fotswi
+              exotic: true
+              country: KR
         - type: group
           title: Rohrsänger
           icon: eurwar1
@@ -315,8 +367,17 @@ profile:
             - type: bird
               title: Drosselrohrsänger
               icon: grrwar1
+            - type: bird
+              title: Seggenrohrsänger
+              icon: aquwar1
+            - type: bird
+              title: Gelbspötter
+              icon: ictwar1
+            - type: bird
+              title: Orpheusspötter
+              icon: melwar1
         - type: group
-          title: Stelzen und Pieper
+          title: Stelzen
           icon: whiwag
           items:
             - type: bird
@@ -329,18 +390,6 @@ profile:
               title: Schafstelze
               icon: eaywag1
             - type: bird
-              title: Wiesenpieper
-              icon: meapip1
-            - type: bird
-              title: Brachpieper
-              icon: tawpip1
-            - type: bird
-              title: Bergpieper
-              icon: watpip1
-            - type: bird
-              title: Rotkehlpieper
-              icon: retpip
-            - type: bird
               title: Zitronenstelze
               icon: citwag
         - type: bird
@@ -351,20 +400,145 @@ profile:
           icon: eubeat1
           items:
             - type: bird
-              title: Eisvogel
-              icon: comkin1
-            - type: bird
               title: Bienenfresser
               icon: eubeat1
             - type: bird
               title: Blauracke
               exotic: true
               icon: eurrol1
+              country: TZ
             - type: bird
               title: Gabelracke
               exotic: true
               icon: librol2
 
+              country: TZ
+        - type: group
+          title: Braunellen
+          icon: dunnoc1
+          items:
+            - type: bird
+              title: Heckenbraunelle
+              icon: dunnoc1
+              favorite: true
+            - type: bird
+              title: Alpenbraunelle
+              icon: alpacc1
+          tag: Braunelle
+        - type: group
+          title: Würger
+          icon: rebshr1
+          items:
+            - type: bird
+              title: Neuntöter
+              icon: rebshr1
+            - type: bird
+              title: Raubwürger
+              icon: norshr1
+            - type: bird
+              title: Isabellwürger
+              icon: isashr1
+            - type: bird
+              title: Braunwürger
+              icon: brnshr
+              exotic: true
+              country: KR
+            - type: bird
+              title: Rotkopfwürger
+              icon: wooshr1
+          tag: Würger
+        - type: group
+          title: Stare
+          icon: eursta
+          items:
+            - type: bird
+              title: Star
+              icon: eursta
+            - type: bird
+              title: Rosenstar
+              icon: rossta2
+              exotic: true
+              country: RU
+            - type: bird
+              title: Dreifarben-Glanzstar
+              icon: supsta1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Rotschwingenstar
+              icon: rewsta1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Hildebrandtglanzstar
+              icon: hilsta1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Grauglanzstar
+              icon: ashsta2
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Lappenstar
+              icon: watsta1
+              exotic: true
+              country: TZ
+          tag: Star
+        - type: group
+          title: Pieper
+          icon: meapip1
+          items:
+            - type: bird
+              title: Bergpieper
+              icon: watpip1
+            - type: bird
+              title: Brachpieper
+              icon: tawpip1
+            - type: bird
+              title: Rotkehlpieper
+              icon: retpip
+            - type: bird
+              title: Wiesenpieper
+              icon: meapip1
+            - type: bird
+              title: Baumpieper
+              icon: trepip
+            - type: bird
+              title: Spornpieper
+              icon: ricpip1
+            - type: bird
+              title: Strandpieper
+              icon: rocpip1
+          tag: Pieper
+        - type: group
+          title: Lieste
+          icon: comkin1
+          items:
+            - type: bird
+              title: Eisvogel
+              icon: comkin1
+            - type: bird
+              title: Braunkopfliest
+              icon: brhkin1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Streifenliest
+              icon: strkin1
+              exotic: true
+              country: TZ
+          tag: Liest
+        - type: bird
+          title: Japanbrillenvogel
+          icon: warwhe1
+          exotic: true
+          country: KR
+        - type: bird
+          title: Orpheusbülbü
+          icon: brebul1
+          exotic: true
+          country: KR
     - type: group
       title: Wasser-vögel
       tag: Wasservogel
@@ -421,6 +595,11 @@ profile:
                 - type: bird
                   title: Knäkente
                   icon: gargan
+                - type: bird
+                  title: China-Fleckschnabelente
+                  icon: spbduc
+                  exotic: true
+                  country: KR
             - type: group
               title: Meerente
               icon: comeid
@@ -467,39 +646,64 @@ profile:
           title: Gans
           icon: gragoo
           items:
-            - type: bird
-              title: Graugans
+            - type: group
+              title: Feldgänse
               icon: gragoo
-            - type: bird
-              icon: taibeg1
-              title: Waldsaatgans
-            - type: bird
-              title: Kurzschnablegans
-              icon: pifgoo
-            - type: bird
-              title: Blässgans
-              icon: gwfgoo
-            - type: bird
-              title: Kanadagans
+              items:
+                - type: bird
+                  title: Graugans
+                  icon: gragoo
+                - type: bird
+                  title: Blässgans
+                  icon: gwfgoo
+                - type: bird
+                  title: Kurzschnablegans
+                  icon: pifgoo
+                - type: bird
+                  icon: taibeg1
+                  title: Waldsaatgans
+                - type: bird
+                  title: Zwerggans
+                  icon: lwfgoo
+                - type: bird
+                  title: Tundrasaatgans
+                  icon: tunbeg1
+                - type: bird
+                  title: Schneegans
+                  icon: snogoo
+                  exotic: true
+                  country: GB
+              tag: Feldgans
+            - type: group
+              title: Meergänse
               icon: cangoo
-            - type: bird
-              title: Nilgans
-              icon: egygoo
-            - type: bird
-              title: Ringelgans
-              icon: brant
-            - type: bird
-              title: Nonnengans
-              icon: bargoo
-            - type: bird
-              title: Rostgans
+              items:
+                - type: bird
+                  title: Kanadagans
+                  icon: cangoo
+                - type: bird
+                  title: Nonnengans
+                  icon: bargoo
+                - type: bird
+                  title: Ringelgans
+                  icon: brant
+                - type: bird
+                  title: Rothalsgans
+                  icon: rebgoo1
+              tag: Meergans
+            - type: group
+              title: Halbgänse
               icon: rudshe
-            - type: bird
-              title: Zwerggans
-              icon: lwfgoo
-            - type: bird
-              title: Brandgans
-              icon: comshe
+              items:
+                - type: bird
+                  title: Rostgans
+                  icon: rudshe
+                - type: bird
+                  title: Nilgans
+                  icon: egygoo
+                - type: bird
+                  title: Brandgans
+                  icon: comshe
         - type: group
           title: Schwan
           icon: mutswa
@@ -513,6 +717,9 @@ profile:
             - type: bird
               title: Zwergschwan
               icon: tunswa
+            - type: bird
+              title: Schwarzschwan
+              icon: blkswa
         - type: group
           title: Reiher
           icon: graher1
@@ -541,9 +748,6 @@ profile:
             - type: bird
               title: Zwergdommel
               icon: litbit1
-        - type: bird
-          title: Kormoran
-          icon: grecor
         - type: group
           title: Möwe
           icon: bkhgul
@@ -576,6 +780,9 @@ profile:
               title: Zwergmöwe
               icon: litgul
             - type: uncertain
+            - type: bird
+              title: Steppenmöwe
+              icon: casgul2
         - type: group
           title: Ralle
           icon: commoo3
@@ -592,6 +799,12 @@ profile:
             - type: bird
               title: Tüpfelsumpfhuhn
               icon: spocra1
+            - type: bird
+              title: Zwergsumpfhuhn
+              icon: baicra1
+            - type: bird
+              title: Kleinsumpfhuhn
+              icon: litcra1
         - type: group
           title: Lappentaucher
           icon: grcgre1
@@ -608,6 +821,9 @@ profile:
             - type: bird
               title: Schwarzhalstaucher
               icon: eargre
+            - type: bird
+              title: Ohrentaucher
+              icon: horgre
         - type: group
           title: Taucher
           icon: retloo
@@ -641,6 +857,18 @@ profile:
               title: Brandseeschwalbe
               icon: santer1
             - type: uncertain
+            - type: bird
+              title: Weißbart-Seeschwalbe
+              icon: whiter2
+            - type: bird
+              title: Weißflügel-Seeschwalbe
+              icon: whwter
+            - type: bird
+              title: Lachseeschwalbe
+              icon: gubter2
+            - type: bird
+              title: Raubseeschwalbe
+              icon: caster1
         - type: group
           title: Alkenvogel
           icon: horpuf
@@ -657,9 +885,67 @@ profile:
             - type: bird
               title: Papageitaucher
               icon: horpuf
+              exotic: true
+              country: IS
+            - type: bird
+              title: Krabbentaucher
+              icon: doveki
+              exotic: true
         - type: bird
           title: Basstölpel
           icon: norgan
+        - type: group
+          title: Kormorane
+          icon: grecor
+          items:
+            - type: bird
+              title: Kormoran
+              icon: grecor
+            - type: bird
+              title: Japankormoran
+              icon: japcor1
+              exotic: true
+            - type: bird
+              title: Krähenscharbe
+              icon: eursha1
+              exotic: true
+              country: IS
+          tag: Kormoran
+        - type: group
+          title: Raubmöwen
+          icon: gresku1
+          items:
+            - type: bird
+              title: Skua
+              icon: gresku1
+              exotic: true
+              country: IS
+            - type: bird
+              title: Schmarotzerraubmöwe
+              icon: parjae
+            - type: bird
+              title: Falkenraubmöwe
+              icon: lotjae
+            - type: uncertain
+            - type: bird
+              title: Spatelraubmöwe
+              icon: pomjae
+          tag: Raubmöwe
+        - type: group
+          title: Sturmvögel
+          icon: lcspet
+          items:
+            - type: bird
+              title: Wellenläufer
+              icon: lcspet
+            - type: bird
+              title: Dunkelsturmtaucher
+              icon: sooshe
+            - type: bird
+              title: Eissturmvogel
+              icon: norful
+            - type: uncertain
+          tag: Sturmvogel
     - type: group
       title: Wat-vögel
       tag: Watvogel
@@ -780,18 +1066,22 @@ profile:
         - type: bird
           title: Buntspecht
           icon: grswoo
+          rotation: -25
         - type: bird
           title: Grünspecht
           icon: eugwoo2
         - type: bird
           title: Kleinspecht
           icon: leswoo1
+          rotation: -20
         - type: bird
           title: Mittelspecht
           icon: miswoo1
+          rotation: -20
         - type: bird
           title: Schwarzspecht
           icon: blawoo1
+          rotation: -20
         - type: bird
           title: Wendehals
           icon: eurwry
@@ -799,6 +1089,14 @@ profile:
           title: Grauspecht
           icon: gyfwoo1
 
+        - type: bird
+          title: Dreizehenspecht
+          icon: ettwoo1
+          rotation: -25
+        - type: bird
+          title: Weißrückenspecht
+          icon: whbwoo1
+          rotation: -24
     - type: group
       title: Raben-vögel
       tag: Rabenvogel
@@ -836,41 +1134,27 @@ profile:
           title: Nebelkrähe
           icon: hoocro1
 
+        - type: bird
+          title: Orientelster
+          icon: orimag1
+          exotic: true
+          country: KR
+        - type: bird
+          title: Dschungelkrähe
+          icon: labcro1
+          exotic: true
+          country: KR
     - type: group
       title: Greif-vögel
       tag: Greifvogel
       bg: "assets/img/habitat-rocky.png"
       items:
         - type: bird
-          title: Mäusebussard
-          icon: combuz1
-        - type: bird
-          title: Wespenbussard
-          icon: euhbuz1
-        - title: Raufußbussard
-          type: bird
-          icon: rolhaw
-        - type: bird
           title: Habicht
           icon: norgos1
         - type: bird
           title: Sperber
           icon: eurspa1
-        - type: bird
-          title: Baumfalke
-          icon: eurhob
-        - type: bird
-          title: Turmfalke
-          icon: eurkes
-        - type: bird
-          title: Wanderfalke
-          icon: perfal
-        - type: bird
-          title: Rotmilan
-          icon: redkit1
-        - type: bird
-          title: Schwarzmilan
-          icon: blakit1
         - type: group
           title: Adler
           icon: whteag
@@ -907,6 +1191,61 @@ profile:
               title: Steppenweihe
               icon: palhar1
 
+        - type: group
+          title: Falken
+          icon: eurkes
+          items:
+            - type: bird
+              title: Baumfalke
+              icon: eurhob
+            - type: bird
+              title: Turmfalke
+              icon: eurkes
+            - type: bird
+              title: Wanderfalke
+              icon: perfal
+            - type: bird
+              title: Rotfußfalke
+              icon: reffal1
+            - type: bird
+              title: Merlin
+              icon: merlin
+            - type: bird
+              title: Halsband-Zwergfalke
+              icon: pygfal1
+              exotic: true
+              country: TZ
+          tag: Falke
+        - type: group
+          title: Bussarde
+          icon: combuz1
+          items:
+            - type: bird
+              title: Mäusebussard
+              icon: combuz1
+            - title: Raufußbussard
+              type: bird
+              icon: rolhaw
+            - type: bird
+              title: Wespenbussard
+              icon: euhbuz1
+          tag: Bussard
+        - type: group
+          title: Milane
+          icon: redkit1
+          items:
+            - type: bird
+              title: Rotmilan
+              icon: redkit1
+            - type: bird
+              title: Schwarzmilan
+              icon: blakit1
+            - type: bird
+              title: Gleitaar
+              icon: bkskit1
+              exotic: true
+              country: TZ
+          tag: Milan
     - type: group
       title: Eulen
       tag: Eule
@@ -938,6 +1277,9 @@ profile:
         - type: bird
           title: Waldohreule
           icon: loeowl
+        - type: bird
+          title: Zwergohreule
+          icon: eursco1
     - type: group
       title: Hühner-vögel
       tag: Hühnervogel
@@ -961,6 +1303,19 @@ profile:
         - type: bird
           title: Wachtel
           icon: comqua1
+        - type: bird
+          title: Wachtelkönig
+          icon: corcra
+        - type: bird
+          title: Silberfasan
+          icon: silphe
+          exotic: true
+        - type: bird
+          title: Steinhuhn
+          icon: rocpar2
+        - type: bird
+          title: Haselhuhn
+          icon: hazgro1
     - type: group
       title: Kraniche
       tag: Kranich
@@ -973,6 +1328,7 @@ profile:
           title: Grauhals-Kronenkranich
           icon: grccra1
           exotic: true
+          country: TZ
     - type: group
       title: Ibisse
       tag: Ibis
@@ -1016,9 +1372,24 @@ profile:
           title: Turteltaube
           icon: eutdov
         - type: bird
-          title: Felsentaube
+          title: Straßentaube
           icon: rocpig
 
+        - type: bird
+          title: Orientturteltaube
+          icon: ortdov
+          exotic: true
+          country: KR
+        - type: bird
+          title: Bronzeflecktaube
+          icon: eswdov1
+          exotic: true
+          country: TZ
+        - type: bird
+          title: Guineataube
+          icon: spepig1
+          exotic: true
+          country: TZ
     - type: group
       title: Papageien
       tag: Papagei

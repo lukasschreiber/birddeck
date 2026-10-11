@@ -8,6 +8,8 @@ import numpy as np
 from scipy import ndimage
 from io import BytesIO
 from paths import ROOT_DIR, DATA_DIR, OUTPUT_DIR, CACHE_DIR as PROJECT_CACHE_DIR
+from config_validation import validate_rotation
+from country_flags import validate_country, flag_path
 
 
 # === CONFIG ===
@@ -147,11 +149,15 @@ def generate_image(
     favorite: bool = False,
     exotic: bool = False,
     corner_radius: int = 40,
+    rotation: float = 0,
+    country: str = "",
 ) -> Image.Image:
     """
     Generate an image with optional background color or local image
     and bird overlay (background auto-removed).
     """
+    validate_rotation(rotation)
+    country = validate_country(country)
     # Background: gradient, color, or local image
     if favorite and ebird_id:
         img = create_diagonal_gradient(size, "#ffffff", "#f8b600")  # white → yellow
@@ -172,6 +178,16 @@ def generate_image(
             print(f"Error loading background image '{background}': {e}")
             img = Image.new("RGBA", size, color="black")
 
+    # Place the flag beneath the bird so overlapping feathers stay visible.
+    if exotic and country:
+        with Image.open(flag_path(country)) as source:
+            flag = source.convert('RGBA')
+        flag.thumbnail((round(size[0] * 0.22), round(size[1] * 0.15)), Image.Resampling.LANCZOS)
+        margin = max(2, round(min(size) * 0.10))
+        x, y = margin, size[1] - margin - flag.height
+        ImageDraw.Draw(img).rectangle((x - 1, y - 1, x + flag.width, y + flag.height), fill='white')
+        img.paste(flag, (x, y), flag)
+
     # Add bird overlay if available
     if ebird_id:
         icons_path = DATA_DIR / "icons.json"
@@ -189,6 +205,8 @@ def generate_image(
             bird = Image.open(local_icon).convert("RGBA") if local_icon.exists() else fetch_image(url)
             if bird:
                 bird = remove_largest_white_background(bird)
+                if rotation:
+                    bird = bird.rotate(-rotation, resample=Image.Resampling.BICUBIC, expand=True)
                 bird.thumbnail((size[0] * 0.9, size[1] * 0.9), Image.Resampling.LANCZOS)
 
                 # Center the bird

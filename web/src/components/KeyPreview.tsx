@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Box, CircularProgress, Stack, Typography } from "@mui/material";
 import type { EntryForm } from "../types";
+import { displayName } from "../displayName";
 
 export function KeyPreview({
   entry,
@@ -84,7 +85,7 @@ export function KeyPreview({
           <Box
             component="img"
             src={image}
-            alt={`Key image for ${entry.title || parentTitle || "new entry"}`}
+            alt={`Key image for ${displayName(entry.title || parentTitle || "new entry")}`}
             sx={{ width: "100%", height: "100%" }}
           />
         )}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { api } from "../api";
+import { displayName } from "../displayName";
 import type {
   Entry,
   EntryForm,
@@ -14,10 +15,12 @@ const blank = (): EntryForm => ({
   type: "bird",
   title: "",
   icon: "",
+  rotation: 0,
   tag: "",
   bg: "",
   favorite: false,
   exotic: false,
+  country: "",
 });
 
 const toForm = (entry: Entry | Profile): EntryForm =>
@@ -36,6 +39,7 @@ export function useProfileEditor() {
   const [adding, setAdding] = useState(false);
   const [form, setForm] = useState<EntryForm>(blank);
   const [dirty, setDirty] = useState(false);
+  const [destination, setDestination] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string[]>(["root"]);
   const [notice, setNotice] = useState<Notice>({
     severity: "info",
@@ -71,6 +75,7 @@ export function useProfileEditor() {
   const choose = (path: number[]) => {
     if (!state || !discard()) return;
     setSelected(path);
+    setDestination(null);
     setAdding(false);
     setForm(toForm(entryAt(state, path)));
     setDirty(false);
@@ -79,6 +84,7 @@ export function useProfileEditor() {
   const add = () => {
     if (discard()) {
       setAdding(true);
+      setDestination(null);
       setForm(blank());
       setDirty(false);
     }
@@ -87,12 +93,18 @@ export function useProfileEditor() {
   const reset = () => {
     if (state && discard()) {
       setForm(adding ? blank() : toForm(entryAt(state, selected)));
+      setDestination(null);
       setDirty(false);
     }
   };
 
   const update = <K extends keyof EntryForm>(key: K, value: EntryForm[K]) => {
     setForm((previous) => ({ ...previous, [key]: value }));
+    setDirty(true);
+  };
+
+  const regroup = (value: string) => {
+    setDestination(value);
     setDirty(true);
   };
 
@@ -106,10 +118,19 @@ export function useProfileEditor() {
         action: adding ? "add" : "update",
         path: selected,
         entry: form,
+        ...(!adding && destination !== null
+          ? {
+              destination:
+                destination === "root"
+                  ? []
+                  : destination.split(".").map(Number),
+            }
+          : {}),
       });
       const path = result.selected!;
       setState(result);
       setSelected(path);
+      setDestination(null);
       setAdding(false);
       setForm(toForm(entryAt(result, path)));
       setDirty(false);
@@ -117,7 +138,7 @@ export function useProfileEditor() {
         Array.from(
           new Set([
             "root",
-            ...previous,
+            ...(destination === null ? previous : []),
             ...path.map((_, index) => path.slice(0, index + 1).join(".")),
           ]),
         ),
@@ -138,6 +159,47 @@ export function useProfileEditor() {
 
   const root = !selected.length && !adding;
   const entry = state ? entryAt(state, selected) : null;
+  const canDelete =
+    !!entry && !adding && !!selected.length && !entry.items?.length;
+  const deleteEntry = async () => {
+    if (!state || !canDelete || saving) return;
+    const name = displayName(entry?.title || "Uncertain");
+    if (
+      !window.confirm(
+        `Delete "${name}"?${dirty ? " Unsaved changes will be discarded." : ""}`,
+      )
+    )
+      return;
+    setSaving(true);
+    try {
+      const result = await api<Snapshot>("/api/entry", {
+        revision: state.revision,
+        action: "delete",
+        path: selected,
+      });
+      const path = result.selected!;
+      setState(result);
+      setSelected(path);
+      setDestination(null);
+      setForm(toForm(entryAt(result, path)));
+      setDirty(false);
+      setExpanded([
+        "root",
+        ...path.map((_, index) => path.slice(0, index + 1).join(".")),
+      ]);
+      setNotice({
+        severity: "success",
+        text: `Deleted "${name}" from your YAML configuration.`,
+      });
+    } catch (error) {
+      setNotice({
+        severity: "error",
+        text: error instanceof Error ? error.message : "Delete failed",
+      });
+    } finally {
+      setSaving(false);
+    }
+  };
   const breadcrumbs = state
     ? [
         state.config.profile.name,
@@ -150,6 +212,8 @@ export function useProfileEditor() {
 
   return {
     state,
+    destination,
+    regroup,
     icons,
     selected,
     adding,
@@ -159,6 +223,8 @@ export function useProfileEditor() {
     notice,
     saving,
     root,
+    canDelete,
+    deleteEntry,
     entry,
     breadcrumbs,
     choose,

@@ -56,9 +56,9 @@ def sort_elements(elements: List[Any]) -> List[Any]:
     return sorted(
         elements,
         key=lambda x: (
+            x.get("type") == "uncertain",          # uncertain always last
             not x.get("favorite", False),          # favorites first
             x.get("exotic", False) if x.get("type") == "bird" or x.get("type") == "group" else False,             # exotic birds last but before uncertain
-            x.get("type") == "uncertain",          # uncertain last
             x.get("title", "").lower().replace("-", ""),  # alphabetical
         ),
     )

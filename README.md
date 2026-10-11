@@ -65,9 +65,22 @@ right. Select a group or the profile root and choose **Add child** to add a bird
 group, or uncertain entry. Entry types are fixed when updating existing entries
 so changing a group cannot accidentally remove its children.
 
+To regroup an existing entry, choose its **Parent group** and click **Save entry**.
+Choose **Profile root** to move it to the top level. Moving a group keeps all its
+children; its own descendants are excluded from the destination list.
+
+Use **Delete entry** to remove an entry after confirming. A group must have no
+children before it can be deleted; delete its children first. The profile root
+cannot be deleted.
+
 Icon IDs are validated against `data/icons.json`; partial IDs show matching
 suggestions. Icons are optional. Bird folders omit the eBird button when no icon is set. Unknown
 icons are rejected by both the editor and profile creation.
+
+Exotic entries can optionally select a country by name or two-letter code, with
+flags shown in the dropdown. The flag appears at the bottom-left of the preview
+and exported key. Clear the country to omit the flag; disabling Exotic removes
+the country when saved. Flag assets are bundled locally from [Flagpedia](https://flagpedia.net).
 
 Choose **Save entry** to save the form to YAML. **Reset** discards the
 current form. The browser asks before discarding unsaved changes. Comments and Unicode are

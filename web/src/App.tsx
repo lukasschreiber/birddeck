@@ -2,6 +2,7 @@ import { Alert, Box, Button, Stack, Typography } from "@mui/material";
 import { Sidebar } from "./components/Sidebar";
 import { EntryForm } from "./components/EntryForm";
 import { useProfileEditor } from "./hooks/useProfileEditor";
+import { displayName } from "./displayName";
 
 export default function App() {
   const editor = useProfileEditor();
@@ -28,13 +29,13 @@ export default function App() {
             sx={{ justifyContent: "space-between", alignItems: "center" }}
           >
             <Box>
-              <Typography variant="h5">{title}</Typography>
+              <Typography variant="h5">{displayName(title)}</Typography>
               <Typography
                 variant="body2"
                 color="text.secondary"
                 sx={{ mt: 0.5 }}
               >
-                {editor.breadcrumbs.join(" / ")}
+                {editor.breadcrumbs.map(displayName).join(" / ")}
               </Typography>
             </Box>
             <Button

@@ -4,10 +4,12 @@ export interface Entry {
   type: EntryType;
   title?: string;
   icon?: string;
+  rotation?: number;
   tag?: string;
   bg?: string;
   favorite?: boolean;
   exotic?: boolean;
+  country?: string;
   items?: Entry[];
 }
 
@@ -29,10 +31,12 @@ export interface EntryForm {
   type: EntryType;
   title: string;
   icon: string;
+  rotation: number;
   tag: string;
   bg: string;
   favorite: boolean;
   exotic: boolean;
+  country: string;
 }
 
 export type IconMap = Record<string, string | number>;

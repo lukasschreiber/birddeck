@@ -72,6 +72,115 @@ class WebEditorTests(unittest.TestCase):
         self.assertEqual(error.exception.code, 403)
         self.assertIn('eurbla', self.request('/api/icons'))
 
+    def test_rotation_is_saved_validated_and_reset(self):
+        body = {'revision': 0, 'action': 'update', 'path': [0, 0],
+                'entry': {'type': 'bird', 'title': 'Woodpecker', 'icon': 'eurgre1', 'rotation': 90}}
+        result = self.request('/api/entry', body)
+        self.assertEqual(result['config']['profile']['items'][0]['items'][0]['rotation'], 90)
+        self.assertIn('rotation: 90', self.path.read_text(encoding='utf-8'))
+        body['revision'] = 1
+        for invalid in (181, -181, '90', True, None):
+            body['entry']['rotation'] = invalid
+            before = self.path.read_bytes()
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', body)
+            self.assertEqual(self.path.read_bytes(), before)
+        body['entry']['rotation'] = 0
+        result = self.request('/api/entry', body)
+        self.assertNotIn('rotation', result['config']['profile']['items'][0]['items'][0])
+
+    def test_regroup_preserves_entry_and_selects_new_path(self):
+        result = self.request('/api/entry', {'revision': 0, 'action': 'update',
+            'path': [0, 0], 'destination': [],
+            'entry': {'type': 'bird', 'title': 'Moved bird', 'icon': 'eurgre1', 'rotation': 45, 'favorite': True}})
+        self.assertEqual(result['selected'], [1])
+        self.assertEqual(result['config']['profile']['items'][0]['items'], [])
+        moved = result['config']['profile']['items'][1]
+        self.assertEqual(moved['rotation'], 45)
+        self.assertTrue(moved['favorite'])
+        result = self.request('/api/entry', {'revision': 1, 'action': 'update',
+            'path': [1], 'destination': [0], 'entry': moved})
+        self.assertEqual(result['selected'], [0, 0])
+        self.assertEqual(result['config']['profile']['items'][0]['items'][0], moved)
+        self.assertIn('# preserve comment', self.path.read_text(encoding='utf-8'))
+
+    def test_country_flag_selection_and_validation(self):
+        self.assertEqual(self.request('/api/countries')['DE'], 'Germany')
+        with urlopen(self.url + '/api/flag-image?code=DE&token=' + self.token) as response:
+            self.assertEqual(response.headers.get_content_type(), 'image/png')
+            self.assertTrue(response.read())
+        for query in ('code=DE', 'code=../DE&token=' + self.token):
+            with self.assertRaises(HTTPError):
+                urlopen(self.url + '/api/flag-image?' + query)
+        body = {'revision': 0, 'action': 'update', 'path': [0, 0],
+            'entry': {'type': 'bird', 'title': 'Exotic bird', 'exotic': True, 'country': ' de '}}
+        result = self.request('/api/entry', body)
+        self.assertEqual(result['config']['profile']['items'][0]['items'][0]['country'], 'DE')
+        body['revision'] = 1
+        for invalid in ('ZZ', '../DE', None):
+            body['entry']['country'] = invalid
+            before = self.path.read_bytes()
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', body)
+            self.assertEqual(before, self.path.read_bytes())
+        body['entry'].update(country='DE', exotic=False)
+        result = self.request('/api/entry', body)
+        self.assertNotIn('country', result['config']['profile']['items'][0]['items'][0])
+
+    def test_delete_requires_empty_children_and_selects_parent(self):
+        before = self.path.read_bytes()
+        for path in ([], [0]):
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', {'revision': 0, 'action': 'delete', 'path': path})
+            self.assertEqual(before, self.path.read_bytes())
+        result = self.request('/api/entry', {'revision': 0, 'action': 'delete', 'path': [0, 0]})
+        self.assertEqual(result['selected'], [0])
+        self.assertEqual(result['config']['profile']['items'][0]['items'], [])
+        result = self.request('/api/entry', {'revision': 1, 'action': 'delete', 'path': [0]})
+        self.assertEqual(result['selected'], [])
+        self.assertEqual(result['config']['profile']['items'], [])
+        self.assertIn('# preserve comment', self.path.read_text(encoding='utf-8'))
+
+    def test_delete_conflict_does_not_remove_entry(self):
+        self.request('/api/entry', {'revision': 0, 'action': 'add', 'path': [],
+                                  'entry': {'type': 'uncertain'}})
+        before = self.path.read_bytes()
+        with self.assertRaises(HTTPError):
+            self.request('/api/entry', {'revision': 0, 'action': 'delete', 'path': [1]})
+        self.assertEqual(before, self.path.read_bytes())
+        result = self.request('/api/entry', {'revision': 1, 'action': 'delete', 'path': [1]})
+        self.assertEqual(len(result['config']['profile']['items']), 1)
+
+    def test_moving_group_adjusts_destination_path_and_preserves_children(self):
+        result = self.request('/api/entry', {'revision': 0, 'action': 'add', 'path': [],
+            'entry': {'type': 'group', 'title': 'Destination'}})
+        source = result['config']['profile']['items'][0]
+        result = self.request('/api/entry', {'revision': 1, 'action': 'update',
+            'path': [0], 'destination': [1], 'entry': source})
+        self.assertEqual(result['selected'], [0, 0])
+        self.assertEqual(result['config']['profile']['items'][0]['items'][0], source)
+        body = {'revision': 2, 'action': 'update', 'path': [0],
+                'entry': result['config']['profile']['items'][0]}
+        for destination in ([0], [0, 0], [0, 0, 0]):
+            before = self.path.read_bytes()
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', {**body, 'destination': destination})
+            self.assertEqual(before, self.path.read_bytes())
+
+    def test_regroup_rejects_conflicts_and_invalid_destinations(self):
+        entry = {'type': 'bird', 'title': 'Bird', 'icon': 'eurgre1'}
+        body = {'revision': 0, 'action': 'update', 'path': [0, 0], 'entry': entry}
+        for destination in ([0, 0], [-1], 'root'):
+            before = self.path.read_bytes()
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', {**body, 'destination': destination})
+            self.assertEqual(before, self.path.read_bytes())
+        self.request('/api/entry', {**body, 'destination': []})
+        before = self.path.read_bytes()
+        with self.assertRaises(HTTPError):
+            self.request('/api/entry', {**body, 'destination': []})
+        self.assertEqual(before, self.path.read_bytes())
+
     def test_asset_mime_types_override_windows_registry(self):
         from unittest.mock import patch
         directory = Path(__file__).resolve().parents[1] / 'web' / 'dist'
