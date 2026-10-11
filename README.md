@@ -82,10 +82,26 @@ then includes a **NABU** website button with the NABU logo alongside **eBird**,
 followed by **Paste**. Both website actions are optional and independent.
 The browser editor can edit or clear the NABU link.
 
-Each bird detail page also has a display-only name key. Set the optional
-`scientific_name` field to add a smaller italic scientific name beneath the
-common name. The editor shows a preview of this key and can edit or clear the
-scientific name. Orientelster is configured with `Pica serica` as an example.
+Each bird detail page has Back, a three-cell scrolling name, and the bird image
+at the far right of the top row. The bird image uses its configured background,
+including favorite and exotic colors. Tag, optional eBird/NABU links, and Paste occupy the
+second row. Set the optional `scientific_name` field to show an italic scientific
+name below the common name. German and English names alternate on the first line; the scientific name
+scrolls separately below. All names remain editable in the web editor.
+The static name image and its editor preview have been removed.
+
+The local `plugins/de.birdtagging.names.sdPlugin` plugin renders a 272px-wide
+name across three 72px cells with 20px common and 16px scientific text on pure
+black. All segments share an animation clock. Both lines loop independently at 24px per second, including short names,
+with a two-second pause at the start of each loop. The virtual canvas
+includes two 28px gaps that are omitted from the key images.
+Press any name cell to pause/resume the whole display.
+The physical gaps between keys remain. Narrower decks use the available cells.
+
+Install with `powershell -ExecutionPolicy Bypass -File plugins/install.ps1`.
+The installer loads the plugin automatically when Stream Deck is running;
+use `-Force` to update it. Rebuild/import with `uv run python cli.py create`.
+Run plugin checks with `node --test plugins/scroll.test.cjs`.
 
 Exotic entries can optionally select a country by name or two-letter code, with
 flags shown in the dropdown. The flag appears at the bottom-left of the preview

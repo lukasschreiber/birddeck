@@ -203,7 +203,7 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                         )
                         save_key_image(bird_image, bird_image_path, pixels)
 
-                        detail_uuid = create_bird_details(profiles_folder, entry, bird_image, pixels, config['profile']['lightroom'], config['profile']['size']['columns'])
+                        detail_uuid = create_bird_details(profiles_folder, entry, bird_image, pixels, config['profile']['lightroom'], config['profile']['size']['columns'], rows=config['profile']['size']['rows'])
                         elements[f"{col},{row}"] = bird_folder_action(detail_uuid, bird_image_uuid, entry['title'])
 
                     elif entry["type"] == "uncertain":

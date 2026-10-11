@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Bird name settings</title>
+<style>body{background:#2d2d2d;color:#ddd;font:13px Arial;margin:16px}label{display:block;margin:12px 0}input{box-sizing:border-box;display:block;width:100%;margin-top:6px;padding:7px;background:#393939;border:1px solid #666;color:white}p{line-height:1.5}</style></head>
+<body><label>Bird name<input id="commonName" maxlength="200"></label>
+<label>English name (optional)<input id="englishName" maxlength="200"></label>
+<label>Scientific name (optional)<input id="scientificName" maxlength="200"></label>
+<p>Press the key to pause or resume. Both lines loop independently, pausing for two seconds at the start of each loop. Multi-key displays account for 28px gaps between keys.</p>
+<script>
+let socket, context, settings = {};
+function populate() {
+  for (const id of ['commonName', 'englishName', 'scientificName']) document.getElementById(id).value = settings[id] || '';
+}
+function connectElgatoStreamDeckSocket(port, uuid, registerEvent, info, actionInfo) {
+  context = uuid;
+  settings = JSON.parse(actionInfo).payload.settings || {};
+  populate();
+  socket = new WebSocket(`ws://127.0.0.1:${port}`);
+  socket.onopen = () => socket.send(JSON.stringify({event: registerEvent, uuid}));
+  socket.onmessage = ({data}) => {
+    const event = JSON.parse(data);
+    if (event.event === 'didReceiveSettings') { settings = event.payload.settings || {}; populate(); }
+  };
+}
+for (const id of ['commonName', 'englishName', 'scientificName']) document.getElementById(id).addEventListener('input', event => {
+  settings[id] = event.target.value;
+  if (socket && socket.readyState === WebSocket.OPEN) socket.send(JSON.stringify({event:'setSettings',context,payload:settings}));
+});
+</script></body></html>

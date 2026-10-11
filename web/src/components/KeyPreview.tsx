@@ -6,11 +6,9 @@ import { displayName } from "../displayName";
 export function KeyPreview({
   entry,
   parentTitle,
-  nameOnly = false,
 }: {
   entry: EntryForm;
   parentTitle: string;
-  nameOnly?: boolean;
 }) {
   const [image, setImage] = useState<string>();
   const [error, setError] = useState<string>();
@@ -33,7 +31,7 @@ export function KeyPreview({
     const timer = window.setTimeout(async () => {
       try {
         const response = await fetch(
-          nameOnly ? "/api/name-preview" : "/api/preview",
+          "/api/preview",
           {
             method: "POST",
             headers: {
@@ -68,12 +66,12 @@ export function KeyPreview({
       controller.abort();
       if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
-  }, [entry, parentTitle, nameOnly]);
+  }, [entry, parentTitle]);
 
   return (
     <Stack spacing={1} sx={{ alignItems: "flex-start" }}>
       <Typography variant="subtitle2">
-        {nameOnly ? "Name key preview" : "Key preview"}
+        Key preview
       </Typography>
       <Box
         sx={{
@@ -97,7 +95,7 @@ export function KeyPreview({
           />
         )}
         {loading && <CircularProgress size={24} />}
-        {image && !nameOnly && (
+        {image && (
           <Typography
             sx={{
               position: "absolute",

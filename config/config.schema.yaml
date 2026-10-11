@@ -327,6 +327,10 @@ $defs:
     properties:
       type: { const: bird }
       title: { type: string }
+      english_name:
+        type: string
+        maxLength: 200
+        description: Optional English name alternating with the German name in the scrolling display.
       scientific_name:
         type: string
         maxLength: 200

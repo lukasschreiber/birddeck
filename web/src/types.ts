@@ -12,6 +12,7 @@ export interface Entry {
   country?: string;
   nabu?: string;
   scientific_name?: string;
+  english_name?: string;
   items?: Entry[];
 }
 
@@ -41,6 +42,7 @@ export interface EntryForm {
   country: string;
   nabu: string;
   scientific_name: string;
+  english_name: string;
 }
 
 export type IconMap = Record<string, string | number>;

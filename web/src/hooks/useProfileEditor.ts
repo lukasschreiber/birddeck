@@ -23,6 +23,7 @@ const blank = (): EntryForm => ({
   country: "",
   nabu: "",
   scientific_name: "",
+  english_name: "",
 });
 
 const toForm = (entry: Entry | Profile): EntryForm =>

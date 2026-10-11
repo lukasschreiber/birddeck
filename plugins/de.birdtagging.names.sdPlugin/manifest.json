@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "de.birdtagging.names",
+  "Name": "Bird names",
+  "Author": "Bird Tagging",
+  "Description": "Two synchronized scrolling bird names on a black key.",
+  "Version": "0.1.0.0",
+  "SDKVersion": 2,
+  "CodePath": "plugin.html",
+  "Icon": "icons/plugin",
+  "OS": [{"Platform": "windows", "MinimumVersion": "10"}],
+  "Software": {"MinimumVersion": "6.5"},
+  "Actions": [{
+    "UUID": "de.birdtagging.names.scroll",
+    "Name": "Scrolling bird name",
+    "Icon": "icons/action",
+    "PropertyInspectorPath": "inspector.html",
+    "Controllers": ["Keypad"],
+    "UserTitleEnabled": false,
+    "SupportedInMultiActions": false,
+    "DisableCaching": true,
+    "Tooltip": "Press to pause or resume scrolling.",
+    "States": [{"Image": "icons/key", "ShowTitle": false}]
+  }]
+}

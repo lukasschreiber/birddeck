@@ -169,18 +169,13 @@ class WebEditorTests(unittest.TestCase):
         result = self.request('/api/entry', body)
         self.assertNotIn('nabu', result['config']['profile']['items'][0]['items'][0])
 
-    def test_scientific_name_save_clear_and_preview(self):
+    def test_scientific_name_save_and_clear(self):
         from io import BytesIO
         from PIL import Image
-        from name_key import render_name_key
         entry = {'type': 'bird', 'title': 'Orientelster', 'scientific_name': 'Pica serica'}
         body = {'revision': 0, 'action': 'update', 'path': [0, 0], 'entry': entry}
         result = self.request('/api/entry', body)
         self.assertEqual(result['config']['profile']['items'][0]['items'][0]['scientific_name'], 'Pica serica')
-        request = Request(self.url + '/api/name-preview', data=json.dumps({'entry': entry}).encode(),
-                          headers={'X-BirdDeck-Token': self.token})
-        with urlopen(request) as response:
-            self.assertEqual(Image.open(BytesIO(response.read())).tobytes(), render_name_key('Orientelster', 'Pica serica').tobytes())
         body['revision'] = 1
         for invalid in (None, 123, 'a' * 201):
             body['entry']['scientific_name'] = invalid

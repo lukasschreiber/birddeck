@@ -18,7 +18,7 @@ from config_validation import load_icons, validate_icons, validate_rotation
 from paths import ROOT_DIR
 from country_flags import COUNTRIES, validate_country, flag_path
 from nabu_portraits import validate_nabu_url
-from name_key import render_name_key, validate_scientific_name
+from name_key import validate_scientific_name
 
 
 def render_preview(entry, icons, pixels=288):
@@ -153,6 +153,13 @@ class ConfigStore:
                     item['scientific_name'] = scientific_name
                 else:
                     item.pop('scientific_name', None)
+                english_name = values.get('english_name', '')
+                if not isinstance(english_name, str) or len(english_name) > 200:
+                    raise ValueError('English name must be text of at most 200 characters')
+                if english_name.strip():
+                    item['english_name'] = english_name.strip()
+                else:
+                    item.pop('english_name', None)
                 nabu = validate_nabu_url(values.get('nabu', ''))
                 if nabu:
                     item['nabu'] = nabu
@@ -313,7 +320,7 @@ def make_server(config_path, port=0):
             if not self.authorized():
                 self.respond(403, {'error': 'Unauthorized'})
                 return
-            if self.path not in ('/api/entry', '/api/preview', '/api/name-preview'):
+            if self.path not in ('/api/entry', '/api/preview'):
                 self.respond(404, {'error': 'Not found'})
                 return
             try:
@@ -321,13 +328,6 @@ def make_server(config_path, port=0):
                 if not 0 < length <= 65536:
                     raise ValueError('Invalid request size')
                 request = json.loads(self.rfile.read(length))
-                if self.path == '/api/name-preview':
-                    from profile_images import save_key_image
-                    image = render_name_key(request['entry'].get('title', ''), request['entry'].get('scientific_name', ''))
-                    buffer = BytesIO()
-                    save_key_image(image, buffer, 288)
-                    self.respond(200, buffer.getvalue(), 'image/png')
-                    return
                 if self.path == '/api/preview':
                     title = preview_title(request['entry'], request.get('parentTitle', 'Vogel'))
                     self.respond(200, render_preview(request['entry'], store.icons), 'image/png',

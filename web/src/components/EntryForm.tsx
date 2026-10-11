@@ -70,9 +70,6 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
               "Vogel"
             }
           />
-          {e.form.type === "bird" && (
-            <KeyPreview entry={e.form} parentTitle="" nameOnly />
-          )}
         </Stack>
         <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
           Entry details
@@ -178,6 +175,17 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
                 />
               )}
             />
+            {e.form.type === "bird" && (
+              <TextField
+                size="small"
+                label="English name (optional)"
+                value={e.form.english_name}
+                onChange={(event) => e.update("english_name", event.target.value)}
+                disabled={e.saving}
+                slotProps={{ htmlInput: { maxLength: 200 } }}
+                helperText="Alternates with the German name on the scrolling name display."
+              />
+            )}
             {e.form.type === "bird" && (
               <TextField
                 size="small"

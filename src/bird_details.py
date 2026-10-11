@@ -9,7 +9,6 @@ from paths import ROOT_DIR
 from PIL import Image, ImageDraw
 from functools import lru_cache
 from nabu_portraits import validate_nabu_url
-from name_key import render_name_key
 
 
 @lru_cache(maxsize=4)
@@ -42,7 +41,7 @@ def paste_name_action(name, image_uuid):
     }
 
 
-def create_bird_details(profiles_folder, entry, image, pixels, lightroom, columns, uncertain=False):
+def create_bird_details(profiles_folder, entry, image, pixels, lightroom, columns, uncertain=False, rows=3):
     page_uuid = str(uuid.uuid4())
     page = Path(profiles_folder) / profile_folder_id(page_uuid)
     (page / 'Images').mkdir(parents=True)
@@ -55,14 +54,14 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
     def position(index):
         return f'{index % columns},{index // columns}'
 
-    actions[position(1)] = tagging
+    actions[position(columns)] = tagging
     websites = []
     if entry.get('icon'):
         websites.append(('ebird', 'eBird', f"https://ebird.org/species/{entry['icon']}"))
     nabu = validate_nabu_url(entry.get('nabu', ''))
     if nabu:
         websites.append(('nabu', 'NABU', nabu))
-    for index, (name, label, url) in enumerate(websites, start=2):
+    for index, (name, label, url) in enumerate(websites, start=columns + 1):
         website_image_uuid = profile_folder_id(str(uuid.uuid4()))
         save_key_image(action_image(name), page / 'Images' / f'{website_image_uuid}.png', pixels)
         actions[position(index)] = {
@@ -74,18 +73,30 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
         }
     copy_image_uuid = profile_folder_id(str(uuid.uuid4()))
     save_key_image(action_image('copy'), page / 'Images' / f'{copy_image_uuid}.png', pixels)
-    actions[position(2 + len(websites))] = paste_name_action(entry['title'], copy_image_uuid)
-    if not uncertain:
-        name_image_uuid = profile_folder_id(str(uuid.uuid4()))
-        save_key_image(render_name_key(entry['title'], entry.get('scientific_name', '')),
-                       page / 'Images' / f'{name_image_uuid}.png', pixels)
-        actions[position(3 + len(websites))] = {
-            'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Bird name',
-            'Plugin': {'Name': 'Multi Action', 'UUID': 'com.elgato.streamdeck.multiactions', 'Version': '1.0'},
-            'UUID': 'com.elgato.streamdeck.multiactions.routine',
-            'Actions': [], 'Settings': {}, 'State': 0,
-            'States': [{'Image': f'Images/{name_image_uuid}.png', 'ShowTitle': False, 'Title': ''}],
-        }
+    actions[f'{columns - 1},1'] = paste_name_action(entry['title'], copy_image_uuid)
+    bird_image_uuid = profile_folder_id(str(uuid.uuid4()))
+    save_key_image(image, page / 'Images' / f'{bird_image_uuid}.png', pixels)
+    actions[f'{columns - 1},0'] = {
+        'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Bird image',
+        'Plugin': {'Name': 'Multi Action', 'UUID': 'com.elgato.streamdeck.multiactions', 'Version': '1.0'},
+        'UUID': 'com.elgato.streamdeck.multiactions.routine',
+        'Actions': [], 'Settings': {}, 'State': 0,
+        'States': [{'Image': f'Images/{bird_image_uuid}.png', 'ShowTitle': False, 'Title': ''}],
+    }
+    if not uncertain and columns > 2:
+        cells = min(3, columns - 2)
+        pair = str(uuid.uuid4())
+        for segment in range(cells):
+            actions[f'{segment + 1},0'] = {
+                'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Bird name',
+                'Plugin': {'Name': 'Bird names', 'UUID': 'de.birdtagging.names', 'Version': '0.1.0.0'},
+                'UUID': 'de.birdtagging.names.scroll', 'State': 0,
+                'Settings': {'commonName': entry['title'],
+                             'scientificName': entry.get('scientific_name', ''),
+                             'englishName': entry.get('english_name', ''),
+                             'cells': cells, 'segment': segment, 'pair': pair},
+                'States': [{'ShowTitle': False, 'Title': ''}],
+            }
     (page / 'manifest.json').write_text(json.dumps({'Controllers': [{'Actions': actions, 'Type': 'Keypad'}]}, indent=4), encoding='utf-8')
     return page_uuid
 
