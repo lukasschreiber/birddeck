@@ -42,7 +42,7 @@ def main():
 
     # optionally write to file
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with (OUTPUT_DIR / "flattened_structure.txt").open("w", encoding="utf-8") as out:
+    with (OUTPUT_DIR / "LightroomKeywords.txt").open("w", encoding="utf-8") as out:
         out.write("\n".join(flat_list))
 
 

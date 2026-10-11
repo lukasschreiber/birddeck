@@ -1,7 +1,7 @@
-﻿# yaml-language-server: $schema=./config.schema.yaml
+# yaml-language-server: $schema=./config.schema.yaml
 
 profile:
-  name: Bird Tagging
+  name: BirdDeck
   lightroom: C:\Program Files\Adobe\Adobe Lightroom Classic\Lightroom.exe
   model: 20GBA9901
   size:
@@ -9,7 +9,7 @@ profile:
     rows: 3
   items:
     - type: group
-      title: Sing-vÃ¶gel
+      title: Sing-vögel
       tag: Singvogel
       bg: "assets/img/habitat-green.png"
       items:
@@ -76,13 +76,13 @@ profile:
               title: Buchfink
               icon: comcha
             - type: bird
-              title: GrÃ¼nfink
+              title: Grünfink
               icon: eurgre1
             - type: bird
-              title: BluthÃ¤nfling
+              title: Bluthänfling
               icon: eurlin1
             - type: bird
-              title: BerghÃ¤nfling
+              title: Berghänfling
               icon: twite1
             - type: bird
               title: Bergfink
@@ -97,7 +97,7 @@ profile:
               title: Gimpel
               icon: eurbul
             - type: bird
-              title: KernbeiÃŸer
+              title: Kernbeißer
               icon: hawfin
             - type: bird
               title: Erlenzeisig
@@ -109,18 +109,18 @@ profile:
               title: Fichtenkreuzschnabel
               icon: redcro
         - type: group
-          title: SchnÃ¤pper
+          title: Schnäpper
           favorite: true
           icon: whinch1
           items:
             - type: bird
-              title: TrauerschnÃ¤pper
+              title: Trauerschnäpper
               icon: eupfly1
             - type: bird
-              title: GrauschnÃ¤pper
+              title: Grauschnäpper
               icon: spofly1
             - type: bird
-              title: HalsbandschnÃ¤pper
+              title: Halsbandschnäpper
               icon: colfly1
             - type: bird
               title: Schwarzkehlchen
@@ -144,26 +144,26 @@ profile:
               title: Nachtigall
               icon: comnig1
             - type: bird
-              title: SteinschmÃ¤tzer
+              title: Steinschmätzer
               icon: norwhe
         - type: group
-          title: GrasmÃ¼cke
+          title: Grasmücke
           icon: blackc1
           items:
             - type: bird
-              title: MÃ¶nchsgrasmÃ¼cke
+              title: Mönchsgrasmücke
               icon: blackc1
             - type: bird
-              title: DorngrasmÃ¼cke
+              title: Dorngrasmücke
               icon: grewhi1
             - type: bird
-              title: GartengrasmÃ¼cke
+              title: Gartengrasmücke
               icon: garwar1
             - type: bird
-              title: KlappergrasmÃ¼cke
+              title: Klappergrasmücke
               icon: leswhi4
         - type: group
-          title: LaubsÃ¤nger
+          title: Laubsänger
           icon: comchi1
           items:
             - type: bird
@@ -173,7 +173,7 @@ profile:
               title: Fitis
               icon: wlwwar
             - type: bird
-              title: WaldlaubsÃ¤nger
+              title: Waldlaubsänger
               icon: woowar
         - type: group
           title: Lerche
@@ -232,17 +232,17 @@ profile:
               title: Zaunammer
               icon: cirbun1
         - type: bird
-          title: ZaunkÃ¶nig
+          title: Zaunkönig
           icon: winwre4
         - type: group
-          title: GoldhÃ¤hnchen
+          title: Goldhähnchen
           icon: goldcr1
           items:
             - type: bird
-              title: WintergoldhÃ¤hnchen
+              title: Wintergoldhähnchen
               icon: goldcr1
             - type: bird
-              title: SommergoldhÃ¤hnchen
+              title: Sommergoldhähnchen
               icon: firecr1
         - type: bird
           title: Heckenbraunelle
@@ -251,14 +251,14 @@ profile:
           title: Kleiber
           icon: eurnut2
         - type: group
-          title: BaumlÃ¤ufer
+          title: Baumläufer
           icon: eurtre1
           items:
             - type: bird
-              title: GartenbaumlÃ¤ufer
+              title: Gartenbaumläufer
               icon: shttre1
             - type: bird
-              title: WaldbaumlÃ¤ufer
+              title: Waldbaumläufer
               icon: eurtre1
         - type: bird
           title: Star
@@ -267,13 +267,13 @@ profile:
           title: Seidenschwanz
           icon: bohwax
         - type: bird
-          title: MauerlÃ¤ufer
+          title: Mauerläufer
           icon: wallcr1
         - type: bird
           title: Pirol
           icon: eugori2
         - type: bird
-          title: NeuntÃ¶ter
+          title: Neuntöter
           icon: rebshr1
         - type: bird
           title: Kuckuck
@@ -295,20 +295,20 @@ profile:
               title: Mauersegler
               icon: comswi
         - type: group
-          title: RohrsÃ¤nger
+          title: Rohrsänger
           icon: eurwar1
           items:
             - type: bird
-              title: TeichrohrsÃ¤nger
+              title: Teichrohrsänger
               icon: eurwar1
             - type: bird
-              title: SumpfrohrsÃ¤nger
+              title: Sumpfrohrsänger
               icon: marwar3
             - type: bird
-              title: SchilfrohrsÃ¤nger
+              title: Schilfrohrsänger
               icon: sedwar1
             - type: bird
-              title: DrosselrohrsÃ¤nger
+              title: Drosselrohrsänger
               icon: grrwar1
         - type: group
           title: Stelzen und Pieper
@@ -352,7 +352,7 @@ profile:
               icon: librol2
 
     - type: group
-      title: Wasser-vÃ¶gel
+      title: Wasser-vögel
       tag: Wasservogel
       bg: "assets/img/habitat-ocean.png"
       items:
@@ -396,16 +396,16 @@ profile:
                   title: Schnatterente
                   icon: gadwal
                 - type: bird
-                  title: LÃ¶ffelente
+                  title: Löffelente
                   icon: norsho
                 - type: bird
-                  title: SpieÃŸente
+                  title: Spießente
                   icon: norpin
                 - type: bird
                   title: Pfeifente
                   icon: eurwig
                 - type: bird
-                  title: KnÃ¤kente
+                  title: Knäkente
                   icon: gargan
             - type: group
               title: Meerente
@@ -424,17 +424,17 @@ profile:
                   title: Eisente
                   icon: lotduc
             - type: group
-              title: SÃ¤ger
+              title: Säger
               icon: commer
               items:
                 - type: bird
-                  title: GÃ¤nsesÃ¤ger
+                  title: Gänsesäger
                   icon: commer
                 - type: bird
-                  title: MittelsÃ¤ger
+                  title: Mittelsäger
                   icon: rebmer
                 - type: bird
-                  title: ZwergsÃ¤ger
+                  title: Zwergsäger
                   icon: smew
             - type: group
               title: Neozoon Ente
@@ -463,7 +463,7 @@ profile:
               title: Kurzschnablegans
               icon: pifgoo
             - type: bird
-              title: BlÃ¤ssgans
+              title: Blässgans
               icon: gwfgoo
             - type: bird
               title: Kanadagans
@@ -491,7 +491,7 @@ profile:
           icon: mutswa
           items:
             - type: bird
-              title: HÃ¶ckerschwan
+              title: Höckerschwan
               icon: mutswa
             - type: bird
               title: Singschwan
@@ -531,35 +531,35 @@ profile:
           title: Kormoran
           icon: grecor
         - type: group
-          title: MÃ¶we
+          title: Möwe
           icon: bkhgul
           items:
             - type: bird
-              title: LachmÃ¶we
+              title: Lachmöwe
               icon: bkhgul
             - type: bird
-              title: SturmmÃ¶we
+              title: Sturmmöwe
               icon: mewgul
             - type: bird
-              title: SilbermÃ¶we
+              title: Silbermöwe
               icon: euhgul1
             - type: bird
-              title: MantelmÃ¶we
+              title: Mantelmöwe
               icon: gbbgul
             - type: bird
-              title: HeringsmÃ¶we
+              title: Heringsmöwe
               icon: lbbgul
             - type: bird
-              title: DreizehenmÃ¶we
+              title: Dreizehenmöwe
               icon: bklkit
             - type: bird
-              title: MittelmeermÃ¶we
+              title: Mittelmeermöwe
               icon: yelgul1
             - type: bird
-              title: SchwarzkopfmÃ¶we
+              title: Schwarzkopfmöwe
               icon: medgul1
             - type: bird
-              title: ZwergmÃ¶we
+              title: Zwergmöwe
               icon: litgul
             - type: uncertain
         - type: group
@@ -570,13 +570,13 @@ profile:
               title: Teichhuhn
               icon: commoo3
             - type: bird
-              title: BlÃ¤sshuhn
+              title: Blässhuhn
               icon: eurcoo
             - type: bird
               title: Wasserralle
               icon: watrai1
             - type: bird
-              title: TÃ¼pfelsumpfhuhn
+              title: Tüpfelsumpfhuhn
               icon: spocra1
         - type: group
           title: Lappentaucher
@@ -615,7 +615,7 @@ profile:
               title: Flussseeschwalbe
               icon: comter
             - type: bird
-              title: KÃ¼stenseeschwalbe
+              title: Küstenseeschwalbe
               icon: arcter
             - type: bird
               title: Trauerseeschwalbe
@@ -644,10 +644,10 @@ profile:
               title: Papageitaucher
               icon: horpuf
         - type: bird
-          title: BasstÃ¶lpel
+          title: Basstölpel
           icon: norgan
     - type: group
-      title: Wat-vÃ¶gel
+      title: Wat-vögel
       tag: Watvogel
       bg: "assets/img/habitat-shore.png"
       items:
@@ -655,10 +655,10 @@ profile:
           title: Kiebitz
           icon: norlap
         - type: bird
-          title: StelzenlÃ¤ufer
+          title: Stelzenläufer
           icon: bkwsti
         - type: bird
-          title: SÃ¤belschnÃ¤bler
+          title: Säbelschnäbler
           icon: pieavo1
         - type: group
           title: Regenpfeifer
@@ -683,30 +683,30 @@ profile:
               title: Kiebitzregenpfeifer
               icon: bkbplo
         - type: group
-          title: WasserlÃ¤ufer
+          title: Wasserläufer
           icon: comgre
           items:
             - type: bird
-              title: GrÃ¼nschenkel
+              title: Grünschenkel
               icon: comgre
             - type: bird
-              title: WaldwasserlÃ¤ufer
+              title: Waldwasserläufer
               icon: grnsan
             - type: bird
               title: Rotschenkel
               icon: comred1
             - type: bird
-              title: BruchwasserlÃ¤ufer
+              title: Bruchwasserläufer
               icon: woosan
         - type: bird
-          title: FlussuferlÃ¤ufer
+          title: Flussuferläufer
           icon: comsan
         - type: group
-          title: StrandlÃ¤ufer
+          title: Strandläufer
           icon: ruff
           items:
             - type: bird
-              title: AlpenstrandlÃ¤ufer
+              title: Alpenstrandläufer
               icon: dunlin
             - type: bird
               title: Sanderling
@@ -715,19 +715,19 @@ profile:
               title: Knutt
               icon: redkno
             - type: bird
-              title: DunkelwasserlÃ¤ufer
+              title: Dunkelwasserläufer
               icon: spored
             - type: bird
-              title: KampflÃ¤ufer
+              title: Kampfläufer
               icon: ruff
             - type: bird
-              title: SichelstrandlÃ¤ufer
+              title: Sichelstrandläufer
               icon: cursan
             - type: bird
-              title: ZwergstrandlÃ¤ufer
+              title: Zwergstrandläufer
               icon: litsti
             - type: bird
-              title: TemminckstrandlÃ¤ufer
+              title: Temminckstrandläufer
               icon: temsti
         - type: bird
           title: Austernfischer
@@ -753,7 +753,7 @@ profile:
           icon: eurcur
           items:
             - type: bird
-              title: GroÃŸer Brachvogel
+              title: Großer Brachvogel
               icon: eurcur
             - type: bird
               title: Regenbrachvogel
@@ -767,7 +767,7 @@ profile:
           title: Buntspecht
           icon: grswoo
         - type: bird
-          title: GrÃ¼nspecht
+          title: Grünspecht
           icon: eugwoo2
         - type: bird
           title: Kleinspecht
@@ -786,7 +786,7 @@ profile:
           icon: gyfwoo1
 
     - type: group
-      title: Raben-vÃ¶gel
+      title: Raben-vögel
       tag: Rabenvogel
       bg: "assets/img/habitat-alpin.png"
       items:
@@ -795,10 +795,10 @@ profile:
           icon: comrav
           favorite: true
         - type: bird
-          title: SaatkrÃ¤he
+          title: Saatkrähe
           icon: rook1
         - type: bird
-          title: RabenkrÃ¤he
+          title: Rabenkrähe
           favorite: true
           icon: carcro1
         - type: bird
@@ -813,27 +813,27 @@ profile:
           favorite: true
           icon: eurmag1
         - type: bird
-          title: EichelhÃ¤her
+          title: Eichelhäher
           icon: eurjay1
         - type: bird
-          title: TannenhÃ¤her
+          title: Tannenhäher
           icon: eurnut3
         - type: bird
-          title: NebelkrÃ¤he
+          title: Nebelkrähe
           icon: hoocro1
 
     - type: group
-      title: Greif-vÃ¶gel
+      title: Greif-vögel
       tag: Greifvogel
       bg: "assets/img/habitat-rocky.png"
       items:
         - type: bird
-          title: MÃ¤usebussard
+          title: Mäusebussard
           icon: combuz1
         - type: bird
           title: Wespenbussard
           icon: euhbuz1
-        - title: RaufuÃŸbussard
+        - title: Raufußbussard
           type: bird
           icon: rolhaw
         - type: bird
@@ -916,7 +916,7 @@ profile:
           title: Sumpfohreule
           icon: sheowl
         - type: bird
-          title: RaufuÃŸkauz
+          title: Raufußkauz
           icon: borowl
         - type: bird
           title: Sperlingskauz
@@ -925,8 +925,8 @@ profile:
           title: Waldohreule
           icon: loeowl
     - type: group
-      title: HÃ¼hner-vÃ¶gel
-      tag: HÃ¼hnervogel
+      title: Hühner-vögel
+      tag: Hühnervogel
       bg: "assets/img/habitat-acker.png"
       items:
         - type: bird
@@ -965,7 +965,7 @@ profile:
       bg: "assets/img/habitat-marsh.png"
       items:
         - type: bird
-          title: LÃ¶ffler
+          title: Löffler
           icon: eurspo1
         - type: bird
           title: Sichler
@@ -974,12 +974,12 @@ profile:
           title: Waldrapp
           icon: waldra1
     - type: group
-      title: StÃ¶rche
+      title: Störche
       tag: Storche
       bg: "assets/img/habitat-river.png"
       items:
         - type: bird
-          title: WeiÃŸstorch
+          title: Weißstorch
           icon: whisto1
         - type: bird
           title: Schwarzstorch
@@ -993,7 +993,7 @@ profile:
           title: Ringeltaube
           icon: cowpig1
         - type: bird
-          title: TÃ¼rkentaube
+          title: Türkentaube
           icon: eucdov
         - type: bird
           title: Hohltaube
@@ -1021,7 +1021,7 @@ profile:
           icon: budger
 
     - type: group
-      title: Horn-vÃ¶gel
+      title: Horn-vögel
       tag: Hornvogel
       bg: "assets/img/habitat-savanne.png"
       items:
