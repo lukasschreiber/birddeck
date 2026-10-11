@@ -21,6 +21,7 @@ from config_validation import validate_icons
 from profile_images import image_size, save_key_image
 from deduplicate_images import deduplicate_images
 from bird_details import create_bird_details, bird_folder_action
+from generate_lightroom_tags import generate_keywords
 
 def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR):
     """Build a profile without modifying other outputs or temporary files."""
@@ -252,10 +253,13 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                 json.dump(manifest, f, indent=4)
 
         deduplicate_images(main_folder)
-        return Path(zip_profile(
+        result = Path(zip_profile(
             os.path.join(temp_folder, profile_name.replace(" ", "")),
             str(output_dir),
         ))
+        keyword_path = generate_keywords(config, output_dir)
+        print(f"Keywords ready: {keyword_path}")
+        return result
 
 
 if __name__ == "__main__":

@@ -27,23 +27,24 @@ def flatten_items(items, depth=0, lines=None, parent_title=""):
     return lines
 
 
-def main():
-    with (CONFIG_DIR / "config.yaml").open("r", encoding="utf-8-sig") as f:
-        config = yaml.safe_load(f)
-
+def generate_keywords(config, output_dir=OUTPUT_DIR):
     items = config["profile"]["items"]
 
     flat_list = ["Vogel"]  # add Vogel as root title
     flatten_items(items, depth=1, lines=flat_list, parent_title="Vogel")
 
-    # print to console
-    for line in flat_list:
-        print(line)
-
-    # optionally write to file
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with (OUTPUT_DIR / "LightroomKeywords.txt").open("w", encoding="utf-8") as out:
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    destination = output_dir / "LightroomKeywords.txt"
+    with destination.open("w", encoding="utf-8") as out:
         out.write("\n".join(flat_list))
+    return destination
+
+
+def main():
+    with (CONFIG_DIR / "config.yaml").open("r", encoding="utf-8-sig") as f:
+        config = yaml.safe_load(f)
+    print(f"Keywords ready: {generate_keywords(config)}")
 
 
 if __name__ == "__main__":

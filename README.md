@@ -10,11 +10,11 @@ Run commands from the repository root using uv. Python 3.12 is pinned in
 uv sync --locked
 uv run python scripts/download-icons.py
 uv run python cli.py create
-uv run python src/generate_lightroom_tags.py
 ```
 
 Import `output/BirdDeck.streamDeckProfile` into Stream Deck. Lightroom keywords
-are written to `output/LightroomKeywords.txt`.
+are regenerated in `output/LightroomKeywords.txt` whenever a profile is created.
+Custom `--config` and `--output-dir` options apply to both generated files.
 
 ## Profile CLI
 
