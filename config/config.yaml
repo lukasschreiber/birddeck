@@ -984,7 +984,8 @@ profile:
               exotic: true
               country: TZ
               anytag_id: '3380985'
-          tag: Star
+          tag: Star (Gruppe)
+          anytag_id: '3384263'
         - type: group
           title: Pieper
           icon: meapip1
@@ -1845,7 +1846,8 @@ profile:
               exotic: true
               country: IS
               anytag_id: '3381073'
-          tag: Kormoran
+          tag: Kormoran (Gruppe)
+          anytag_id: '3384265'
         - type: group
           title: Raubmöwen
           icon: gresku1
@@ -2189,7 +2191,8 @@ profile:
               exotic: true
               country: TZ
               anytag_id: '3381127'
-          tag: Kiebitz
+          tag: Kiebitz (Gruppe)
+          anytag_id: '3384267'
         - type: bird
           title: Kampfläufer
           icon: ruff
@@ -2256,7 +2259,7 @@ profile:
               exotic: true
               country: TZ
               anytag_id: '3381147'
-          tag: Triel
+          tag: Triel (Gruppe)
           anytag_id: '3381143'
       anytag_id: '1976265'
     - type: group
@@ -2987,7 +2990,7 @@ profile:
           anytag_id: '3381225'
         - type: group
           title: Kraniche
-          tag: Kranich
+          tag: Kranich (Gruppe)
           bg: "#ffffff"
           items:
             - type: bird
@@ -3041,8 +3044,8 @@ profile:
           english_name: Eurasian Nightjar
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ziegenmelker/
           anytag_id: '3381249'
-      tag: Nachtschwalbe
+      tag: Nachtschwalbe (Gruppe)
       bg: assets/img/habitat-night-heathland.png
       anytag_id: '3381247'
   anytag_id: '1963195'
-  anytag_catalog: F:\Lightroom\Lightroom\Lightroom Catalog-v13-4.lrcat
+  anytag_catalog: E:\Lightroom\Lightroom\Lightroom Catalog-v13-4.lrcat

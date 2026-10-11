@@ -32,14 +32,30 @@ Exact hierarchy paths are matched first, then unique names, then unique names
 with display hyphens removed. Ambiguous names stop the command; set the correct
 `anytag_id` from the export on that YAML entry to resolve them.
 
-After editing the hierarchy, export a fresh CSV from the same catalog and run:
+### Routine updates
+
+1. Open the intended catalog in Lightroom and use **File > Plug-in Extras >
+   Any Tag > Export Keywords** to replace `examples/anytag.csv` with a fresh
+   export. Do this for every update; earlier exports may omit newly assigned IDs.
+2. Edit `config/config.yaml` or use the browser editor. Keep existing
+   `anytag_id` fields when renaming or moving entries. New entries should have
+   no ID. If a group and a descendant share a keyword name, give the upper
+   group a distinct `tag`, such as `Star (Gruppe)`.
+3. Generate the update:
 
 ```powershell
 uv run python cli.py anytag --catalog-keywords examples/anytag.csv --bind
 ```
 
-Import `output/AnyTagKeywords.csv` with **File > Plug-in Extras > Any Tag >
-Import Keywords**. Existing keyword IDs, attributes, photo counts, synonyms,
+4. Import `output/AnyTagKeywords.csv` with **File > Plug-in Extras > Any Tag >
+   Import Keywords**. Enable **Delete keywords that are not referenced in the
+   imported file** to move obsolete entries out of the active hierarchy.
+5. Check the result in Lightroom. Inspect `_Any Tag To Delete` before deleting
+   its contents, particularly entries with photo assignments. After adding new
+   keywords, export again and rerun the command with `--bind` to record their
+   assigned IDs; this binding run does not require another import.
+
+Existing keyword IDs, attributes, photo counts, synonyms,
 and the catalog path are retained. New entries have blank IDs; after importing,
 export again and use `--bind` to record their assigned IDs. Use `--config` and
 `--output` for custom paths. Without `--bind`, YAML is left unchanged.
@@ -60,6 +76,37 @@ The plain-text
 `LightroomKeywords.txt` remains available for initial imports; use the CSV
 workflow for catalog renames and moves. A keyword renamed before its first
 binding needs its old catalog ID set explicitly in YAML to retain assignments.
+
+### Catalog paths and interrupted imports
+
+The CSV's second row and `profile.anytag_catalog` identify the catalog. The
+current configuration uses `E:\Lightroom\Lightroom\Lightroom Catalog-v13-4.lrcat`.
+Use a fresh export from that catalog; older exports in this repository may
+reference drive `F:`. If the same catalog is moved to another drive, update
+`profile.anytag_catalog` to its new path and export again. For a different
+catalog, establish new bindings rather than reusing the old catalog's IDs.
+Stop if Any Tag reports a different catalog; verify which catalog is open.
+
+The generator rejects duplicate keyword paths and a keyword sharing an
+ancestor's name. However, renaming a keyword to a name currently held by another
+entry can still fail during import, even if the final CSV has unique paths.
+This case requires two separate imports and is not automatically repaired by
+the update command:
+
+1. Prepare a CSV from the latest catalog state that retains every ID and parent
+   and renames only the blocking obsolete entries to unique names, such as
+   `Bachstelze (Alt 3380947)`. Import it with deletion disabled.
+2. After that succeeds, import a separate CSV restoring the retained keywords'
+   intended names, also with deletion disabled.
+3. Export the repaired catalog again, generate a fresh hierarchy update, and
+   import it with deletion of unreferenced keywords enabled.
+
+Any Tag temporarily gives keywords UUID names during an import. If an import
+fails, those names may remain; export the current state before preparing a
+repair. Preserve IDs to retain photo assignments. The files
+`output/AnyTagRepair01FreeNames.csv` and `output/AnyTagNameRepair.csv` were
+prepared for a specific interrupted import and are not reusable repair
+templates for future catalog states.
 
 See [Any Tag's batch editing documentation](https://johnrellis.com/lightroom/anytag.htm#batch).
 

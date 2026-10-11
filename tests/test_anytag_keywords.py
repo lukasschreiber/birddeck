@@ -102,11 +102,50 @@ class AnyTagTests(unittest.TestCase):
     def test_former_flat_bird_identity_goes_to_child_not_new_group(self):
         with tempfile.TemporaryDirectory() as directory:
             config, source, output = self.setup_files(directory)
-            data = {'profile': {'items': [{'type': 'group', 'title': 'Nandu', 'anytag_id': '3',
+            data = {'profile': {'items': [{'type': 'group', 'title': 'Nandu', 'tag': 'Nandu (Gruppe)',
                                          'items': [{'type': 'bird', 'title': 'Nandu'}]}]}}
             config.write_text(yaml.safe_dump(data), encoding='utf-8')
             generate_anytag(config, source, output, bind=True)
             _, nodes = read_catalog(output)
             bird = next(n for n in nodes if n['attrs'][0] == '3')
-            self.assertEqual(bird['path'], ('Vogel', 'Nandu', 'Nandu'))
+            self.assertEqual(bird['path'], ('Vogel', 'Nandu (Gruppe)', 'Nandu'))
             self.assertEqual(bird['parent']['attrs'][0], '')
+
+    def test_same_name_ancestor_is_rejected_before_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config, source, output = self.setup_files(directory)
+            data = {'profile': {'items': [{'type': 'group', 'title': 'Nandu',
+                                         'items': [{'type': 'bird', 'title': 'Nandu'}]}]}}
+            config.write_text(yaml.safe_dump(data), encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'same name as an ancestor'):
+                generate_anytag(config, source, output)
+            self.assertFalse(output.exists())
+
+    def test_duplicate_new_siblings_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config, source, output = self.setup_files(directory)
+            data = {'profile': {'items': [{'type': 'bird', 'title': 'New Bird'},
+                                         {'type': 'bird', 'title': 'new bird'}]}}
+            config.write_text(yaml.safe_dump(data), encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'Duplicate keyword path'):
+                generate_anytag(config, source, output)
+            self.assertFalse(output.exists())
+
+    def test_fresh_export_reuses_previously_created_group_id(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config, source, output = self.setup_files(directory)
+            data = {'profile': {'items': [{'type': 'group', 'title': 'New Group', 'items': []}]}}
+            config.write_text(yaml.safe_dump(data), encoding='utf-8')
+            with source.open('a', encoding='utf-8', newline='') as handle:
+                csv.writer(handle).writerows([
+                    ['8', '0', 'Y', 'Y', 'Y', 'N', 'N', '1', 'Other Root'],
+                    ['9', '0', 'Y', 'Y', 'Y', 'N', 'N', '1', 'Vogel'],
+                    ['10', '0', 'Y', 'Y', 'Y', 'N', 'N', '2', '', 'New Group', 'Vogel']])
+            # Use the already bound original root even if an invalid source has
+            # a second same-name root, so this test focuses on new group IDs.
+            data['profile']['anytag_id'] = '1'
+            config.write_text(yaml.safe_dump(data), encoding='utf-8')
+            generate_anytag(config, source, output, bind=True)
+            _, nodes = read_catalog(output)
+            group = next(n for n in nodes if n['name'] == 'New Group')
+            self.assertEqual(group['attrs'][0], '10')

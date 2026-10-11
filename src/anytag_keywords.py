@@ -63,8 +63,15 @@ def generate_anytag(config_path, catalog_path, destination, bind=False):
     by_id = {n['attrs'][0]: n for n in keywords if n['attrs'][0]}
     used, bindings = set(), []
     desired = []
+    desired_paths = set()
 
     def walk(entry, name, parent, path):
+        key = tuple(part.casefold() for part in path)
+        if key in desired_paths:
+            raise ValueError(f'Duplicate keyword path in config: {" > ".join(path)}')
+        desired_paths.add(key)
+        if any(name.casefold() == ancestor.casefold() for ancestor in path[:-1]):
+            raise ValueError(f'Keyword has the same name as an ancestor: {name}; add (Gruppe) to the upper group tag')
         identity = str(entry.get('anytag_id', ''))
         match = by_id.get(identity) if identity else None
         if identity and match is None:
