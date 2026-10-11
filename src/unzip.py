@@ -23,4 +23,12 @@ def unzip_profile(profile_file, output_dir):
     print(f"Profile unzipped to: {unzipped_dir}")
     return unzipped_dir
 
-unzip_profile("./Lightroom.streamDeckProfile", "./output")
+if __name__ == "__main__":
+    import argparse
+    from paths import ROOT_DIR, OUTPUT_DIR
+
+    parser = argparse.ArgumentParser(description="Extract a Stream Deck profile.")
+    parser.add_argument("profile", nargs="?", type=str,
+                        default=str(ROOT_DIR / "examples" / "Lightroom.streamDeckProfile"))
+    args = parser.parse_args()
+    unzip_profile(args.profile, OUTPUT_DIR / "extracted")

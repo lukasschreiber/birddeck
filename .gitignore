@@ -21,6 +21,10 @@ node_modules/
 temp/
 /src/cache/
 /src/output/
+/.cache/
+/output/
+*.streamDeckProfile
+!/examples/*.streamDeckProfile
 
 # Local environment files
 .env

@@ -7,10 +7,11 @@ import hashlib
 import numpy as np
 from scipy import ndimage
 from io import BytesIO
+from paths import ROOT_DIR, DATA_DIR, OUTPUT_DIR, CACHE_DIR as PROJECT_CACHE_DIR
 
 
 # === CONFIG ===
-CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
+CACHE_DIR = PROJECT_CACHE_DIR / "images"
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 
@@ -160,11 +161,7 @@ def generate_image(
         img = Image.new("RGBA", size, color=background)
     else:
         try:
-            background_path = background
-            if background.startswith("./src/"):
-                background_path = os.path.join(
-                    os.path.dirname(__file__), background.removeprefix("./src/")
-                )
+            background_path = ROOT_DIR / background
             bg = (
                 Image.open(background_path)
                 .convert("RGBA")
@@ -177,7 +174,7 @@ def generate_image(
 
     # Add bird overlay if available
     if ebird_id:
-        icons_path = os.path.join(os.path.dirname(__file__), "../icons.json")
+        icons_path = DATA_DIR / "icons.json"
         try:
             with open(icons_path, "r", encoding="utf-8") as f:
                 ebird_images = json.load(f)
@@ -188,7 +185,8 @@ def generate_image(
         asset_id = ebird_images.get(ebird_id)
         if asset_id:
             url = f"https://cdn.download.ams.birds.cornell.edu/api/v1/asset/{asset_id}/640"
-            bird = fetch_image(url)
+            local_icon = PROJECT_CACHE_DIR / "icons" / f"{ebird_id}.jpg"
+            bird = Image.open(local_icon).convert("RGBA") if local_icon.exists() else fetch_image(url)
             if bird:
                 bird = remove_largest_white_background(bird)
                 bird.thumbnail((size[0] * 0.9, size[1] * 0.9), Image.Resampling.LANCZOS)
@@ -219,4 +217,5 @@ if __name__ == "__main__":
         favorite=True,
     )
     img.show()
-    img.save("test_bird_image.png")
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    img.save(OUTPUT_DIR / "test_bird_image.png")

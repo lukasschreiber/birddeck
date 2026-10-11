@@ -1,5 +1,6 @@
 import yaml
 from pathlib import Path
+from paths import CONFIG_DIR, OUTPUT_DIR
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -27,7 +28,7 @@ def flatten_items(items, depth=0, lines=None, parent_title=""):
 
 
 def main():
-    with (BASE_DIR / "config.yaml").open("r", encoding="utf-8") as f:
+    with (CONFIG_DIR / "config.yaml").open("r", encoding="utf-8-sig") as f:
         config = yaml.safe_load(f)
 
     items = config["profile"]["items"]
@@ -40,7 +41,8 @@ def main():
         print(line)
 
     # optionally write to file
-    with (BASE_DIR / "flattened_structure.txt").open("w", encoding="utf-8") as out:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    with (OUTPUT_DIR / "flattened_structure.txt").open("w", encoding="utf-8") as out:
         out.write("\n".join(flat_list))
 
 

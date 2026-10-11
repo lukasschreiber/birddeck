@@ -16,11 +16,11 @@ from gen_action import (
 from PIL import Image
 
 from pagination import paginate_elements, sort_elements
+from paths import CONFIG_DIR, IMAGE_DIR, OUTPUT_DIR
 
 BASE_DIR = Path(__file__).resolve().parent
-TEMP_FOLDER = BASE_DIR / "temp"
-CONFIG_PATH = BASE_DIR / "config.yaml"
-IMAGE_DIR = BASE_DIR / "img"
+TEMP_FOLDER = OUTPUT_DIR / "temp"
+CONFIG_PATH = CONFIG_DIR / "config.yaml"
 
 
 # clear it if it exists
@@ -249,5 +249,5 @@ with CONFIG_PATH.open("r", encoding="utf-8") as f:
 
 zip_profile(
     os.path.join(TEMP_FOLDER, profile_name.replace(" ", "")),
-    str(BASE_DIR / profile_name),
+    str(OUTPUT_DIR),
 )
