@@ -102,8 +102,8 @@ Extract the example with `uv run python src/unzip.py`, or pass another profile
 path. Extracted files go to `output/extracted/`.
 
 Each bird opens a folder with Back and the existing Lightroom tagging action.
-Each folder also has a Copy button that copies the full display name. On Windows,
-this uses the built-in Open Application action to run PowerShell's Set-Clipboard
-without typing or pasting into the active application. No extra plugin is needed.
+Each folder also has a Paste button using the built-in Text action. It inserts
+ the full display name into the active application without pressing Enter.
+No extra plugin or PowerShell command is needed.
 When an icon code is set, the folder also includes a website action for
 `https://ebird.org/species/<icon-code>`. Uncertain entries omit this website action.

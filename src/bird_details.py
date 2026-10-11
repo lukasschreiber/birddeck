@@ -1,8 +1,6 @@
 """Native folder pages for bird-specific actions."""
 import json
 import uuid
-import base64
-import os
 from pathlib import Path
 from gen_uuid import profile_folder_id
 from gen_action import generate_bird_action, generate_folder_action, generate_open_parent_folder_action, FolderType
@@ -28,20 +26,15 @@ def action_image(name):
     return canvas
 
 
-def copy_name_action(name, image_uuid):
-    literal = name.replace("'", "''")
-    encoded = base64.b64encode(f"Set-Clipboard -Value '{literal}'".encode('utf-16-le')).decode('ascii')
-    executable = str(Path(os.environ.get('SystemRoot', 'C:/Windows')) / 'System32' / 'WindowsPowerShell' / 'v1.0' / 'powershell.exe')
+def paste_name_action(name, image_uuid):
     return {
-        'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Open Application',
-        'UUID': 'com.elgato.streamdeck.system.openapp',
-        'Plugin': {'Name': 'Open Application', 'UUID': 'com.elgato.streamdeck.system.openapp', 'Version': '1.0'},
-        'Settings': {'app_name': 'Copy bird name', 'exec': executable,
-                     'args': f'-NoProfile -NonInteractive -STA -WindowStyle Hidden -EncodedCommand {encoded}',
-                     'bring_to_front': False, 'is_bundle': False, 'long_press': False,
-                     'bundle_id': '', 'bundle_path': '', 'source': ''},
+        'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Text',
+        'UUID': 'com.elgato.streamdeck.system.text',
+        'Plugin': {'Name': 'Text', 'UUID': 'com.elgato.streamdeck.system.text', 'Version': '1.0'},
+        'Settings': {'pastedText': name, 'isTypingMode': False, 'isSendingEnter': False,
+                     'Hotkey': {'KeyModifiers': 0, 'QTKeyCode': 33554431, 'VKeyCode': -1}},
         'State': 0,
-        'States': [{'Image': f'Images/{image_uuid}.png', 'Title': 'Copy', 'TitleAlignment': 'bottom',
+        'States': [{'Image': f'Images/{image_uuid}.png', 'Title': 'Paste', 'TitleAlignment': 'bottom',
                     'FontSize': 9, 'TitleColor': '#ffffff', 'ShowTitle': True, 'OutlineThickness': 2}],
     }
 
@@ -72,7 +65,7 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
         }
     copy_image_uuid = profile_folder_id(str(uuid.uuid4()))
     save_key_image(action_image('copy'), page / 'Images' / f'{copy_image_uuid}.png', pixels)
-    actions[position(3 if entry.get('icon') else 2)] = copy_name_action(entry['title'], copy_image_uuid)
+    actions[position(3 if entry.get('icon') else 2)] = paste_name_action(entry['title'], copy_image_uuid)
     (page / 'manifest.json').write_text(json.dumps({'Controllers': [{'Actions': actions, 'Type': 'Keypad'}]}, indent=4), encoding='utf-8')
     return page_uuid
 
