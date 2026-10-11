@@ -17,6 +17,13 @@ export function sortEntries(items: Entry[]) {
       for (let i = 0; i < left.length; i++) {
         if (left[i] !== right[i]) return left[i] - right[i];
       }
+      if (left[2]) {
+        const leftCountry = (a.entry.country || "").trim().toUpperCase();
+        const rightCountry = (b.entry.country || "").trim().toUpperCase();
+        if (leftCountry !== rightCountry) {
+          return leftCountry < rightCountry ? -1 : 1;
+        }
+      }
       const leftTitle = (a.entry.title || "").toLowerCase().replaceAll("-", "");
       const rightTitle = (b.entry.title || "")
         .toLowerCase()

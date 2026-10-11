@@ -50,7 +50,8 @@ def sort_elements(elements: List[Any]) -> List[Any]:
     Sort elements so that:
       - Favorites come first.
       - 'uncertain' types come last.
-      - Grouped items come before ungrouped.
+      - Exotic birds and groups follow regular entries within each favorite tier.
+      - Exotic entries are sorted by country code before title.
       - Titles are sorted alphabetically (case-insensitive, ignoring hyphens).
     """
     return sorted(
@@ -59,6 +60,9 @@ def sort_elements(elements: List[Any]) -> List[Any]:
             x.get("type") == "uncertain",          # uncertain always last
             not x.get("favorite", False),          # favorites first
             x.get("exotic", False) if x.get("type") == "bird" or x.get("type") == "group" else False,             # exotic birds last but before uncertain
+            (x.get("country") or "").strip().upper()
+            if x.get("type") in ("bird", "group") and x.get("exotic", False)
+            else "",
             x.get("title", "").lower().replace("-", ""),  # alphabetical
         ),
     )

@@ -103,8 +103,10 @@ The installer loads the plugin automatically when Stream Deck is running;
 use `-Force` to update it. Rebuild/import with `uv run python cli.py create`.
 Run plugin checks with `node --test plugins/scroll.test.cjs`.
 
-Exotic entries can optionally select a country by name or two-letter code, with
-flags shown in the dropdown. The flag appears at the bottom-left of the preview
+Exotic entries are sorted by country code and then name in both the editor and
+exported profile, within the existing favorite ordering. Entries without a country
+come first. Exotic entries can optionally select a country by name or two-letter
+code, with flags shown in the dropdown. The flag appears at the bottom-left of the preview
 and exported key. Clear the country to omit the flag; disabling Exotic removes
 the country when saved. Flag assets are bundled locally from [Flagpedia](https://flagpedia.net).
 
