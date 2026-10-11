@@ -21,6 +21,7 @@ const blank = (): EntryForm => ({
   favorite: false,
   exotic: false,
   country: "",
+  nabu: "",
 });
 
 const toForm = (entry: Entry | Profile): EntryForm =>

@@ -17,6 +17,7 @@ from ruamel.yaml import YAML
 from config_validation import load_icons, validate_icons, validate_rotation
 from paths import ROOT_DIR
 from country_flags import COUNTRIES, validate_country, flag_path
+from nabu_portraits import validate_nabu_url
 
 
 def render_preview(entry, icons, pixels=288):
@@ -62,6 +63,7 @@ class ConfigStore:
         self.yaml = YAML()
         self.yaml.preserve_quotes = True
         self.yaml.allow_unicode = True
+        self.yaml.width = 4096
         self.yaml.indent(mapping=2, sequence=4, offset=2)
         self.original = self.path.read_bytes()
         self.config = self.yaml.load(self.original.decode('utf-8-sig'))
@@ -144,6 +146,12 @@ class ConfigStore:
                         item[field] = value
                     else:
                         item.pop(field, None)
+            if kind == 'bird':
+                nabu = validate_nabu_url(values.get('nabu', ''))
+                if nabu:
+                    item['nabu'] = nabu
+                else:
+                    item.pop('nabu', None)
             selected = path
             if adding:
                 selected = [*path, len(target['items'])]

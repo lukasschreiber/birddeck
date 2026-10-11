@@ -22,21 +22,27 @@ profile:
             - type: bird
               title: Amsel
               icon: eurbla
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/amsel/
             - type: bird
               title: Singdrossel
               icon: sonthr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/singdrossel/
             - type: bird
               title: Misteldrossel
               icon: misthr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/misteldrossel/
             - type: bird
               title: Rotdrossel
               icon: redwin
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotdrossel/
             - type: bird
               title: Wacholderdrossel
               icon: fieldf
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wacholderdrossel/
             - type: bird
               title: Ringdrossel
               icon: rinouz1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ringdrossel/
         - type: group
           title: Meise
           favorite: true
@@ -45,30 +51,39 @@ profile:
             - type: bird
               title: Kohlmeise
               icon: gretit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kohlmeise/
             - type: bird
               title: Blaumeise
               icon: blutit
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaumeise/
             - type: bird
               title: Tannenmeise
               icon: coatit2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tannenmeise/
             - type: bird
               title: Sumpfmeise
               icon: martit2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpfmeise/
             - type: bird
               title: Weidenmeise
               icon: wiltit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weidenmeise/
             - type: bird
               title: Haubenmeise
               icon: cretit2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haubenmeise/
             - type: bird
               title: Schwanzmeise
               icon: lottit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwanzmeise/
             - type: bird
               title: Bartmeise
               icon: bearee1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bartmeise/
             - type: bird
               title: Beutelmeise
               icon: euptit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/beutelmeise/
             - type: bird
               title: Buntmeise
               icon: vartit1
@@ -86,39 +101,59 @@ profile:
             - type: bird
               title: Buchfink
               icon: comcha
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/buchfink/
             - type: bird
               title: Grünfink
               icon: eurgre1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenfink/
             - type: bird
               title: Bluthänfling
               icon: eurlin1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bluthaenfling/
             - type: bird
               title: Berghänfling
               icon: twite1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/berghaenfling/
             - type: bird
               title: Bergfink
               icon: brambl
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bergfink/
             - type: bird
               title: Girlitz
               icon: eurser1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/girlitz/
             - type: bird
               title: Stieglitz
               icon: eurgol
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/stieglitz/
             - type: bird
               title: Gimpel
               icon: eurbul
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gimpel/
             - type: bird
               title: Kernbeißer
               icon: hawfin
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kernbeisser/
             - type: bird
               title: Erlenzeisig
               icon: eursis
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/erlenzeisig/
             - type: bird
               title: Birkenzeisig
               icon: redpol1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/birkenzeisig/
             - type: bird
               title: Fichtenkreuzschnabel
               icon: redcro
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/fichtenkreuzschnabel/
+            - type: bird
+              title: Zitronenzeisig
+              icon: citfin1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zitronengirlitz/
+            - type: bird
+              title: Karmingimpel
+              icon: comros
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/karmingimpel/
         - type: group
           title: Schnäpper
           favorite: true
@@ -127,48 +162,65 @@ profile:
             - type: bird
               title: Trauerschnäpper
               icon: eupfly1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trauerschnaepper/
             - type: bird
               title: Grauschnäpper
               icon: spofly1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grauschnaepper/
             - type: bird
               title: Halsbandschnäpper
               icon: colfly1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/halsbandschnaepper/
             - type: bird
               title: Schwarzkehlchen
               icon: stonec4
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzkehlchen/
             - type: bird
               title: Rotkehlchen
               icon: eurrob1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotkehlchen/
             - type: bird
               title: Gartenrotschwanz
               icon: comred2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gartenrotschwanz/
             - type: bird
               title: Hausrotschwanz
               icon: blared1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/hausrotschwanz/
             - type: bird
               title: Braunkehlchen
               icon: whinch1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/braunkehlchen/
             - type: bird
               title: Blaukehlchen
               icon: blueth
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaukehlchen/
             - type: bird
               title: Nachtigall
               icon: comnig1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nachtigall/
             - type: bird
               title: Steinschmätzer
               icon: norwhe
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinschmaetzer/
             - type: bird
               title: Zwergschnäpper
               icon: rebfly
               exotic: true
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergschnaepper/
             - type: bird
               title: Sprosser
               icon: thrnig1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sprosser/
             - type: bird
               title: Spiegelrotschwanz
               icon: daured1
               exotic: true
               country: KR
+            - type: bird
+              title: Steinrötel
+              icon: rtrthr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinroetel/
         - type: group
           title: Grasmücke
           icon: blackc1
@@ -176,18 +228,23 @@ profile:
             - type: bird
               title: Mönchsgrasmücke
               icon: blackc1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/moenchsgrasmuecke/
             - type: bird
               title: Dorngrasmücke
               icon: grewhi1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dorngrasmuecke/
             - type: bird
               title: Gartengrasmücke
               icon: garwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gartengrasmuecke/
             - type: bird
               title: Klappergrasmücke
               icon: leswhi4
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/klappergrasmuecke/
             - type: bird
               title: Sperbergrasmücke
               icon: barwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sperbergrasmuecke/
         - type: group
           title: Laubsänger
           icon: comchi1
@@ -195,21 +252,27 @@ profile:
             - type: bird
               title: Zilpzalp
               icon: comchi1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zilpzalp/
             - type: bird
               title: Fitis
               icon: wlwwar
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/fitis/
             - type: bird
               title: Waldlaubsänger
               icon: woowar
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldlaubsaenger/
             - type: bird
               title: Berglaubsänger
               icon: webwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/berglaubsaenger/
             - type: bird
               title: Gelbbrauen-Laubsänger
               icon: yebwar3
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gelbbrauen-laubsaenger/
             - type: bird
               title: Grünlaubsänger
               icon: grewar3
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenlaubsaenger/
         - type: group
           title: Lerche
           icon: skylar
@@ -217,15 +280,19 @@ profile:
             - type: bird
               title: Feldlerche
               icon: skylar
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/feldlerche/
             - type: bird
               title: Heidelerche
               icon: woolar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/heidelerche/
             - type: bird
               title: Haubenlerche
               icon: crelar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haubenlerche/
             - type: bird
               title: Ohrenlerche
               icon: horlar
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ohrenlerche/
             - type: uncertain
         - type: group
           title: Sperling
@@ -234,12 +301,15 @@ profile:
             - type: bird
               title: Haussperling
               icon: houspa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haussperling/
             - type: bird
               title: Feldsperling
               icon: eutspa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/feldsperling/
             - type: bird
               title: Schneesperling
               icon: whwsno1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schneesperling/
             - type: bird
               title: Keniasperling
               icon: kerspa2
@@ -252,12 +322,15 @@ profile:
             - type: bird
               title: Rohrschwirl
               icon: savwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrschwirl/
             - type: bird
               title: Feldschwirl
               icon: cogwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/feldschwirl/
             - type: bird
               title: Schlagschwirl
               icon: eurwar2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schlagschwirl/
         - type: group
           title: Ammer
           icon: yellow2
@@ -265,30 +338,39 @@ profile:
             - type: bird
               title: Goldammer
               icon: yellow2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/goldammer/
             - type: bird
               title: Ortolan
               icon: ortbun1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ortolan/
             - type: bird
               title: Grauammer
               icon: corbun1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grauammer/
             - type: bird
               title: Rohrammer
               icon: reebun
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrammer/
             - type: bird
               title: Zaunammer
               icon: cirbun1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zaunammer/
             - type: bird
               title: Zippammer
               icon: rocbun1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zippammer/
             - type: bird
               title: Schneeammer
               icon: snobun
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schneeammer/
             - type: bird
               title: Spornammer
               icon: laplon
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spornammer/
         - type: bird
           title: Zaunkönig
           icon: winwre4
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zaunkoenig/
         - type: group
           title: Goldhähnchen
           icon: goldcr1
@@ -296,12 +378,15 @@ profile:
             - type: bird
               title: Wintergoldhähnchen
               icon: goldcr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wintergoldhaehnchen/
             - type: bird
               title: Sommergoldhähnchen
               icon: firecr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sommergoldhaehnchen/
         - type: bird
           title: Kleiber
           icon: eurnut2
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kleiber/
         - type: group
           title: Baumläufer
           icon: eurtre1
@@ -309,21 +394,27 @@ profile:
             - type: bird
               title: Gartenbaumläufer
               icon: shttre1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gartenbaumlaeufer/
             - type: bird
               title: Waldbaumläufer
               icon: eurtre1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldbaumlaeufer/
         - type: bird
           title: Seidenschwanz
           icon: bohwax
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seidenschwanz/
         - type: bird
           title: Mauerläufer
           icon: wallcr1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mauerlaeufer/
         - type: bird
           title: Pirol
           icon: eugori2
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/pirol/
         - type: bird
           title: Kuckuck
           icon: comcuc
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kuckuck/
         - type: group
           title: Schwalbe
           icon: barswa
@@ -331,21 +422,27 @@ profile:
             - type: bird
               title: Mehlschwalbe
               icon: comhom1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mehlschwalbe/
             - type: bird
               title: Rauchschwalbe
               icon: barswa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rauchschwalbe/
             - type: bird
               title: Uferschwalbe
               icon: banswa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/uferschwalbe/
             - type: bird
               title: Mauersegler
               icon: comswi
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mauersegler/
             - type: bird
               title: Alpensegler
               icon: alpswi1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpensegler/
             - type: bird
               title: Felsenschwalbe
               icon: eurcrm1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/felsenschwalbe/
             - type: bird
               title: Pazifiksegler
               icon: fotswi
@@ -358,24 +455,31 @@ profile:
             - type: bird
               title: Teichrohrsänger
               icon: eurwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/teichrohrsaenger/
             - type: bird
               title: Sumpfrohrsänger
               icon: marwar3
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpfrohrsaenger/
             - type: bird
               title: Schilfrohrsänger
               icon: sedwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schilfrohrsaenger/
             - type: bird
               title: Drosselrohrsänger
               icon: grrwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/drosselrohrsaenger/
             - type: bird
               title: Seggenrohrsänger
               icon: aquwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seggenrohrsaenger/
             - type: bird
               title: Gelbspötter
               icon: ictwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gelbspoetter/
             - type: bird
               title: Orpheusspötter
               icon: melwar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/orpheusspoetter/
         - type: group
           title: Stelzen
           icon: whiwag
@@ -383,18 +487,22 @@ profile:
             - type: bird
               title: Bachstelze
               icon: whiwag
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bachstelze/
             - type: bird
               title: Gebirgsstelze
               icon: grywag
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gebirgsstelze/
             - type: bird
               title: Schafstelze
               icon: eaywag1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schafstelze/
             - type: bird
               title: Zitronenstelze
               icon: citwag
         - type: bird
           title: Wasseramsel
           icon: whtdip1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wasseramsel/
         - type: group
           title: Racke
           icon: eubeat1
@@ -402,6 +510,7 @@ profile:
             - type: bird
               title: Bienenfresser
               icon: eubeat1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bienenfresser/
             - type: bird
               title: Blauracke
               exotic: true
@@ -421,9 +530,11 @@ profile:
               title: Heckenbraunelle
               icon: dunnoc1
               favorite: true
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/heckenbraunelle/
             - type: bird
               title: Alpenbraunelle
               icon: alpacc1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpenbraunelle/
           tag: Braunelle
         - type: group
           title: Würger
@@ -432,9 +543,11 @@ profile:
             - type: bird
               title: Neuntöter
               icon: rebshr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/neuntoeter/
             - type: bird
               title: Raubwürger
               icon: norshr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raubwuerger/
             - type: bird
               title: Isabellwürger
               icon: isashr1
@@ -446,6 +559,7 @@ profile:
             - type: bird
               title: Rotkopfwürger
               icon: wooshr1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotkopfwuerger/
           tag: Würger
         - type: group
           title: Stare
@@ -454,6 +568,7 @@ profile:
             - type: bird
               title: Star
               icon: eursta
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/star/
             - type: bird
               title: Rosenstar
               icon: rossta2
@@ -492,24 +607,31 @@ profile:
             - type: bird
               title: Bergpieper
               icon: watpip1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bergpieper/
             - type: bird
               title: Brachpieper
               icon: tawpip1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brachpieper/
             - type: bird
               title: Rotkehlpieper
               icon: retpip
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotkehlpieper/
             - type: bird
               title: Wiesenpieper
               icon: meapip1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wiesenpieper/
             - type: bird
               title: Baumpieper
               icon: trepip
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/baumpieper/
             - type: bird
               title: Spornpieper
               icon: ricpip1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spornpieper/
             - type: bird
               title: Strandpieper
               icon: rocpip1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/strandpieper/
           tag: Pieper
         - type: group
           title: Lieste
@@ -518,6 +640,7 @@ profile:
             - type: bird
               title: Eisvogel
               icon: comkin1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eisvogel/
             - type: bird
               title: Braunkopfliest
               icon: brhkin1
@@ -555,21 +678,27 @@ profile:
                 - type: bird
                   title: Tafelente
                   icon: compoc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tafelente/
                 - type: bird
                   title: Reiherente
                   icon: tufduc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/reiherente/
                 - type: bird
                   title: Kolbenente
                   icon: recpoc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kolbenente/
                 - type: bird
                   title: Bergente
                   icon: gresca
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bergente/
                 - type: bird
                   title: Schellente
                   icon: comgol
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schellente/
                 - type: bird
                   title: Moorente
                   icon: ferduc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/moorente/
             - type: group
               title: Schwimmente
               icon: mallar3
@@ -577,24 +706,31 @@ profile:
                 - type: bird
                   title: Stockente
                   icon: mallar3
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/stockente/
                 - type: bird
                   title: Krickente
                   icon: gnwtea
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/krickente/
                 - type: bird
                   title: Schnatterente
                   icon: gadwal
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schnatterente/
                 - type: bird
                   title: Löffelente
                   icon: norsho
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/loeffelente/
                 - type: bird
                   title: Spießente
                   icon: norpin
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spiessente/
                 - type: bird
                   title: Pfeifente
                   icon: eurwig
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/pfeifente/
                 - type: bird
                   title: Knäkente
                   icon: gargan
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/knaekente/
                 - type: bird
                   title: China-Fleckschnabelente
                   icon: spbduc
@@ -607,15 +743,19 @@ profile:
                 - type: bird
                   title: Eiderente
                   icon: comeid
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eiderente/
                 - type: bird
                   title: Samtente
                   icon: whwsco3
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/samtente/
                 - type: bird
                   title: Trauerente
                   icon: blksco1
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trauerente/
                 - type: bird
                   title: Eisente
                   icon: lotduc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eisente/
             - type: group
               title: Säger
               icon: commer
@@ -623,12 +763,15 @@ profile:
                 - type: bird
                   title: Gänsesäger
                   icon: commer
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gaensesaeger/
                 - type: bird
                   title: Mittelsäger
                   icon: rebmer
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mittelsaeger/
                 - type: bird
                   title: Zwergsäger
                   icon: smew
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergsaeger/
             - type: group
               title: Neozoon Ente
               icon: manduc
@@ -636,9 +779,11 @@ profile:
                 - type: bird
                   title: Mandarinente
                   icon: manduc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mandarinente/
                 - type: bird
                   title: Brautente
                   icon: wooduc
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brautente/
                 - type: bird
                   title: Moschusente
                   icon: musduc
@@ -653,21 +798,27 @@ profile:
                 - type: bird
                   title: Graugans
                   icon: gragoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/graugans/
                 - type: bird
                   title: Blässgans
                   icon: gwfgoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaessgans/
                 - type: bird
-                  title: Kurzschnablegans
+                  title: Kurzschnabelgans
                   icon: pifgoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kurzschnabelgans/
                 - type: bird
                   icon: taibeg1
                   title: Waldsaatgans
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldsaatgans/
                 - type: bird
                   title: Zwerggans
                   icon: lwfgoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwerggans/
                 - type: bird
                   title: Tundrasaatgans
                   icon: tunbeg1
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tundrasaatgans/
                 - type: bird
                   title: Schneegans
                   icon: snogoo
@@ -681,15 +832,19 @@ profile:
                 - type: bird
                   title: Kanadagans
                   icon: cangoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kanadagans/
                 - type: bird
                   title: Nonnengans
                   icon: bargoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weisswangengans/
                 - type: bird
                   title: Ringelgans
                   icon: brant
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ringelgans/
                 - type: bird
                   title: Rothalsgans
                   icon: rebgoo1
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rothalsgans/
               tag: Meergans
             - type: group
               title: Halbgänse
@@ -698,12 +853,15 @@ profile:
                 - type: bird
                   title: Rostgans
                   icon: rudshe
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rostgans/
                 - type: bird
                   title: Nilgans
                   icon: egygoo
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nilgans/
                 - type: bird
                   title: Brandgans
                   icon: comshe
+                  nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brandgans/
         - type: group
           title: Schwan
           icon: mutswa
@@ -711,15 +869,19 @@ profile:
             - type: bird
               title: Höckerschwan
               icon: mutswa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/hoeckerschwan/
             - type: bird
               title: Singschwan
               icon: whoswa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/singschwan/
             - type: bird
               title: Zwergschwan
               icon: tunswa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergschwan/
             - type: bird
               title: Schwarzschwan
               icon: blkswa
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzschwan/
         - type: group
           title: Reiher
           icon: graher1
@@ -727,27 +889,34 @@ profile:
             - type: bird
               title: Graureiher
               icon: graher1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/graureiher/
             - type: bird
               title: Silberreiher
               icon: greegr
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/silberreiher/
             - type: bird
               title: Seidenreiher
               icon: litegr
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seidenreiher/
             - type: bird
               title: Nachtreiher
               icon: bcnher
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nachtreiher/
             - type: bird
               title: Purpurreiher
               icon: purher1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/purpurreiher/
             - type: bird
               title: Kuhreiher
               icon: categr1
             - type: bird
               title: Rohrdommel
               icon: grebit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrdommel/
             - type: bird
               title: Zwergdommel
               icon: litbit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergdommel/
         - type: group
           title: Möwe
           icon: bkhgul
@@ -755,34 +924,44 @@ profile:
             - type: bird
               title: Lachmöwe
               icon: bkhgul
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/lachmoewe/
             - type: bird
               title: Sturmmöwe
               icon: mewgul
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sturmmoewe/
             - type: bird
               title: Silbermöwe
               icon: euhgul1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/silbermoewe/
             - type: bird
               title: Mantelmöwe
               icon: gbbgul
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mantelmoewe/
             - type: bird
               title: Heringsmöwe
               icon: lbbgul
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/heringsmoewe/
             - type: bird
               title: Dreizehenmöwe
               icon: bklkit
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dreizehenmoewe/
             - type: bird
               title: Mittelmeermöwe
               icon: yelgul1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mittelmeermoewe/
             - type: bird
               title: Schwarzkopfmöwe
               icon: medgul1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzkopfmoewe/
             - type: bird
               title: Zwergmöwe
               icon: litgul
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergmoewe/
             - type: uncertain
             - type: bird
               title: Steppenmöwe
               icon: casgul2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steppenmoewe/
         - type: group
           title: Ralle
           icon: commoo3
@@ -790,21 +969,31 @@ profile:
             - type: bird
               title: Teichhuhn
               icon: commoo3
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/teichhuhn/
             - type: bird
               title: Blässhuhn
               icon: eurcoo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaesshuhn/
             - type: bird
               title: Wasserralle
               icon: watrai1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wasserralle/
             - type: bird
               title: Tüpfelsumpfhuhn
               icon: spocra1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tuepfelsumpfhuhn/
             - type: bird
               title: Zwergsumpfhuhn
               icon: baicra1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergsumpfhuhn/
             - type: bird
               title: Kleinsumpfhuhn
               icon: litcra1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kleinsumpfhuhn/
+            - type: bird
+              title: Wachtelkönig
+              icon: corcra
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wachtelkoenig/
         - type: group
           title: Lappentaucher
           icon: grcgre1
@@ -812,18 +1001,23 @@ profile:
             - type: bird
               title: Zwergtaucher
               icon: litgre1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergtaucher/
             - type: bird
               title: Rothalstaucher
               icon: rengre
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rothalstaucher/
             - type: bird
               title: Haubentaucher
               icon: grcgre1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haubentaucher/
             - type: bird
               title: Schwarzhalstaucher
               icon: eargre
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzhalstaucher/
             - type: bird
               title: Ohrentaucher
               icon: horgre
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ohrentaucher/
         - type: group
           title: Taucher
           icon: retloo
@@ -831,12 +1025,15 @@ profile:
             - type: bird
               title: Sterntaucher
               icon: retloo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sterntaucher/
             - type: bird
               title: Eistaucher
               icon: comloo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eistaucher/
             - type: bird
               title: Prachttaucher
               icon: arcloo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/prachttaucher/
         - type: group
           title: Seeschwalbe
           icon: comter
@@ -844,31 +1041,40 @@ profile:
             - type: bird
               title: Flussseeschwalbe
               icon: comter
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/flussseeschwalbe/
             - type: bird
               title: Küstenseeschwalbe
               icon: arcter
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kuestenseeschwalbe/
             - type: bird
               title: Trauerseeschwalbe
               icon: blkter
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trauerseeschwalbe/
             - type: bird
               title: Zwergseeschwalbe
               icon: litter1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergseeschwalbe/
             - type: bird
               title: Brandseeschwalbe
               icon: santer1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brandseeschwalbe/
             - type: uncertain
             - type: bird
               title: Weißbart-Seeschwalbe
               icon: whiter2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissbart-seeschwalbe/
             - type: bird
               title: Weißflügel-Seeschwalbe
               icon: whwter
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissfluegel-seeschwalbe/
             - type: bird
               title: Lachseeschwalbe
               icon: gubter2
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/lachseeschwalbe/
             - type: bird
               title: Raubseeschwalbe
               icon: caster1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raubseeschwalbe/
         - type: group
           title: Alkenvogel
           icon: horpuf
@@ -876,12 +1082,15 @@ profile:
             - type: bird
               title: Trottellumme
               icon: commur
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trottellumme/
             - type: bird
               title: Tordalk
               icon: razorb
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tordalk/
             - type: bird
               title: Gryllteiste
               icon: blkgui
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gryllteiste/
             - type: bird
               title: Papageitaucher
               icon: horpuf
@@ -891,9 +1100,11 @@ profile:
               title: Krabbentaucher
               icon: doveki
               exotic: true
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/krabbentaucher/
         - type: bird
           title: Basstölpel
           icon: norgan
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/basstoelpel/
         - type: group
           title: Kormorane
           icon: grecor
@@ -901,6 +1112,7 @@ profile:
             - type: bird
               title: Kormoran
               icon: grecor
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kormoran/
             - type: bird
               title: Japankormoran
               icon: japcor1
@@ -920,16 +1132,20 @@ profile:
               icon: gresku1
               exotic: true
               country: IS
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/skua/
             - type: bird
               title: Schmarotzerraubmöwe
               icon: parjae
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schmarotzerraubmoewe/
             - type: bird
               title: Falkenraubmöwe
               icon: lotjae
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/falkenraubmoewe/
             - type: uncertain
             - type: bird
               title: Spatelraubmöwe
               icon: pomjae
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spatelraubmoewe/
           tag: Raubmöwe
         - type: group
           title: Sturmvögel
@@ -938,12 +1154,15 @@ profile:
             - type: bird
               title: Wellenläufer
               icon: lcspet
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wellenlaeufer/
             - type: bird
               title: Dunkelsturmtaucher
               icon: sooshe
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dunkler-sturmtaucher/
             - type: bird
               title: Eissturmvogel
               icon: norful
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eissturmvogel/
             - type: uncertain
           tag: Sturmvogel
     - type: group
@@ -952,14 +1171,13 @@ profile:
       bg: "assets/img/habitat-shore.png"
       items:
         - type: bird
-          title: Kiebitz
-          icon: norlap
-        - type: bird
           title: Stelzenläufer
           icon: bkwsti
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/stelzenlaeufer/
         - type: bird
           title: Säbelschnäbler
           icon: pieavo1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/saebelschnaebler/
         - type: group
           title: Regenpfeifer
           icon: corplo
@@ -967,87 +1185,119 @@ profile:
             - type: bird
               title: Sandregenpfeifer
               icon: corplo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sandregenpfeifer/
             - type: bird
               title: Goldregenpfeifer
               icon: eugplo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/goldregenpfeifer/
             - type: bird
               title: Flussregenpfeifer
               icon: lirplo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/flussregenpfeifer/
             - type: bird
               title: Mornellregenpfeifer
               icon: eurdot
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mornellregenpfeifer/
             - type: bird
               title: Seeregenpfeifer
               icon: kenplo1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seeregenpfeifer/
             - type: bird
               title: Kiebitzregenpfeifer
               icon: bkbplo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kiebitzregenpfeifer/
         - type: group
-          title: Wasserläufer
+          title: Wasserläufer und Uferläufer
           icon: comgre
           items:
             - type: bird
               title: Grünschenkel
               icon: comgre
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenschenkel/
             - type: bird
               title: Waldwasserläufer
               icon: grnsan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldwasserlaeufer/
             - type: bird
               title: Rotschenkel
               icon: comred1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotschenkel/
             - type: bird
               title: Bruchwasserläufer
               icon: woosan
-        - type: bird
-          title: Flussuferläufer
-          icon: comsan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bruchwasserlaeufer/
+            - type: bird
+              title: Flussuferläufer
+              icon: comsan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/flussuferlaeufer/
+            - type: bird
+              title: Dunkelwasserläufer
+              icon: spored
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dunkelwasserlaeufer/
+            - type: bird
+              title: Teichwasserläufer
+              icon: marsan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/teichwasserlaeufer/
         - type: group
           title: Strandläufer
-          icon: ruff
+          icon: dunlin
           items:
             - type: bird
               title: Alpenstrandläufer
               icon: dunlin
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpenstrandlaeufer/
             - type: bird
               title: Sanderling
               icon: sander
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sanderling/
             - type: bird
               title: Knutt
               icon: redkno
-            - type: bird
-              title: Dunkelwasserläufer
-              icon: spored
-            - type: bird
-              title: Kampfläufer
-              icon: ruff
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/knutt/
             - type: bird
               title: Sichelstrandläufer
               icon: cursan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sichelstrandlaeufer/
             - type: bird
               title: Zwergstrandläufer
               icon: litsti
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergstrandlaeufer/
             - type: bird
               title: Temminckstrandläufer
               icon: temsti
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/temminckstrandlaeufer/
+            - type: bird
+              title: Meerstrandläufer
+              icon: pursan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/meerstrandlaeufer/
+            - type: bird
+              title: Sumpfläufer
+              icon: brbsan
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpflaeufer/
         - type: bird
           title: Austernfischer
           icon: euroys1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/austernfischer/
         - type: group
-          title: Schnepfe
+          title: Schnepfen und Bekassinen
           icon: comsni
           items:
             - type: bird
               title: Bekassine
               icon: comsni
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bekassine/
             - type: bird
               title: Waldschnepfe
               icon: eurwoo
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldschnepfe/
             - type: bird
-              title: Uferschnepfe
-              icon: bktgod
+              title: Zwergschnepfe
+              icon: jacsni
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergschnepfe/
             - type: bird
-              title: Pfuhlschnepfe
-              icon: batgod
+              title: Doppelschnepfe
+              icon: gresni1
+          tag: Schnepfe
         - type: group
           title: Brachvogel
           icon: eurcur
@@ -1055,9 +1305,77 @@ profile:
             - type: bird
               title: Großer Brachvogel
               icon: eurcur
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brachvogel/
             - type: bird
               title: Regenbrachvogel
               icon: whimbr
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/regenbrachvogel/
+        - type: group
+          title: Kiebitze
+          icon: norlap
+          items:
+            - type: bird
+              title: Kiebitz
+              icon: norlap
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kiebitz/
+            - type: bird
+              title: Kronenkiebitz
+              icon: crolap1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Schmiedekiebitz
+              icon: blaplo1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Spornkiebitz
+              icon: spwlap1
+              exotic: true
+              country: TZ
+          tag: Kiebitz
+        - type: bird
+          title: Kampfläufer
+          icon: ruff
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kampflaeufer/
+        - type: group
+          title: Uferschnepfen
+          icon: bktgod
+          items:
+            - type: bird
+              title: Pfuhlschnepfe
+              icon: batgod
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/pfuhlschnepfe/
+            - type: bird
+              title: Uferschnepfe
+              icon: bktgod
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/uferschnepfe/
+        - type: bird
+          title: Odinshühnchen
+          icon: renpha
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/odinshuehnchen/
+        - type: bird
+          title: Thorshühnchen
+          icon: redpha1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/thorshuehnchen/
+        - type: bird
+          title: Steinwälzer
+          icon: rudtur
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinwaelzer/
+        - type: group
+          title: Triele
+          icon: eutkne1
+          items:
+            - type: bird
+              title: Triel
+              icon: eutkne1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/triel/
+            - type: bird
+              title: Kaptriel
+              icon: sptkne1
+              exotic: true
+              country: TZ
+          tag: Triel
     - type: group
       title: Spechte
       tag: Specht
@@ -1067,36 +1385,45 @@ profile:
           title: Buntspecht
           icon: grswoo
           rotation: -25
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/buntspecht/
         - type: bird
           title: Grünspecht
           icon: eugwoo2
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenspecht/
         - type: bird
           title: Kleinspecht
           icon: leswoo1
           rotation: -20
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kleinspecht/
         - type: bird
           title: Mittelspecht
           icon: miswoo1
           rotation: -20
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mittelspecht/
         - type: bird
           title: Schwarzspecht
           icon: blawoo1
           rotation: -20
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzspecht/
         - type: bird
           title: Wendehals
           icon: eurwry
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wendehals/
         - type: bird
           title: Grauspecht
           icon: gyfwoo1
 
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grauspecht/
         - type: bird
           title: Dreizehenspecht
           icon: ettwoo1
           rotation: -25
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dreizehenspecht/
         - type: bird
           title: Weißrückenspecht
           icon: whbwoo1
           rotation: -24
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissrueckenspecht/
     - type: group
       title: Raben-vögel
       tag: Rabenvogel
@@ -1106,34 +1433,43 @@ profile:
           title: Kolkrabe
           icon: comrav
           favorite: true
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kolkrabe/
         - type: bird
           title: Saatkrähe
           icon: rook1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/saatkraehe/
         - type: bird
           title: Rabenkrähe
           favorite: true
           icon: carcro1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rabenkraehe/
         - type: bird
           title: Dohle
           favorite: true
           icon: eurjac
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dohle/
         - type: bird
           title: Alpendohle
           icon: yebcho1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpendohle/
         - type: bird
           title: Elster
           favorite: true
           icon: eurmag1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/elster/
         - type: bird
           title: Eichelhäher
           icon: eurjay1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eichelhaeher/
         - type: bird
           title: Tannenhäher
           icon: eurnut3
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tannenhaeher/
         - type: bird
           title: Nebelkrähe
           icon: hoocro1
 
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nebelkraehe/
         - type: bird
           title: Orientelster
           icon: orimag1
@@ -1152,9 +1488,11 @@ profile:
         - type: bird
           title: Habicht
           icon: norgos1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/habicht/
         - type: bird
           title: Sperber
           icon: eurspa1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sperber/
         - type: group
           title: Adler
           icon: whteag
@@ -1162,15 +1500,19 @@ profile:
             - type: bird
               title: Seeadler
               icon: whteag
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seeadler/
             - type: bird
               title: Steinadler
               icon: goleag
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinadler/
             - type: bird
               title: Fischadler
               icon: osprey
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/fischadler/
             - type: bird
               title: Schreiadler
               icon: leseag1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schreiadler/
             - type: bird
               title: Schlangenadler
               icon: shteag1
@@ -1181,12 +1523,15 @@ profile:
             - type: bird
               title: Rohrweihe
               icon: wemhar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrweihe/
             - type: bird
               title: Kornweihe
               icon: norhar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kornweihe/
             - type: bird
               title: Wiesenweihe
               icon: monhar1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wiesenweihe/
             - type: bird
               title: Steppenweihe
               icon: palhar1
@@ -1198,24 +1543,30 @@ profile:
             - type: bird
               title: Baumfalke
               icon: eurhob
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/baumfalke/
             - type: bird
               title: Turmfalke
               icon: eurkes
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/turmfalke/
             - type: bird
               title: Wanderfalke
               icon: perfal
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wanderfalke/
             - type: bird
               title: Rotfußfalke
               icon: reffal1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotfussfalke/
             - type: bird
               title: Merlin
               icon: merlin
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/merlin/
             - type: bird
               title: Halsband-Zwergfalke
               icon: pygfal1
               exotic: true
               country: TZ
           tag: Falke
+          favorite: true
         - type: group
           title: Bussarde
           icon: combuz1
@@ -1223,13 +1574,17 @@ profile:
             - type: bird
               title: Mäusebussard
               icon: combuz1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/maeusebussard/
             - title: Raufußbussard
               type: bird
               icon: rolhaw
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raufussbussard/
             - type: bird
               title: Wespenbussard
               icon: euhbuz1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wespenbussard/
           tag: Bussard
+          favorite: true
         - type: group
           title: Milane
           icon: redkit1
@@ -1237,15 +1592,30 @@ profile:
             - type: bird
               title: Rotmilan
               icon: redkit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotmilan/
             - type: bird
               title: Schwarzmilan
               icon: blakit1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzmilan/
             - type: bird
               title: Gleitaar
               icon: bkskit1
               exotic: true
               country: TZ
           tag: Milan
+        - type: group
+          title: Geier
+          icon: eurgri1
+          items:
+            - type: bird
+              title: Gänsegeier
+              icon: eurgri1
+              exotic: true
+              country: TZ
+            - type: bird
+              title: Bartgeier
+              icon: lammer1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bartgeier/
     - type: group
       title: Eulen
       tag: Eule
@@ -1255,31 +1625,45 @@ profile:
           title: Waldkauz
           icon: tawowl1
           favorite: true
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldkauz/
         - type: bird
           title: Schleiereule
           icon: webowl1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schleiereule/
         - type: bird
           title: Steinkauz
           icon: litowl1
           favorite: true
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinkauz/
         - type: bird
           title: Uhu
           icon: eueowl1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/uhu/
         - type: bird
           title: Sumpfohreule
           icon: sheowl
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpfohreule/
         - type: bird
           title: Raufußkauz
           icon: borowl
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raufusskauz/
         - type: bird
           title: Sperlingskauz
           icon: eupowl1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sperlingskauz/
         - type: bird
           title: Waldohreule
           icon: loeowl
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldohreule/
         - type: bird
           title: Zwergohreule
           icon: eursco1
+        - type: bird
+          title: Habichtskauz
+          icon: uraowl1
+          exotic: true
+          country: SE
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/Habichtskauz/
     - type: group
       title: Hühner-vögel
       tag: Hühnervogel
@@ -1288,24 +1672,27 @@ profile:
         - type: bird
           title: Jagdfasan
           icon: rinphe1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/jagdfasan/
         - type: bird
           title: Rebhuhn
           icon: grypar
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rebhuhn/
         - type: bird
           title: Auerhuhn
           icon: wescap1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/auerhuhn/
         - type: bird
           title: Birkhuhn
           icon: blagro1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/birkhuhn/
         - type: bird
           title: Alpenschneehuhn
           icon: rocpta1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpenschneehuhn/
         - type: bird
           title: Wachtel
           icon: comqua1
-        - type: bird
-          title: Wachtelkönig
-          icon: corcra
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wachtel/
         - type: bird
           title: Silberfasan
           icon: silphe
@@ -1313,47 +1700,11 @@ profile:
         - type: bird
           title: Steinhuhn
           icon: rocpar2
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinhuhn/
         - type: bird
           title: Haselhuhn
           icon: hazgro1
-    - type: group
-      title: Kraniche
-      tag: Kranich
-      bg: "assets/img/habitat-steppe.png"
-      items:
-        - type: bird
-          title: Kranich
-          icon: comcra
-        - type: bird
-          title: Grauhals-Kronenkranich
-          icon: grccra1
-          exotic: true
-          country: TZ
-    - type: group
-      title: Ibisse
-      tag: Ibis
-      bg: "assets/img/habitat-marsh.png"
-      items:
-        - type: bird
-          title: Löffler
-          icon: eurspo1
-        - type: bird
-          title: Sichler
-          icon: gloibi
-        - type: bird
-          title: Waldrapp
-          icon: waldra1
-    - type: group
-      title: Störche
-      tag: Storche
-      bg: "assets/img/habitat-river.png"
-      items:
-        - type: bird
-          title: Weißstorch
-          icon: whisto1
-        - type: bird
-          title: Schwarzstorch
-          icon: blasto1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haselhuhn/
     - type: group
       title: Tauben
       tag: Taube
@@ -1362,19 +1713,24 @@ profile:
         - type: bird
           title: Ringeltaube
           icon: cowpig1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ringeltaube/
         - type: bird
           title: Türkentaube
           icon: eucdov
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tuerkentaube/
         - type: bird
           title: Hohltaube
           icon: stodov1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/hohltaube/
         - type: bird
           title: Turteltaube
           icon: eutdov
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/turteltaube/
         - type: bird
           title: Straßentaube
           icon: rocpig
 
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/strassentaube/
         - type: bird
           title: Orientturteltaube
           icon: ortdov
@@ -1398,6 +1754,7 @@ profile:
         - type: bird
           title: Halsbandsittich
           icon: rorpar
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/halsbandsittich/
         - type: bird
           title: Alexandersittich
           icon: alepar2
@@ -1408,9 +1765,107 @@ profile:
     - type: group
       title: Horn-vögel
       tag: Hornvogel
-      bg: "assets/img/habitat-savanne.png"
+      bg: "assets/img/habitat-orchard.png"
       items:
         - title: Wiedehopf
           type: bird
           icon: hoopoe
 
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wiedehopf/
+        - type: bird
+          title: Silberwangen-Hornvogel
+          icon: sichor1
+          exotic: true
+          country: TZ
+    - type: group
+      title: Lauf-Vögel
+      items:
+        - type: bird
+          title: Nandu
+          icon: grerhe1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nandu/
+        - type: bird
+          title: Strauß
+          icon: ostric2
+          exotic: true
+          country: TZ
+      bg: assets/img/habitat-savanne.png
+    - type: group
+      title: Schreit-vögel
+      items:
+        - type: group
+          title: Störche
+          tag: Storche
+          bg: "#ffffff"
+          items:
+            - type: bird
+              title: Weißstorch
+              icon: whisto1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissstorch/
+            - type: bird
+              title: Schwarzstorch
+              icon: blasto1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzstorch/
+          icon: whisto1
+        - type: group
+          title: Ibisse
+          tag: Ibis
+          bg: "#ffffff"
+          items:
+            - type: bird
+              title: Löffler
+              icon: eurspo1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/loeffler/
+            - type: bird
+              title: Sichler
+              icon: gloibi
+            - type: bird
+              title: Waldrapp
+              icon: waldra1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldrapp/
+            - type: bird
+              title: Pharaonenibis
+              icon: sacibi2
+              exotic: true
+              country: TZ
+          icon: sacibi2
+        - type: group
+          title: Kraniche
+          tag: Kranich
+          bg: "#ffffff"
+          items:
+            - type: bird
+              title: Kranich
+              icon: comcra
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kranich/
+            - type: bird
+              title: Grauhals-Kronenkranich
+              icon: grccra1
+              exotic: true
+              country: TZ
+          icon: comcra
+        - type: group
+          title: Trappen
+          icon: grebus1
+          items:
+            - type: bird
+              title: Großtrappe
+              icon: grebus1
+              nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grosstrappe/
+            - type: bird
+              title: Riesentrappe
+              icon: korbus1
+              exotic: true
+              country: TZ
+          tag: Trappe
+      tag: Schreitvogel
+      bg: assets/img/habitat-marsh.png
+    - type: group
+      title: Nacht-schwalben
+      items:
+        - type: bird
+          title: Nachtschwalbe
+          icon: eurnig1
+          nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ziegenmelker/
+      tag: Nachtschwalbe
+      bg: assets/img/habitat-night-heathland.png

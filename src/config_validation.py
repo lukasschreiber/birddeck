@@ -2,6 +2,7 @@ import json
 import math
 from paths import DATA_DIR
 from country_flags import validate_country
+from nabu_portraits import validate_nabu_url
 
 
 def load_icons():
@@ -23,6 +24,7 @@ def validate_icons(config, icons=None):
             icon = item.get("icon", "")
             validate_rotation(item.get("rotation", 0))
             validate_country(item.get("country", ""))
+            validate_nabu_url(item.get("nabu", ""))
             if icon and icon not in icons:
                 raise ValueError(f"{label}: unknown icon ID '{icon}' (see data/icons.json)")
             if item.get("type") == "group":

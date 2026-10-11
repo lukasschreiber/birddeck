@@ -62,14 +62,12 @@ def fetch_image(url: str) -> Image.Image | None:
 # === BACKGROUND REMOVAL ===
 def remove_largest_white_background(image: Image.Image) -> Image.Image:
     """
-    Remove only the largest connected region of white-ish pixels
-    (R,G,B > 250), keeping white details inside the subject.
+    Remove white-ish regions connected to the image border, including
+    disconnected corners, while keeping enclosed white subject details.
     """
     threshold = 245
     feather_radius = 1
-    arr = np.array(image)
-    if arr.shape[2] == 3:
-        arr = np.dstack([arr, np.full(arr.shape[:2], 255, dtype=np.uint8)])
+    arr = np.array(image.convert("RGBA"))
 
     r, g, b, a = arr[..., 0], arr[..., 1], arr[..., 2], arr[..., 3]
 
@@ -81,10 +79,14 @@ def remove_largest_white_background(image: Image.Image) -> Image.Image:
     if num == 0:
         return image
 
-    # Find largest connected white region
-    sizes = ndimage.sum(white_mask, labeled, range(1, num + 1))
-    largest_label = int(np.argmax(sizes) + 1)
-    background_mask = labeled == largest_label
+    # A subject can split the background into multiple disconnected regions.
+    border_labels = np.unique(np.concatenate((
+        labeled[0, :], labeled[-1, :], labeled[:, 0], labeled[:, -1],
+    )))
+    border_labels = border_labels[border_labels != 0]
+    if not len(border_labels):
+        return image
+    background_mask = np.isin(labeled, border_labels)
 
     # Convert background mask to float for feathering
     mask_float = background_mask.astype(float)

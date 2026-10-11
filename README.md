@@ -77,6 +77,11 @@ Icon IDs are validated against `data/icons.json`; partial IDs show matching
 suggestions. Icons are optional. Bird folders omit the eBird button when no icon is set. Unknown
 icons are rejected by both the editor and profile creation.
 
+Bird entries may set `nabu` to their HTTPS NABU portrait URL. The detail page
+then includes a **NABU** website button with the NABU logo alongside **eBird**,
+followed by **Paste**. Both website actions are optional and independent.
+The browser editor can edit or clear the NABU link.
+
 Exotic entries can optionally select a country by name or two-letter code, with
 flags shown in the dropdown. The flag appears at the bottom-left of the preview
 and exported key. Clear the country to omit the flag; disabling Exotic removes

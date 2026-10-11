@@ -10,6 +10,7 @@ export interface Entry {
   favorite?: boolean;
   exotic?: boolean;
   country?: string;
+  nabu?: string;
   items?: Entry[];
 }
 
@@ -37,6 +38,7 @@ export interface EntryForm {
   favorite: boolean;
   exotic: boolean;
   country: string;
+  nabu: string;
 }
 
 export type IconMap = Record<string, string | number>;

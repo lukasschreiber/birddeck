@@ -8,9 +8,10 @@ from profile_images import save_key_image
 from paths import ROOT_DIR
 from PIL import Image, ImageDraw
 from functools import lru_cache
+from nabu_portraits import validate_nabu_url
 
 
-@lru_cache(maxsize=3)
+@lru_cache(maxsize=4)
 def action_image(name):
     if name == 'copy':
         canvas = Image.new('RGB', (288, 288), 'black')
@@ -18,7 +19,8 @@ def action_image(name):
         draw.rounded_rectangle((93, 69, 187, 181), radius=8, outline='white', width=7)
         draw.rounded_rectangle((113, 87, 207, 199), radius=8, fill='black', outline='white', width=7)
         return canvas
-    with Image.open(ROOT_DIR / 'assets' / 'actions' / f'{name}.png') as source:
+    filename = 'nabu.webp' if name == 'nabu' else f'{name}.png'
+    with Image.open(ROOT_DIR / 'assets' / 'actions' / filename) as source:
         icon = source.convert('RGBA')
     icon.thumbnail((144, 144), Image.Resampling.LANCZOS)
     canvas = Image.new('RGB', (288, 288), 'black')
@@ -53,19 +55,25 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
         return f'{index % columns},{index // columns}'
 
     actions[position(1)] = tagging
+    websites = []
     if entry.get('icon'):
-        ebird_image_uuid = profile_folder_id(str(uuid.uuid4()))
-        save_key_image(action_image('ebird'), page / 'Images' / f'{ebird_image_uuid}.png', pixels)
-        actions[position(2)] = {
+        websites.append(('ebird', 'eBird', f"https://ebird.org/species/{entry['icon']}"))
+    nabu = validate_nabu_url(entry.get('nabu', ''))
+    if nabu:
+        websites.append(('nabu', 'NABU', nabu))
+    for index, (name, label, url) in enumerate(websites, start=2):
+        website_image_uuid = profile_folder_id(str(uuid.uuid4()))
+        save_key_image(action_image(name), page / 'Images' / f'{website_image_uuid}.png', pixels)
+        actions[position(index)] = {
             'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Website',
             'Plugin': {'Name': 'Website', 'UUID': 'com.elgato.streamdeck.system.website', 'Version': '1.0'},
             'UUID': 'com.elgato.streamdeck.system.website',
-            'Settings': {'path': f"https://ebird.org/species/{entry['icon']}"}, 'State': 0,
-            'States': [{**tagging['States'][0], 'Title': 'eBird', 'Image': f'Images/{ebird_image_uuid}.png'}],
+            'Settings': {'path': url}, 'State': 0,
+            'States': [{**tagging['States'][0], 'Title': label, 'Image': f'Images/{website_image_uuid}.png'}],
         }
     copy_image_uuid = profile_folder_id(str(uuid.uuid4()))
     save_key_image(action_image('copy'), page / 'Images' / f'{copy_image_uuid}.png', pixels)
-    actions[position(3 if entry.get('icon') else 2)] = paste_name_action(entry['title'], copy_image_uuid)
+    actions[position(2 + len(websites))] = paste_name_action(entry['title'], copy_image_uuid)
     (page / 'manifest.json').write_text(json.dumps({'Controllers': [{'Actions': actions, 'Type': 'Keypad'}]}, indent=4), encoding='utf-8')
     return page_uuid
 

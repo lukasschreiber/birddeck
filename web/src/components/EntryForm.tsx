@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Checkbox,
+  Divider,
   FormControlLabel,
   MenuItem,
   Paper,
@@ -188,6 +189,17 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
                 />
               </>
             )}
+            {e.form.type === "bird" && (
+              <TextField
+                size="small"
+                type="url"
+                label="NABU portrait link (optional)"
+                value={e.form.nabu}
+                onChange={(event) => e.update("nabu", event.target.value)}
+                disabled={e.saving}
+                helperText="Adds a NABU button to this bird’s Stream Deck detail page."
+              />
+            )}
             {icon && (
               <Box
                 component="details"
@@ -268,28 +280,12 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
             )}
           </>
         )}
-        <Stack direction="row" sx={{ justifyContent: "flex-end" }} spacing={1}>
-          {!e.adding && (
-            <Box sx={{ mr: "auto !important" }}>
-              <Button
-                size="small"
-                color="error"
-                onClick={e.deleteEntry}
-                disabled={e.saving || !e.canDelete}
-              >
-                Delete entry
-              </Button>
-              {!e.canDelete && (
-                <Typography
-                  variant="caption"
-                  sx={{ display: "block" }}
-                  color="text.secondary"
-                >
-                  Delete all children first.
-                </Typography>
-              )}
-            </Box>
-          )}
+        <Divider />
+        <Stack
+          direction="row"
+          sx={{ justifyContent: "flex-end", alignItems: "center" }}
+          spacing={1}
+        >
           <Button size="small" onClick={e.reset} disabled={e.saving}>
             Reset
           </Button>
@@ -302,6 +298,36 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
             {e.saving ? "Saving..." : "Save entry"}
           </Button>
         </Stack>
+        {!e.adding && (
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={1.5}
+            sx={{
+              alignItems: { xs: "flex-start", sm: "center" },
+              justifyContent: "space-between",
+              bgcolor: "action.hover",
+              borderRadius: 1,
+              px: 1.5,
+              py: 1,
+            }}
+          >
+            <Typography variant="body2" color="text.secondary">
+              {e.canDelete
+                ? "Remove this entry from the profile."
+                : "This group can be deleted once all children are removed."}
+            </Typography>
+            <Button
+              size="small"
+              variant="outlined"
+              color="error"
+              onClick={e.deleteEntry}
+              disabled={e.saving || !e.canDelete}
+              sx={{ flexShrink: 0, textTransform: "none" }}
+            >
+              Delete entry
+            </Button>
+          </Stack>
+        )}
       </Stack>
     </Paper>
   );

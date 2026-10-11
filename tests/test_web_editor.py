@@ -151,6 +151,24 @@ class WebEditorTests(unittest.TestCase):
         result = self.request('/api/entry', {'revision': 1, 'action': 'delete', 'path': [1]})
         self.assertEqual(len(result['config']['profile']['items']), 1)
 
+    def test_nabu_link_round_trip_clear_and_validation(self):
+        url = 'https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenfink/'
+        body = {'revision': 0, 'action': 'update', 'path': [0, 0],
+                'entry': {'type': 'bird', 'title': 'Bird', 'nabu': url}}
+        result = self.request('/api/entry', body)
+        self.assertEqual(result['config']['profile']['items'][0]['items'][0]['nabu'], url)
+        body['revision'] = 1
+        for invalid in ('javascript:alert(1)', 'https://example.com/amsel/',
+                        'https://www.nabu.de.example.com/tiere-und-pflanzen/voegel/portraets/amsel/', None):
+            body['entry']['nabu'] = invalid
+            before = self.path.read_bytes()
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', body)
+            self.assertEqual(before, self.path.read_bytes())
+        body['entry']['nabu'] = ''
+        result = self.request('/api/entry', body)
+        self.assertNotIn('nabu', result['config']['profile']['items'][0]['items'][0])
+
     def test_moving_group_adjusts_destination_path_and_preserves_children(self):
         result = self.request('/api/entry', {'revision': 0, 'action': 'add', 'path': [],
             'entry': {'type': 'group', 'title': 'Destination'}})
