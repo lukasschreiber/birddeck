@@ -9,6 +9,7 @@ from paths import ROOT_DIR
 from PIL import Image, ImageDraw
 from functools import lru_cache
 from nabu_portraits import validate_nabu_url
+from name_key import render_name_key
 
 
 @lru_cache(maxsize=4)
@@ -74,6 +75,17 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
     copy_image_uuid = profile_folder_id(str(uuid.uuid4()))
     save_key_image(action_image('copy'), page / 'Images' / f'{copy_image_uuid}.png', pixels)
     actions[position(2 + len(websites))] = paste_name_action(entry['title'], copy_image_uuid)
+    if not uncertain:
+        name_image_uuid = profile_folder_id(str(uuid.uuid4()))
+        save_key_image(render_name_key(entry['title'], entry.get('scientific_name', '')),
+                       page / 'Images' / f'{name_image_uuid}.png', pixels)
+        actions[position(3 + len(websites))] = {
+            'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Bird name',
+            'Plugin': {'Name': 'Multi Action', 'UUID': 'com.elgato.streamdeck.multiactions', 'Version': '1.0'},
+            'UUID': 'com.elgato.streamdeck.multiactions.routine',
+            'Actions': [], 'Settings': {}, 'State': 0,
+            'States': [{'Image': f'Images/{name_image_uuid}.png', 'ShowTitle': False, 'Title': ''}],
+        }
     (page / 'manifest.json').write_text(json.dumps({'Controllers': [{'Actions': actions, 'Type': 'Keypad'}]}, indent=4), encoding='utf-8')
     return page_uuid
 

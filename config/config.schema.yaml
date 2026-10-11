@@ -327,6 +327,10 @@ $defs:
     properties:
       type: { const: bird }
       title: { type: string }
+      scientific_name:
+        type: string
+        maxLength: 200
+        description: Optional scientific name, displayed in smaller italics beneath the common name on a dedicated detail-page key.
       favorite: { type: boolean }
       exotic: { type: boolean }
       icon: { type: string }

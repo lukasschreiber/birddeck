@@ -11,6 +11,7 @@ export interface Entry {
   exotic?: boolean;
   country?: string;
   nabu?: string;
+  scientific_name?: string;
   items?: Entry[];
 }
 
@@ -39,6 +40,7 @@ export interface EntryForm {
   exotic: boolean;
   country: string;
   nabu: string;
+  scientific_name: string;
 }
 
 export type IconMap = Record<string, string | number>;

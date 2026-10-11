@@ -82,6 +82,11 @@ then includes a **NABU** website button with the NABU logo alongside **eBird**,
 followed by **Paste**. Both website actions are optional and independent.
 The browser editor can edit or clear the NABU link.
 
+Each bird detail page also has a display-only name key. Set the optional
+`scientific_name` field to add a smaller italic scientific name beneath the
+common name. The editor shows a preview of this key and can edit or clear the
+scientific name. Orientelster is configured with `Pica serica` as an example.
+
 Exotic entries can optionally select a country by name or two-letter code, with
 flags shown in the dropdown. The flag appears at the bottom-left of the preview
 and exported key. Clear the country to omit the flag; disabling Exotic removes

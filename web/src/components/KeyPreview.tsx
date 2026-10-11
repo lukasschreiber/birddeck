@@ -6,9 +6,11 @@ import { displayName } from "../displayName";
 export function KeyPreview({
   entry,
   parentTitle,
+  nameOnly = false,
 }: {
   entry: EntryForm;
   parentTitle: string;
+  nameOnly?: boolean;
 }) {
   const [image, setImage] = useState<string>();
   const [error, setError] = useState<string>();
@@ -30,15 +32,18 @@ export function KeyPreview({
     setLoading(true);
     const timer = window.setTimeout(async () => {
       try {
-        const response = await fetch("/api/preview", {
-          method: "POST",
-          headers: {
-            "X-BirdDeck-Token": location.hash.slice(1),
-            "Content-Type": "application/json",
+        const response = await fetch(
+          nameOnly ? "/api/name-preview" : "/api/preview",
+          {
+            method: "POST",
+            headers: {
+              "X-BirdDeck-Token": location.hash.slice(1),
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ entry, parentTitle }),
+            signal: controller.signal,
           },
-          body: JSON.stringify({ entry, parentTitle }),
-          signal: controller.signal,
-        });
+        );
         if (!response.ok)
           throw new Error((await response.json()).error || "Preview failed");
         const blob = await response.blob();
@@ -63,11 +68,13 @@ export function KeyPreview({
       controller.abort();
       if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
-  }, [entry, parentTitle]);
+  }, [entry, parentTitle, nameOnly]);
 
   return (
     <Stack spacing={1} sx={{ alignItems: "flex-start" }}>
-      <Typography variant="subtitle2">Key preview</Typography>
+      <Typography variant="subtitle2">
+        {nameOnly ? "Name key preview" : "Key preview"}
+      </Typography>
       <Box
         sx={{
           width: 160,
@@ -90,7 +97,7 @@ export function KeyPreview({
           />
         )}
         {loading && <CircularProgress size={24} />}
-        {image && (
+        {image && !nameOnly && (
           <Typography
             sx={{
               position: "absolute",

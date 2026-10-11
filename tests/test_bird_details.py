@@ -11,6 +11,24 @@ from gen_uuid import profile_folder_id
 
 
 class BirdDetailTests(unittest.TestCase):
+    def test_name_key_is_display_only_and_scientific_name_is_optional(self):
+        from name_key import render_name_key
+        from profile_images import save_key_image
+        from io import BytesIO
+        for scientific_name in ('', 'Pica serica'):
+            with self.subTest(scientific_name=scientific_name), tempfile.TemporaryDirectory() as directory:
+                entry = {'title': 'Orientelster', 'scientific_name': scientific_name}
+                page_id = create_bird_details(directory, entry, Image.new('RGB', (288, 288)), 72, 'Lightroom.exe', 5)
+                page = Path(directory) / profile_folder_id(page_id)
+                actions = json.loads((page / 'manifest.json').read_text())['Controllers'][0]['Actions']
+                name_key = actions['3,0']
+                self.assertEqual(name_key['Name'], 'Bird name')
+                self.assertEqual(name_key['Actions'], [])
+                self.assertFalse(name_key['States'][0]['ShowTitle'])
+                expected = BytesIO()
+                save_key_image(render_name_key(entry['title'], scientific_name), expected, 72)
+                self.assertEqual((page / name_key['States'][0]['Image']).read_bytes(), expected.getvalue())
+
     def test_nabu_action_with_and_without_ebird(self):
         url = 'https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/amsel/'
         for code in ('eurbla', None):

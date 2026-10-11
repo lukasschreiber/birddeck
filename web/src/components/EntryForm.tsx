@@ -58,17 +58,22 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
   return (
     <Paper variant="outlined" sx={{ p: 2 }} component="form" onSubmit={e.save}>
       <Stack spacing={2}>
-        <KeyPreview
-          entry={e.form}
-          parentTitle={
-            (!e.adding &&
-              destinations.find((group) => group.id === parent)?.title) ||
-            e.breadcrumbs[
-              e.adding ? e.breadcrumbs.length - 1 : e.breadcrumbs.length - 2
-            ] ||
-            "Vogel"
-          }
-        />
+        <Stack direction="row" spacing={2} sx={{ flexWrap: "wrap", rowGap: 2 }}>
+          <KeyPreview
+            entry={e.form}
+            parentTitle={
+              (!e.adding &&
+                destinations.find((group) => group.id === parent)?.title) ||
+              e.breadcrumbs[
+                e.adding ? e.breadcrumbs.length - 1 : e.breadcrumbs.length - 2
+              ] ||
+              "Vogel"
+            }
+          />
+          {e.form.type === "bird" && (
+            <KeyPreview entry={e.form} parentTitle="" nameOnly />
+          )}
+        </Stack>
         <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
           Entry details
         </Typography>
@@ -173,6 +178,19 @@ export function EntryForm({ editor: e }: { editor: Editor }) {
                 />
               )}
             />
+            {e.form.type === "bird" && (
+              <TextField
+                size="small"
+                label="Scientific name (optional)"
+                value={e.form.scientific_name}
+                onChange={(event) =>
+                  e.update("scientific_name", event.target.value)
+                }
+                disabled={e.saving}
+                slotProps={{ htmlInput: { maxLength: 200 } }}
+                helperText="Shown in italics beneath the common name on the name key."
+              />
+            )}
             {e.form.type === "group" && (
               <>
                 <TextField

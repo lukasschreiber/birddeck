@@ -169,6 +169,29 @@ class WebEditorTests(unittest.TestCase):
         result = self.request('/api/entry', body)
         self.assertNotIn('nabu', result['config']['profile']['items'][0]['items'][0])
 
+    def test_scientific_name_save_clear_and_preview(self):
+        from io import BytesIO
+        from PIL import Image
+        from name_key import render_name_key
+        entry = {'type': 'bird', 'title': 'Orientelster', 'scientific_name': 'Pica serica'}
+        body = {'revision': 0, 'action': 'update', 'path': [0, 0], 'entry': entry}
+        result = self.request('/api/entry', body)
+        self.assertEqual(result['config']['profile']['items'][0]['items'][0]['scientific_name'], 'Pica serica')
+        request = Request(self.url + '/api/name-preview', data=json.dumps({'entry': entry}).encode(),
+                          headers={'X-BirdDeck-Token': self.token})
+        with urlopen(request) as response:
+            self.assertEqual(Image.open(BytesIO(response.read())).tobytes(), render_name_key('Orientelster', 'Pica serica').tobytes())
+        body['revision'] = 1
+        for invalid in (None, 123, 'a' * 201):
+            body['entry']['scientific_name'] = invalid
+            before = self.path.read_bytes()
+            with self.assertRaises(HTTPError):
+                self.request('/api/entry', body)
+            self.assertEqual(before, self.path.read_bytes())
+        body['entry']['scientific_name'] = ''
+        result = self.request('/api/entry', body)
+        self.assertNotIn('scientific_name', result['config']['profile']['items'][0]['items'][0])
+
     def test_moving_group_adjusts_destination_path_and_preserves_children(self):
         result = self.request('/api/entry', {'revision': 0, 'action': 'add', 'path': [],
             'entry': {'type': 'group', 'title': 'Destination'}})

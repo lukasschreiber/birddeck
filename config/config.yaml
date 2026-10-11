@@ -733,6 +733,7 @@ profile:
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/knaekente/
                 - type: bird
                   title: China-Fleckschnabelente
+                  scientific_name: Anas zonorhyncha
                   icon: spbduc
                   exotic: true
                   country: KR
@@ -1472,6 +1473,7 @@ profile:
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nebelkraehe/
         - type: bird
           title: Orientelster
+          scientific_name: Pica serica
           icon: orimag1
           exotic: true
           country: KR
@@ -1778,7 +1780,7 @@ profile:
           exotic: true
           country: TZ
     - type: group
-      title: Lauf-Vögel
+      title: Lauf-vögel
       items:
         - type: bird
           title: Nandu
