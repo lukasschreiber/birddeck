@@ -1,0 +1,47 @@
+{
+	"Name": "BirdTagging",
+	"Version": "0.1.0.0",
+	"Author": "Lukas Schreiber",
+	"Actions": [
+		{
+			"Name": "Test",
+			"UUID": "com.lukas-schreiber.birdtagging.increment",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Some tooltip text",
+			"PropertyInspectorPath": "ui/test-action.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		}
+	],
+	"Category": "BirdTagging",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Lightroom Bird Tagging",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.5"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.lukas-schreiber.birdtagging"
+}

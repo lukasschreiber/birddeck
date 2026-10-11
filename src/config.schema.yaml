@@ -1,0 +1,70 @@
+# bird_tagging.schema.yaml
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Bird Tagging Profile Wrapper
+type: object
+required: [profile]
+properties:
+  profile:
+    $ref: "#/$defs/profile"
+
+$defs:
+  profile:
+    type: object
+    required: [name, lightroom, model, size, items]
+    properties:
+      name:
+        type: string
+      lightroom:
+        type: string
+      model:
+        type: string
+      size:
+        type: object
+        required: [columns, rows]
+        properties:
+          columns: { type: integer, minimum: 1 }
+          rows: { type: integer, minimum: 1 }
+      items:
+        type: array
+        items:
+          $ref: "#/$defs/item"
+
+  item:
+    oneOf:
+      - $ref: "#/$defs/group"
+      - $ref: "#/$defs/bird"
+      - $ref: "#/$defs/uncertain"
+
+  group:
+    type: object
+    required: [type, title, items]
+    properties:
+      type: { const: group }
+      title: { type: string }
+      tag: { type: string }
+      bg: { type: string }
+      favorite: { type: boolean }
+      exotic: { type: boolean }
+      icon: { type: string }
+      items:
+        type: array
+        items: { $ref: "#/$defs/item" }
+    additionalProperties: false
+
+  bird:
+    type: object
+    required: [type, title, icon]
+    properties:
+      type: { const: bird }
+      title: { type: string }
+      favorite: { type: boolean }
+      exotic: { type: boolean }
+      icon: { type: string }
+    additionalProperties: false
+
+  uncertain:
+    type: object
+    required: [type]
+    properties:
+      type: { const: uncertain }
+    additionalProperties: false

@@ -1,0 +1,1030 @@
+# yaml-language-server: $schema=./config.schema.yaml
+
+profile:
+  name: Bird Tagging
+  lightroom: C:\Program Files\Adobe\Adobe Lightroom Classic\Lightroom.exe
+  model: 20GBA9901
+  size:
+    columns: 5
+    rows: 3
+  items:
+    - type: group
+      title: Sing-vögel
+      tag: Singvogel
+      bg: "./src/img/habitat-green.png"
+      items:
+        - type: group
+          title: Drossel
+          favorite: true
+          icon: eurbla
+          items:
+            - type: bird
+              title: Amsel
+              icon: eurbla
+            - type: bird
+              title: Singdrossel
+              icon: sonthr1
+            - type: bird
+              title: Misteldrossel
+              icon: misthr1
+            - type: bird
+              title: Rotdrossel
+              icon: redwin
+            - type: bird
+              title: Wacholderdrossel
+              icon: fieldf
+            - type: bird
+              title: Ringdrossel
+              icon: rinouz1
+        - type: group
+          title: Meise
+          favorite: true
+          icon: cretit2
+          items:
+            - type: bird
+              title: Kohlmeise
+              icon: gretit1
+            - type: bird
+              title: Blaumeise
+              icon: blutit
+            - type: bird
+              title: Tannenmeise
+              icon: coatit2
+            - type: bird
+              title: Sumpfmeise
+              icon: martit2
+            - type: bird
+              title: Weidenmeise
+              icon: wiltit1
+            - type: bird
+              title: Haubenmeise
+              icon: cretit2
+            - type: bird
+              title: Schwanzmeise
+              icon: lottit1
+            - type: bird
+              title: Bartmeise
+              icon: bearee1
+            - type: bird
+              title: Beutelmeise
+              icon: euptit1
+        - type: group
+          title: Fink
+          icon: comcha
+          items:
+            - type: bird
+              title: Buchfink
+              icon: comcha
+            - type: bird
+              title: Grünfink
+              icon: eurgre1
+            - type: bird
+              title: Bluthänfling
+              icon: eurlin1
+            - type: bird
+              title: Berghänfling
+              icon: twite1
+            - type: bird
+              title: Bergfink
+              icon: brambl
+            - type: bird
+              title: Girlitz
+              icon: eurser1
+            - type: bird
+              title: Stieglitz
+              icon: eurgol
+            - type: bird
+              title: Gimpel
+              icon: eurbul
+            - type: bird
+              title: Kernbeißer
+              icon: hawfin
+            - type: bird
+              title: Erlenzeisig
+              icon: eursis
+            - type: bird
+              title: Birkenzeisig
+              icon: redpol1
+            - type: bird
+              title: Fichtenkreuzschnabel
+              icon: redcro
+        - type: group
+          title: Schnäpper
+          favorite: true
+          icon: whinch1
+          items:
+            - type: bird
+              title: Trauerschnäpper
+              icon: eupfly1
+            - type: bird
+              title: Grauschnäpper
+              icon: spofly1
+            - type: bird
+              title: Halsbandschnäpper
+              icon: colfly1
+            - type: bird
+              title: Schwarzkehlchen
+              icon: stonec4
+            - type: bird
+              title: Rotkehlchen
+              icon: eurrob1
+            - type: bird
+              title: Gartenrotschwanz
+              icon: comred2
+            - type: bird
+              title: Hausrotschwanz
+              icon: blared1
+            - type: bird
+              title: Braunkehlchen
+              icon: whinch1
+            - type: bird
+              title: Blaukehlchen
+              icon: blueth
+            - type: bird
+              title: Nachtigall
+              icon: comnig1
+            - type: bird
+              title: Steinschmätzer
+              icon: norwhe
+        - type: group
+          title: Grasmücke
+          icon: blackc1
+          items:
+            - type: bird
+              title: Mönchsgrasmücke
+              icon: blackc1
+            - type: bird
+              title: Dorngrasmücke
+              icon: grewhi1
+            - type: bird
+              title: Gartengrasmücke
+              icon: garwar1
+            - type: bird
+              title: Klappergrasmücke
+              icon: leswhi4
+        - type: group
+          title: Laubsänger
+          icon: comchi1
+          items:
+            - type: bird
+              title: Zilpzalp
+              icon: comchi1
+            - type: bird
+              title: Fitis
+              icon: wlwwar
+            - type: bird
+              title: Waldlaubsänger
+              icon: woowar
+        - type: group
+          title: Lerche
+          icon: skylar
+          items:
+            - type: bird
+              title: Feldlerche
+              icon: skylar
+            - type: bird
+              title: Heidelerche
+              icon: woolar1
+            - type: bird
+              title: Haubenlerche
+              icon: crelar1
+            - type: bird
+              title: Ohrenlerche
+              icon: horlar
+            - type: uncertain
+        - type: group
+          title: Sperling
+          icon: houspa
+          items:
+            - type: bird
+              title: Haussperling
+              icon: houspa
+            - type: bird
+              title: Feldsperling
+              icon: eutspa
+        - type: group
+          title: Schwirl
+          icon: savwar1
+          items:
+            - type: bird
+              title: Rohrschwirl
+              icon: savwar1
+            - type: bird
+              title: Feldschwirl
+              icon: cogwar1
+        - type: group
+          title: Ammer
+          icon: yellow2
+          items:
+            - type: bird
+              title: Goldammer
+              icon: yellow2
+            - type: bird
+              title: Ortolan
+              icon: ortbun1
+            - type: bird
+              title: Grauammer
+              icon: corbun1
+            - type: bird
+              title: Rohrammer
+              icon: reebun
+            - type: bird
+              title: Zaunammer
+              icon: cirbun1
+        - type: bird
+          title: Zaunkönig
+          icon: winwre4
+        - type: group
+          title: Goldhähnchen
+          icon: goldcr1
+          items:
+            - type: bird
+              title: Wintergoldhähnchen
+              icon: goldcr1
+            - type: bird
+              title: Sommergoldhähnchen
+              icon: firecr1
+        - type: bird
+          title: Heckenbraunelle
+          icon: dunnoc1
+        - type: bird
+          title: Kleiber
+          icon: eurnut2
+        - type: group
+          title: Baumläufer
+          icon: eurtre1
+          items:
+            - type: bird
+              title: Gartenbaumläufer
+              icon: shttre1
+            - type: bird
+              title: Waldbaumläufer
+              icon: eurtre1
+        - type: bird
+          title: Star
+          icon: eursta
+        - type: bird
+          title: Seidenschwanz
+          icon: bohwax
+        - type: bird
+          title: Mauerläufer
+          icon: wallcr1
+        - type: bird
+          title: Pirol
+          icon: eugori2
+        - type: bird
+          title: Neuntöter
+          icon: rebshr1
+        - type: bird
+          title: Kuckuck
+          icon: comcuc
+        - type: group
+          title: Schwalbe
+          icon: barswa
+          items:
+            - type: bird
+              title: Mehlschwalbe
+              icon: comhom1
+            - type: bird
+              title: Rauchschwalbe
+              icon: barswa
+            - type: bird
+              title: Uferschwalbe
+              icon: banswa
+            - type: bird
+              title: Mauersegler
+              icon: comswi
+        - type: group
+          title: Rohrsänger
+          icon: eurwar1
+          items:
+            - type: bird
+              title: Teichrohrsänger
+              icon: eurwar1
+            - type: bird
+              title: Sumpfrohrsänger
+              icon: marwar3
+            - type: bird
+              title: Schilfrohrsänger
+              icon: sedwar1
+            - type: bird
+              title: Drosselrohrsänger
+              icon: grrwar1
+        - type: group
+          title: Stelzen und Pieper
+          icon: whiwag
+          items:
+            - type: bird
+              title: Bachstelze
+              icon: whiwag
+            - type: bird
+              title: Gebirgsstelze
+              icon: grywag
+            - type: bird
+              title: Schafstelze
+              icon: eaywag1
+            - type: bird
+              title: Wiesenpieper
+              icon: meapip1
+            - type: bird
+              title: Brachpieper
+              icon: tawpip1
+        - type: bird
+          title: Wasseramsel
+          icon: whtdip1
+        - type: group
+          title: Racke
+          icon: eubeat1
+          items:
+            - type: bird
+              title: Eisvogel
+              icon: comkin1
+            - type: bird
+              title: Bienenfresser
+              icon: eubeat1
+            - type: bird
+              title: Blauracke
+              exotic: true
+              icon: eurrol1
+            - type: bird
+              title: Gabelracke
+              exotic: true
+              icon: librol2
+
+    - type: group
+      title: Wasser-vögel
+      tag: Wasservogel
+      bg: "./src/img/habitat-ocean.png"
+      items:
+        - type: group
+          title: Ente
+          icon: mallar3
+          items:
+            - type: group
+              title: Tauchente
+              icon: tufduc
+              items:
+                - type: bird
+                  title: Tafelente
+                  icon: compoc
+                - type: bird
+                  title: Reiherente
+                  icon: tufduc
+                - type: bird
+                  title: Kolbenente
+                  icon: recpoc
+                - type: bird
+                  title: Bergente
+                  icon: gresca
+                - type: bird
+                  title: Schellente
+                  icon: comgol
+                - type: bird
+                  title: Moorente
+                  icon: ferduc
+            - type: group
+              title: Schwimmente
+              icon: mallar3
+              items:
+                - type: bird
+                  title: Stockente
+                  icon: mallar3
+                - type: bird
+                  title: Krickente
+                  icon: gnwtea
+                - type: bird
+                  title: Schnatterente
+                  icon: gadwal
+                - type: bird
+                  title: Löffelente
+                  icon: norsho
+                - type: bird
+                  title: Spießente
+                  icon: norpin
+                - type: bird
+                  title: Pfeifente
+                  icon: eurwig
+                - type: bird
+                  title: Knäkente
+                  icon: gargan
+            - type: group
+              title: Meerente
+              icon: comeid
+              items:
+                - type: bird
+                  title: Eiderente
+                  icon: comeid
+                - type: bird
+                  title: Samtente
+                  icon: whwsco3
+                - type: bird
+                  title: Trauerente
+                  icon: blksco1
+                - type: bird
+                  title: Eisente
+                  icon: lotduc
+            - type: group
+              title: Säger
+              icon: commer
+              items:
+                - type: bird
+                  title: Gänsesäger
+                  icon: commer
+                - type: bird
+                  title: Mittelsäger
+                  icon: rebmer
+                - type: bird
+                  title: Zwergsäger
+                  icon: smew
+            - type: group
+              title: Neozoon Ente
+              icon: manduc
+              items:
+                - type: bird
+                  title: Mandarinente
+                  icon: manduc
+                - type: bird
+                  title: Brautente
+                  icon: wooduc
+                - type: bird
+                  title: Moschusente
+                  icon: musduc
+        - type: group
+          title: Gans
+          icon: gragoo
+          items:
+            - type: bird
+              title: Graugans
+              icon: gragoo
+            - type: bird
+              icon: taibeg1
+              title: Waldsaatgans
+            - type: bird
+              title: Kurzschnablegans
+              icon: pifgoo
+            - type: bird
+              title: Blässgans
+              icon: gwfgoo
+            - type: bird
+              title: Kanadagans
+              icon: cangoo
+            - type: bird
+              title: Nilgans
+              icon: egygoo
+            - type: bird
+              title: Ringelgans
+              icon: brant
+            - type: bird
+              title: Nonnengans
+              icon: bargoo
+            - type: bird
+              title: Rostgans
+              icon: rudshe
+            - type: bird
+              title: Zwerggans
+              icon: lwfgoo
+            - type: bird
+              title: Brandgans
+              icon: comshe
+        - type: group
+          title: Schwan
+          icon: mutswa
+          items:
+            - type: bird
+              title: Höckerschwan
+              icon: mutswa
+            - type: bird
+              title: Singschwan
+              icon: whoswa
+            - type: bird
+              title: Zwergschwan
+              icon: tunswa
+        - type: group
+          title: Reiher
+          icon: graher1
+          items:
+            - type: bird
+              title: Graureiher
+              icon: graher1
+            - type: bird
+              title: Silberreiher
+              icon: greegr
+            - type: bird
+              title: Seidenreiher
+              icon: litegr
+            - type: bird
+              title: Nachtreiher
+              icon: bcnher
+            - type: bird
+              title: Purpurreiher
+              icon: purher1
+            - type: bird
+              title: Kuhreiher
+              icon: categr1
+            - type: bird
+              title: Rohrdommel
+              icon: grebit1
+            - type: bird
+              title: Zwergdommel
+              icon: litbit1
+        - type: bird
+          title: Kormoran
+          icon: grecor
+        - type: group
+          title: Möwe
+          icon: bkhgul
+          items:
+            - type: bird
+              title: Lachmöwe
+              icon: bkhgul
+            - type: bird
+              title: Sturmmöwe
+              icon: mewgul
+            - type: bird
+              title: Silbermöwe
+              icon: euhgul1
+            - type: bird
+              title: Mantelmöwe
+              icon: gbbgul
+            - type: bird
+              title: Heringsmöwe
+              icon: lbbgul
+            - type: bird
+              title: Dreizehenmöwe
+              icon: bklkit
+            - type: bird
+              title: Mittelmeermöwe
+              icon: yelgul1
+            - type: bird
+              title: Schwarzkopfmöwe
+              icon: medgul1
+            - type: bird
+              title: Zwergmöwe
+              icon: litgul
+            - type: uncertain
+        - type: group
+          title: Ralle
+          icon: commoo3
+          items:
+            - type: bird
+              title: Teichhuhn
+              icon: commoo3
+            - type: bird
+              title: Blässhuhn
+              icon: eurcoo
+            - type: bird
+              title: Wasserralle
+              icon: watrai1
+            - type: bird
+              title: Tüpfelsumpfhuhn
+              icon: spocra1
+        - type: group
+          title: Lappentaucher
+          icon: grcgre1
+          items:
+            - type: bird
+              title: Zwergtaucher
+              icon: litgre1
+            - type: bird
+              title: Rothalstaucher
+              icon: rengre
+            - type: bird
+              title: Haubentaucher
+              icon: grcgre1
+            - type: bird
+              title: Schwarzhalstaucher
+              icon: eargre
+        - type: group
+          title: Taucher
+          icon: retloo
+          items:
+            - type: bird
+              title: Sterntaucher
+              icon: retloo
+            - type: bird
+              title: Eistaucher
+              icon: comloo
+            - type: bird
+              title: Prachttaucher
+              icon: arcloo
+        - type: group
+          title: Seeschwalbe
+          icon: comter
+          items:
+            - type: bird
+              title: Flussseeschwalbe
+              icon: comter
+            - type: bird
+              title: Küstenseeschwalbe
+              icon: arcter
+            - type: bird
+              title: Trauerseeschwalbe
+              icon: blkter
+            - type: bird
+              title: Zwergseeschwalbe
+              icon: litter1
+            - type: bird
+              title: Brandseeschwalbe
+              icon: santer1
+            - type: uncertain
+        - type: group
+          title: Alkenvogel
+          icon: horpuf
+          items:
+            - type: bird
+              title: Trottellumme
+              icon: commur
+            - type: bird
+              title: Tordalk
+              icon: razorb
+            - type: bird
+              title: Gryllteiste
+              icon: blkgui
+            - type: bird
+              title: Papageitaucher
+              icon: horpuf
+        - type: bird
+          title: Basstölpel
+          icon: norgan
+    - type: group
+      title: Wat-vögel
+      tag: Watvogel
+      bg: "./src/img/habitat-shore.png"
+      items:
+        - type: bird
+          title: Kiebitz
+          icon: norlap
+        - type: bird
+          title: Stelzenläufer
+          icon: bkwsti
+        - type: bird
+          title: Säbelschnäbler
+          icon: pieavo1
+        - type: group
+          title: Regenpfeifer
+          icon: corplo
+          items:
+            - type: bird
+              title: Sandregenpfeifer
+              icon: corplo
+            - type: bird
+              title: Goldregenpfeifer
+              icon: eugplo
+            - type: bird
+              title: Flussregenpfeifer
+              icon: lirplo
+            - type: bird
+              title: Mornellregenpfeifer
+              icon: eurdot
+            - type: bird
+              title: Seeregenpfeifer
+              icon: kenplo1
+            - type: bird
+              title: Kiebitzregenpfeifer
+              icon: bkbplo
+        - type: group
+          title: Wasserläufer
+          icon: comgre
+          items:
+            - type: bird
+              title: Grünschenkel
+              icon: comgre
+            - type: bird
+              title: Waldwasserläufer
+              icon: grnsan
+            - type: bird
+              title: Rotschenkel
+              icon: comred1
+            - type: bird
+              title: Bruchwasserläufer
+              icon: woosan
+        - type: bird
+          title: Flussuferläufer
+          icon: comsan
+        - type: group
+          title: Strandläufer
+          icon: ruff
+          items:
+            - type: bird
+              title: Alpenstrandläufer
+              icon: dunlin
+            - type: bird
+              title: Sanderling
+              icon: sander
+            - type: bird
+              title: Knutt
+              icon: redkno
+            - type: bird
+              title: Dunkelwasserläufer
+              icon: spored
+            - type: bird
+              title: Kampfläufer
+              icon: ruff
+            - type: bird
+              title: Sichelstrandläufer
+              icon: cursan
+            - type: bird
+              title: Zwergstrandläufer
+              icon: litsti
+            - type: bird
+              title: Temminckstrandläufer
+              icon: temsti
+        - type: bird
+          title: Austernfischer
+          icon: euroys1
+        - type: group
+          title: Schnepfe
+          icon: comsni
+          items:
+            - type: bird
+              title: Bekassine
+              icon: comsni
+            - type: bird
+              title: Waldschnepfe
+              icon: eurwoo
+            - type: bird
+              title: Uferschnepfe
+              icon: bktgod
+            - type: bird
+              title: Pfuhlschnepfe
+              icon: batgod
+        - type: group
+          title: Brachvogel
+          icon: eurcur
+          items:
+            - type: bird
+              title: Großer Brachvogel
+              icon: eurcur
+            - type: bird
+              title: Regenbrachvogel
+              icon: whimbr
+    - type: group
+      title: Spechte
+      tag: Specht
+      bg: "./src/img/habitat-tree.png"
+      items:
+        - type: bird
+          title: Buntspecht
+          icon: grswoo
+        - type: bird
+          title: Grünspecht
+          icon: eugwoo2
+        - type: bird
+          title: Kleinspecht
+          icon: leswoo1
+        - type: bird
+          title: Mittelspecht
+          icon: miswoo1
+        - type: bird
+          title: Schwarzspecht
+          icon: blawoo1
+        - type: bird
+          title: Wendehals
+          icon: eurwry
+        - type: bird
+          title: Grauspecht
+          icon: gyfwoo1
+
+    - type: group
+      title: Raben-vögel
+      tag: Rabenvogel
+      bg: "./src/img/habitat-alpin.png"
+      items:
+        - type: bird
+          title: Kolkrabe
+          icon: comrav
+          favorite: true
+        - type: bird
+          title: Saatkrähe
+          icon: rook1
+        - type: bird
+          title: Rabenkrähe
+          favorite: true
+          icon: carcro1
+        - type: bird
+          title: Dohle
+          favorite: true
+          icon: eurjac
+        - type: bird
+          title: Alpendohle
+          icon: yebcho1
+        - type: bird
+          title: Elster
+          favorite: true
+          icon: eurmag1
+        - type: bird
+          title: Eichelhäher
+          icon: eurjay1
+        - type: bird
+          title: Tannenhäher
+          icon: eurnut3
+        - type: bird
+          title: Nebelkrähe
+          icon: hoocro1
+
+    - type: group
+      title: Greif-vögel
+      tag: Greifvogel
+      bg: "./src/img/habitat-rocky.png"
+      items:
+        - type: bird
+          title: Mäusebussard
+          icon: combuz1
+        - type: bird
+          title: Wespenbussard
+          icon: euhbuz1
+        - title: Raufußbussard
+          type: bird
+          icon: rolhaw
+        - type: bird
+          title: Habicht
+          icon: norgos1
+        - type: bird
+          title: Sperber
+          icon: eurspa1
+        - type: bird
+          title: Baumfalke
+          icon: eurhob
+        - type: bird
+          title: Turmfalke
+          icon: eurkes
+        - type: bird
+          title: Wanderfalke
+          icon: perfal
+        - type: bird
+          title: Rotmilan
+          icon: redkit1
+        - type: bird
+          title: Schwarzmilan
+          icon: blakit1
+        - type: group
+          title: Adler
+          icon: whteag
+          items:
+            - type: bird
+              title: Seeadler
+              icon: whteag
+            - type: bird
+              title: Steinadler
+              icon: goleag
+            - type: bird
+              title: Fischadler
+              icon: osprey
+            - type: bird
+              title: Schreiadler
+              icon: leseag1
+            - type: bird
+              title: Schlangenadler
+              icon: shteag1
+        - type: group
+          title: Weihe
+          icon: wemhar1
+          items:
+            - type: bird
+              title: Rohrweihe
+              icon: wemhar1
+            - type: bird
+              title: Kornweihe
+              icon: norhar1
+            - type: bird
+              title: Wiesenweihe
+              icon: monhar1
+            - type: bird
+              title: Steppenweihe
+              icon: palhar1
+
+    - type: group
+      title: Eulen
+      tag: Eule
+      bg: "./src/img/habitat-night.png"
+      items:
+        - type: bird
+          title: Waldkauz
+          icon: tawowl1
+          favorite: true
+        - type: bird
+          title: Schleiereule
+          icon: webowl1
+        - type: bird
+          title: Steinkauz
+          icon: litowl1
+          favorite: true
+        - type: bird
+          title: Uhu
+          icon: eueowl1
+        - type: bird
+          title: Sumpfohreule
+          icon: sheowl
+        - type: bird
+          title: Raufußkauz
+          icon: borowl
+        - type: bird
+          title: Sperlingskauz
+          icon: eupowl1
+        - type: bird
+          title: Waldohreule
+          icon: loeowl
+    - type: group
+      title: Hühner-vögel
+      tag: Hühnervogel
+      bg: "./src/img/habitat-acker.png"
+      items:
+        - type: bird
+          title: Jagdfasan
+          icon: rinphe1
+        - type: bird
+          title: Rebhuhn
+          icon: grypar
+        - type: bird
+          title: Auerhuhn
+          icon: wescap1
+        - type: bird
+          title: Birkhuhn
+          icon: blagro1
+        - type: bird
+          title: Alpenschneehuhn
+          icon: rocpta1
+        - type: bird
+          title: Wachtel
+          icon: comqua1
+    - type: group
+      title: Kraniche
+      tag: Kranich
+      bg: "./src/img/habitat-steppe.png"
+      items:
+        - type: bird
+          title: Kranich
+          icon: comcra
+        - type: bird
+          title: Grauhals-Kronenkranich
+          icon: grccra1
+          exotic: true
+    - type: group
+      title: Ibisse
+      tag: Ibis
+      bg: "./src/img/habitat-marsh.png"
+      items:
+        - type: bird
+          title: Löffler
+          icon: eurspo1
+        - type: bird
+          title: Sichler
+          icon: gloibi
+        - type: bird
+          title: Waldrapp
+          icon: waldra1
+    - type: group
+      title: Störche
+      tag: Storche
+      bg: "./src/img/habitat-river.png"
+      items:
+        - type: bird
+          title: Weißstorch
+          icon: whisto1
+        - type: bird
+          title: Schwarzstorch
+          icon: blasto1
+    - type: group
+      title: Tauben
+      tag: Taube
+      bg: "./src/img/habitat-garten.png"
+      items:
+        - type: bird
+          title: Ringeltaube
+          icon: cowpig1
+        - type: bird
+          title: Türkentaube
+          icon: eucdov
+        - type: bird
+          title: Hohltaube
+          icon: stodov1
+        - type: bird
+          title: Turteltaube
+          icon: eutdov
+        - type: bird
+          title: Felsentaube
+          icon: rocpig
+
+    - type: group
+      title: Papageien
+      tag: Papagei
+      bg: "./src/img/habitat-jungle.png"
+      items:
+        - type: bird
+          title: Halsbandsittich
+          icon: rorpar
+        - type: bird
+          title: Alexandersittich
+          icon: alepar2
+        - type: bird
+          title: Wellensittich
+          icon: budger
+
+    - type: group
+      title: Horn-vögel
+      tag: Hornvogel
+      bg: "./src/img/habitat-savanne.png"
+      items:
+        - title: Wiedehopf
+          type: bird
+          icon: hoopoe
