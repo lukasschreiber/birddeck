@@ -18,6 +18,12 @@ $defs:
         type: string
       model:
         type: string
+      image_size:
+        type: integer
+        minimum: 16
+        maximum: 1024
+        default: 72
+        description: Square key image size in pixels; rendered at 288 pixels or higher before downscaling.
       size:
         type: object
         required: [columns, rows]

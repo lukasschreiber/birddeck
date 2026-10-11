@@ -18,8 +18,9 @@ from config_validation import load_icons, validate_icons
 from paths import ROOT_DIR
 
 
-def render_preview(entry, icons):
+def render_preview(entry, icons, pixels=288):
     from gen_image import generate_image
+    from profile_images import save_key_image
     kind = entry.get('type')
     if kind not in ('bird', 'group', 'uncertain'):
         raise ValueError('Invalid entry type')
@@ -35,9 +36,10 @@ def render_preview(entry, icons):
         image_path = (ROOT_DIR / background).resolve()
         if not image_path.is_relative_to((ROOT_DIR / 'assets').resolve()):
             raise ValueError('Preview background must be inside assets/')
-    image = generate_image(icon, background, (288, 288), favorite=entry.get('favorite', False), exotic=entry.get('exotic', False))
+    render_pixels = max(288, pixels)
+    image = generate_image(icon, background, (render_pixels, render_pixels), favorite=entry.get('favorite', False), exotic=entry.get('exotic', False), corner_radius=round(render_pixels * 40 / 288))
     buffer = BytesIO()
-    image.save(buffer, format='PNG')
+    save_key_image(image, buffer, pixels)
     return buffer.getvalue()
 
 

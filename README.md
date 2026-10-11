@@ -29,6 +29,20 @@ to the repository's configuration and output directory. Each build uses an
 isolated temporary directory that is removed automatically when the build ends.
 Existing profiles with the same filename are replaced.
 
+Set `profile.image_size` in `config/config.yaml` to control the square exported
+key image resolution. It defaults to `72` (72×72 pixels). For example:
+
+```yaml
+profile:
+  image_size: 72
+```
+
+Images are rendered at 288 pixels or higher, then resized with Lanczos and saved
+as optimized PNGs. Navigation images use the same output resolution. Supported
+values are integers from 16 to 1024.
+
+Browser previews use 288×288 images independently of the export resolution.
+
 ## Browser entry editor
 
 ```powershell

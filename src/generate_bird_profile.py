@@ -18,6 +18,7 @@ from PIL import Image
 from pagination import paginate_elements, sort_elements
 from paths import CONFIG_DIR, IMAGE_DIR, OUTPUT_DIR
 from config_validation import validate_icons
+from profile_images import image_size, save_key_image
 
 def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR):
     """Build a profile without modifying other outputs or temporary files."""
@@ -29,6 +30,8 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
         with config_path.open("r", encoding="utf-8-sig") as f:
             config = yaml.safe_load(f)
             validate_icons(config)
+            pixels = image_size(config['profile'])
+            render_pixels = max(288, pixels)
 
             profile_name = config["profile"]["name"]
             if not isinstance(profile_name, str) or not profile_name.strip():
@@ -78,7 +81,7 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                         page_folder, "Images", f"{previous_image_uuid}.png"
                     )
 
-                    previous_image.save(previous_image_path)
+                    save_key_image(previous_image, previous_image_path, pixels)
 
                     elements[f"0,0"] = generate_open_parent_folder_action(
                         image_uuid=previous_image_uuid,
@@ -92,7 +95,7 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                     next_image_path = os.path.join(
                         page_folder, "Images", f"{next_image_uuid}.png"
                     )
-                    next_image.save(next_image_path)
+                    save_key_image(next_image, next_image_path, pixels)
 
                     elements[
                         f"{config['profile']['size']['columns'] - 1},{config['profile']['size']['rows'] - 1}"
@@ -159,14 +162,15 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                             exotic=entry.get("exotic", False),
                             favorite=entry.get("favorite", False),
                             background=entry.get("bg", entry.get("color", "#ffffff")),
-                            size=(288, 288),
+                            size=(render_pixels, render_pixels),
+                            corner_radius=round(render_pixels * 40 / 288),
                         )
 
                         folder_image_uuid = profile_folder_id(str(uuid.uuid4()))
                         folder_image_path = os.path.join(
                             page_folder, "Images", f"{folder_image_uuid}.png"
                         )
-                        folder_image.save(folder_image_path)
+                        save_key_image(folder_image, folder_image_path, pixels)
 
                         # Link to the first subpage of the group
                         elements[f"{col},{row}"] = generate_folder_action(
@@ -182,14 +186,15 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                             exotic=entry.get("exotic", False),
                             favorite=entry.get("favorite", False),
                             background=entry.get("color", "#ffffff"),
-                            size=(288, 288),
+                            size=(render_pixels, render_pixels),
+                            corner_radius=round(render_pixels * 40 / 288),
                         )
 
                         bird_image_uuid = profile_folder_id(str(uuid.uuid4()))
                         bird_image_path = os.path.join(
                             page_folder, "Images", f"{bird_image_uuid}.png"
                         )
-                        bird_image.save(bird_image_path)
+                        save_key_image(bird_image, bird_image_path, pixels)
 
                         elements[f"{col},{row}"] = generate_bird_action(
                             bird_name=entry["title"],
@@ -201,14 +206,15 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
                         bird_image = generate_image(
                             ebird_id="",
                             background=str(IMAGE_DIR / "unknown-bird.png"),
-                            size=(288, 288),
+                            size=(render_pixels, render_pixels),
+                            corner_radius=round(render_pixels * 40 / 288),
                         )
 
                         bird_image_uuid = profile_folder_id(str(uuid.uuid4()))
                         bird_image_path = os.path.join(
                             page_folder, "Images", f"{bird_image_uuid}.png"
                         )
-                        bird_image.save(bird_image_path)
+                        save_key_image(bird_image, bird_image_path, pixels)
 
                         elements[f"{col},{row}"] = generate_bird_action(
                             bird_name=parent_name + " (?)",

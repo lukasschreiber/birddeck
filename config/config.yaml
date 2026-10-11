@@ -4,6 +4,7 @@ profile:
   name: BirdDeck
   lightroom: C:\Program Files\Adobe\Adobe Lightroom Classic\Lightroom.exe
   model: 20GBA9901
+  image_size: 72
   size:
     columns: 5
     rows: 3
@@ -146,6 +147,10 @@ profile:
             - type: bird
               title: Steinschmätzer
               icon: norwhe
+            - type: bird
+              title: Zwergschnäpper
+              icon: rebfly
+              exotic: true
         - type: group
           title: Grasmücke
           icon: blackc1
