@@ -334,6 +334,15 @@ profile:
             - type: bird
               title: Brachpieper
               icon: tawpip1
+            - type: bird
+              title: Bergpieper
+              icon: watpip1
+            - type: bird
+              title: Rotkehlpieper
+              icon: retpip
+            - type: bird
+              title: Zitronenstelze
+              icon: citwag
         - type: bird
           title: Wasseramsel
           icon: whtdip1
