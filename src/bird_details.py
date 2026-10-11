@@ -1,23 +1,49 @@
 """Native folder pages for bird-specific actions."""
 import json
 import uuid
+import base64
+import os
 from pathlib import Path
 from gen_uuid import profile_folder_id
 from gen_action import generate_bird_action, generate_folder_action, generate_open_parent_folder_action, FolderType
 from profile_images import save_key_image
 from paths import ROOT_DIR
-from PIL import Image
+from PIL import Image, ImageDraw
 from functools import lru_cache
 
 
-@lru_cache(maxsize=2)
+@lru_cache(maxsize=3)
 def action_image(name):
+    if name == 'copy':
+        canvas = Image.new('RGB', (288, 288), 'black')
+        draw = ImageDraw.Draw(canvas)
+        draw.rounded_rectangle((93, 69, 187, 181), radius=8, outline='white', width=7)
+        draw.rounded_rectangle((113, 87, 207, 199), radius=8, fill='black', outline='white', width=7)
+        return canvas
     with Image.open(ROOT_DIR / 'assets' / 'actions' / f'{name}.png') as source:
         icon = source.convert('RGBA')
     icon.thumbnail((144, 144), Image.Resampling.LANCZOS)
     canvas = Image.new('RGB', (288, 288), 'black')
     canvas.paste(icon, ((288 - icon.width) // 2, 24 + (216 - icon.height) // 2), icon)
     return canvas
+
+
+def copy_name_action(name, image_uuid):
+    literal = name.replace("'", "''")
+    encoded = base64.b64encode(f"Set-Clipboard -Value '{literal}'".encode('utf-16-le')).decode('ascii')
+    executable = str(Path(os.environ.get('SystemRoot', 'C:/Windows')) / 'System32' / 'WindowsPowerShell' / 'v1.0' / 'powershell.exe')
+    return {
+        'ActionID': str(uuid.uuid4()), 'LinkedTitle': True, 'Name': 'Open Application',
+        'UUID': 'com.elgato.streamdeck.system.openapp',
+        'Plugin': {'Name': 'Open Application', 'UUID': 'com.elgato.streamdeck.system.openapp', 'Version': '1.0'},
+        'Settings': {'app_name': 'Copy bird name', 'exec': executable,
+                     'args': f'-NoProfile -NonInteractive -STA -WindowStyle Hidden -EncodedCommand {encoded}',
+                     'bring_to_front': False, 'is_bundle': False, 'long_press': False,
+                     'bundle_id': '', 'bundle_path': '', 'source': ''},
+        'State': 0,
+        'States': [{'Image': f'Images/{image_uuid}.png', 'Title': 'Copy', 'TitleAlignment': 'bottom',
+                    'FontSize': 9, 'TitleColor': '#ffffff', 'ShowTitle': True, 'OutlineThickness': 2}],
+    }
 
 
 def create_bird_details(profiles_folder, entry, image, pixels, lightroom, columns, uncertain=False):
@@ -44,6 +70,9 @@ def create_bird_details(profiles_folder, entry, image, pixels, lightroom, column
             'Settings': {'path': f"https://ebird.org/species/{entry['icon']}"}, 'State': 0,
             'States': [{**tagging['States'][0], 'Title': 'eBird', 'Image': f'Images/{ebird_image_uuid}.png'}],
         }
+    copy_image_uuid = profile_folder_id(str(uuid.uuid4()))
+    save_key_image(action_image('copy'), page / 'Images' / f'{copy_image_uuid}.png', pixels)
+    actions[position(3 if entry.get('icon') else 2)] = copy_name_action(entry['title'], copy_image_uuid)
     (page / 'manifest.json').write_text(json.dumps({'Controllers': [{'Actions': actions, 'Type': 'Keypad'}]}, indent=4), encoding='utf-8')
     return page_uuid
 
