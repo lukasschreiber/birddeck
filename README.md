@@ -16,6 +16,38 @@ Import `output/BirdDeck.streamDeckProfile` into Stream Deck. Lightroom keywords
 are regenerated in `output/LightroomKeywords.txt` whenever a profile is created.
 Custom `--config` and `--output-dir` options apply to both generated files.
 
+## Single-file installation on another laptop
+
+Install Elgato's packaging CLI once on the build laptop (requires Node.js/npm):
+
+```powershell
+npm install -g @elgato/cli
+uv run python cli.py package
+```
+
+Copy `output/de.birdtagging.names.streamDeckPlugin` to the other Windows laptop
+and double-click it with Stream Deck 6.6 or newer installed. Accept Stream Deck's
+bundled-profile installation prompt. The installer includes the scrolling-name
+plugin, generated BirdDeck profile, key images, and action settings. Python,
+Node.js, and the repository are only needed on the build laptop.
+
+The package command rebuilds from YAML each time and overwrites the previous
+installer. It supports the same `--config` and `--output-dir` options as `create`.
+It stages the plugin in a temporary directory, leaving the source plugin untouched,
+and uses Elgato's CLI to validate and pack it.
+
+The default `--device-type 0` targets the configured standard 15-key Stream Deck.
+For other hardware, configure the matching `profile.model` and `profile.size`
+and pass the matching Elgato device type (Mini: `1`, XL: `2`, +: `7`, Neo: `9`).
+
+Lightroom Classic must be installed separately. Set `profile.lightroom` to its
+path on the receiving laptop before building. `output/LightroomKeywords.txt`
+remains a separate optional Lightroom import; installing the plugin does not
+import Lightroom keywords.
+
+See Elgato's [bundled profiles](https://docs.elgato.com/streamdeck/sdk/guides/profiles/)
+and [plugin packaging](https://docs.elgato.com/streamdeck/cli/commands/pack/) documentation.
+
 ## Profile CLI
 
 ```powershell
