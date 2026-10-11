@@ -29,6 +29,45 @@ to the repository's configuration and output directory. Each build uses an
 isolated temporary directory that is removed automatically when the build ends.
 Existing profiles with the same filename are replaced.
 
+## Browser entry editor
+
+```powershell
+uv run python cli.py edit
+uv run python cli.py edit --config config/config.yaml
+uv run python cli.py edit --no-browser --port 8765
+```
+
+The CLI starts a local server and opens your browser.
+The browser UI uses TypeScript, React, Material UI's default theme, and MUI X
+Tree View. Node.js and npm are
+needed to build it; the CLI installs the locked frontend dependencies and builds
+the UI automatically on first launch. After frontend edits it rebuilds as needed.
+
+Keep the command running while editing; press Ctrl+C in the terminal to stop it. `--no-browser` prints
+the URL instead of opening it automatically.
+
+Search and browse the hierarchy on the left and select an entry to edit its form on the
+right. Select a group or the profile root and choose **Add child** to add a bird,
+group, or uncertain entry. Entry types are fixed when updating existing entries
+so changing a group cannot accidentally remove its children.
+
+Icon IDs are validated against `data/icons.json`; partial IDs show matching
+suggestions. Birds require an icon, while groups can leave it empty. Unknown
+icons are rejected by both the editor and profile creation.
+
+Choose **Save entry** to save the form to YAML. **Reset** discards the
+current form. The browser asks before discarding unsaved changes. Comments and Unicode are
+preserved, and saves are blocked if another program changes the configuration.
+Rebuild with `uv run python cli.py create` to export your changes.
+
+Frontend development checks:
+
+```powershell
+npm --prefix web run typecheck
+npm --prefix web run format
+npm --prefix web run build
+```
+
 The downloader skips existing icons. Profile generation uses local icons when
 available and downloads missing images into the image cache. Refresh the asset
 ID mapping with `uv run python scripts/extract-icons.py`.

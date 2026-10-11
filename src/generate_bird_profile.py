@@ -17,6 +17,7 @@ from PIL import Image
 
 from pagination import paginate_elements, sort_elements
 from paths import CONFIG_DIR, IMAGE_DIR, OUTPUT_DIR
+from config_validation import validate_icons
 
 def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR):
     """Build a profile without modifying other outputs or temporary files."""
@@ -27,6 +28,7 @@ def create_profile(config_path=CONFIG_DIR / "config.yaml", output_dir=OUTPUT_DIR
         temp_folder = Path(workspace)
         with config_path.open("r", encoding="utf-8-sig") as f:
             config = yaml.safe_load(f)
+            validate_icons(config)
 
             profile_name = config["profile"]["name"]
             if not isinstance(profile_name, str) or not profile_name.strip():

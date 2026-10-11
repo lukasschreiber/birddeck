@@ -9,6 +9,7 @@ __pycache__/
 
 # Node.js dependencies and build metadata
 node_modules/
+/web/dist/
 *.tsbuildinfo
 
 # Generated Stream Deck plugin code and logs
