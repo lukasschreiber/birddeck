@@ -25,36 +25,43 @@ profile:
               scientific_name: Turdus merula
               english_name: Eurasian Blackbird
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/amsel/
+              anytag_id: '1969880'
             - type: bird
               title: Singdrossel
               icon: sonthr1
               scientific_name: Turdus philomelos
               english_name: Song Thrush
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/singdrossel/
+              anytag_id: '1969614'
             - type: bird
               title: Misteldrossel
               icon: misthr1
               scientific_name: Turdus viscivorus
               english_name: Mistle Thrush
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/misteldrossel/
+              anytag_id: '1975905'
             - type: bird
               title: Rotdrossel
               icon: redwin
               scientific_name: Turdus iliacus
               english_name: Redwing
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotdrossel/
+              anytag_id: '1975907'
             - type: bird
               title: Wacholderdrossel
               icon: fieldf
               scientific_name: Turdus pilaris
               english_name: Fieldfare
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wacholderdrossel/
+              anytag_id: '1970156'
             - type: bird
               title: Ringdrossel
               icon: rinouz1
               scientific_name: Turdus torquatus
               english_name: Ring Ouzel
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ringdrossel/
+              anytag_id: '1975911'
+          anytag_id: '1975899'
         - type: group
           title: Meise
           favorite: true
@@ -66,54 +73,63 @@ profile:
               scientific_name: Parus major
               english_name: Great Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kohlmeise/
+              anytag_id: '1969468'
             - type: bird
               title: Blaumeise
               icon: blutit
               scientific_name: Cyanistes caeruleus
               english_name: Eurasian Blue Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaumeise/
+              anytag_id: '1963321'
             - type: bird
               title: Tannenmeise
               icon: coatit2
               scientific_name: Periparus ater
               english_name: Coal Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tannenmeise/
+              anytag_id: '1975919'
             - type: bird
               title: Sumpfmeise
               icon: martit2
               scientific_name: Poecile palustris
               english_name: Marsh Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpfmeise/
+              anytag_id: '1975921'
             - type: bird
               title: Weidenmeise
               icon: wiltit1
               scientific_name: Poecile montanus
               english_name: Willow Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weidenmeise/
+              anytag_id: '1975923'
             - type: bird
               title: Haubenmeise
               icon: cretit2
               scientific_name: Lophophanes cristatus
               english_name: Crested Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haubenmeise/
+              anytag_id: '1975925'
             - type: bird
               title: Schwanzmeise
               icon: lottit1
               scientific_name: Aegithalos caudatus
               english_name: Long-tailed Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwanzmeise/
+              anytag_id: '1975927'
             - type: bird
               title: Bartmeise
               icon: bearee1
               scientific_name: Panurus biarmicus
               english_name: Bearded Reedling
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bartmeise/
+              anytag_id: '1963377'
             - type: bird
               title: Beutelmeise
               icon: euptit1
               scientific_name: Remiz pendulinus
               english_name: Eurasian Penduline-Tit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/beutelmeise/
+              anytag_id: '1975931'
             - type: bird
               title: Buntmeise
               icon: vartit1
@@ -121,6 +137,7 @@ profile:
               english_name: Varied Tit
               exotic: true
               country: KR
+              anytag_id: '3309315'
             - type: bird
               title: Graukohlmeise
               icon: cintit13
@@ -128,6 +145,8 @@ profile:
               english_name: Asian Tit
               exotic: true
               country: KR
+              anytag_id: '3380899'
+          anytag_id: '1975913'
         - type: group
           title: Fink
           icon: comcha
@@ -138,84 +157,99 @@ profile:
               scientific_name: Fringilla coelebs
               english_name: Common Chaffinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/buchfink/
+              anytag_id: '1975935'
             - type: bird
               title: Grünfink
               icon: eurgre1
               scientific_name: Chloris chloris
               english_name: European Greenfinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenfink/
+              anytag_id: '1972222'
             - type: bird
               title: Bluthänfling
               icon: eurlin1
               scientific_name: Linaria cannabina
               english_name: Eurasian Linnet
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bluthaenfling/
+              anytag_id: '1972212'
             - type: bird
               title: Berghänfling
               icon: twite1
               scientific_name: Linaria flavirostris
               english_name: Twite
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/berghaenfling/
+              anytag_id: '1975941'
             - type: bird
               title: Bergfink
               icon: brambl
               scientific_name: Fringilla montifringilla
               english_name: Brambling
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bergfink/
+              anytag_id: '1975943'
             - type: bird
               title: Girlitz
               icon: eurser1
               scientific_name: Serinus serinus
               english_name: European Serin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/girlitz/
+              anytag_id: '1975945'
             - type: bird
               title: Stieglitz
               icon: eurgol
               scientific_name: Carduelis carduelis
               english_name: European Goldfinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/stieglitz/
+              anytag_id: '1969672'
             - type: bird
               title: Gimpel
               icon: eurbul
               scientific_name: Pyrrhula pyrrhula
               english_name: Eurasian Bullfinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gimpel/
+              anytag_id: '1975949'
             - type: bird
               title: Kernbeißer
               icon: hawfin
               scientific_name: Coccothraustes coccothraustes
               english_name: Hawfinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kernbeisser/
+              anytag_id: '1975951'
             - type: bird
               title: Erlenzeisig
               icon: eursis
               scientific_name: Spinus spinus
               english_name: Eurasian Siskin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/erlenzeisig/
+              anytag_id: '1975953'
             - type: bird
               title: Birkenzeisig
               icon: redpol1
               scientific_name: Acanthis flammea
               english_name: Redpoll
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/birkenzeisig/
+              anytag_id: '1975955'
             - type: bird
               title: Fichtenkreuzschnabel
               icon: redcro
               scientific_name: Loxia curvirostra
               english_name: Red Crossbill
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/fichtenkreuzschnabel/
+              anytag_id: '1975957'
             - type: bird
               title: Zitronenzeisig
               icon: citfin1
               scientific_name: Carduelis citrinella
               english_name: Citril Finch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zitronengirlitz/
+              anytag_id: '3380901'
             - type: bird
               title: Karmingimpel
               icon: comros
               scientific_name: Carpodacus erythrinus
               english_name: Common Rosefinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/karmingimpel/
+              anytag_id: '3380903'
+          anytag_id: '1975933'
         - type: group
           title: Schnäpper
           favorite: true
@@ -227,66 +261,77 @@ profile:
               scientific_name: Ficedula hypoleuca
               english_name: European Pied Flycatcher
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trauerschnaepper/
+              anytag_id: '1975961'
             - type: bird
               title: Grauschnäpper
               icon: spofly1
               scientific_name: Muscicapa striata
               english_name: Spotted Flycatcher
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grauschnaepper/
+              anytag_id: '1975963'
             - type: bird
               title: Halsbandschnäpper
               icon: colfly1
               scientific_name: Ficedula albicollis
               english_name: Collared Flycatcher
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/halsbandschnaepper/
+              anytag_id: '1975965'
             - type: bird
               title: Schwarzkehlchen
               icon: stonec4
               scientific_name: Saxicola rubicola
               english_name: European Stonechat
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzkehlchen/
+              anytag_id: '1963413'
             - type: bird
               title: Rotkehlchen
               icon: eurrob1
               scientific_name: Erithacus rubecula
               english_name: European Robin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotkehlchen/
+              anytag_id: '1963267'
             - type: bird
               title: Gartenrotschwanz
               icon: comred2
               scientific_name: Phoenicurus phoenicurus
               english_name: Common Redstart
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gartenrotschwanz/
+              anytag_id: '1969594'
             - type: bird
               title: Hausrotschwanz
               icon: blared1
               scientific_name: Phoenicurus ochruros
               english_name: Black Redstart
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/hausrotschwanz/
+              anytag_id: '1971328'
             - type: bird
               title: Braunkehlchen
               icon: whinch1
               scientific_name: Saxicola rubetra
               english_name: Whinchat
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/braunkehlchen/
+              anytag_id: '1971912'
             - type: bird
               title: Blaukehlchen
               icon: blueth
               scientific_name: Luscinia svecica
               english_name: Bluethroat
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaukehlchen/
+              anytag_id: '1975977'
             - type: bird
               title: Nachtigall
               icon: comnig1
               scientific_name: Luscinia megarhynchos
               english_name: Common Nightingale
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nachtigall/
+              anytag_id: '1975979'
             - type: bird
               title: Steinschmätzer
               icon: norwhe
               scientific_name: Oenanthe oenanthe
               english_name: Northern Wheatear
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinschmaetzer/
+              anytag_id: '1971516'
             - type: bird
               title: Zwergschnäpper
               icon: rebfly
@@ -294,12 +339,14 @@ profile:
               english_name: Red-breasted Flycatcher
               exotic: true
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergschnaepper/
+              anytag_id: '3380905'
             - type: bird
               title: Sprosser
               icon: thrnig1
               scientific_name: Luscinia luscinia
               english_name: Thrush Nightingale
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sprosser/
+              anytag_id: '3380907'
             - type: bird
               title: Spiegelrotschwanz
               icon: daured1
@@ -307,12 +354,15 @@ profile:
               english_name: Daurian Redstart
               exotic: true
               country: KR
+              anytag_id: '3380909'
             - type: bird
               title: Steinrötel
               icon: rtrthr1
               scientific_name: Monticola saxatilis
               english_name: Rufous-tailed Rock-Thrush
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinroetel/
+              anytag_id: '3380911'
+          anytag_id: '1975959'
         - type: group
           title: Grasmücke
           icon: blackc1
@@ -323,30 +373,36 @@ profile:
               scientific_name: Sylvia atricapilla
               english_name: Eurasian Blackcap
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/moenchsgrasmuecke/
+              anytag_id: '1975985'
             - type: bird
               title: Dorngrasmücke
               icon: grewhi1
               scientific_name: Curruca communis
               english_name: Greater Whitethroat
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dorngrasmuecke/
+              anytag_id: '1971988'
             - type: bird
               title: Gartengrasmücke
               icon: garwar1
               scientific_name: Sylvia borin
               english_name: Garden Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gartengrasmuecke/
+              anytag_id: '1975989'
             - type: bird
               title: Klappergrasmücke
               icon: leswhi4
               scientific_name: Curruca curruca
               english_name: Lesser Whitethroat
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/klappergrasmuecke/
+              anytag_id: '1975991'
             - type: bird
               title: Sperbergrasmücke
               icon: barwar1
               scientific_name: Curruca nisoria
               english_name: Barred Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sperbergrasmuecke/
+              anytag_id: '3380913'
+          anytag_id: '1975983'
         - type: group
           title: Laubsänger
           icon: comchi1
@@ -357,36 +413,43 @@ profile:
               scientific_name: Phylloscopus collybita
               english_name: Common Chiffchaff
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zilpzalp/
+              anytag_id: '1969934'
             - type: bird
               title: Fitis
               icon: wlwwar
               scientific_name: Phylloscopus trochilus
               english_name: Willow Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/fitis/
+              anytag_id: '1975997'
             - type: bird
               title: Waldlaubsänger
               icon: woowar
               scientific_name: Phylloscopus sibilatrix
               english_name: Wood Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldlaubsaenger/
+              anytag_id: '1975999'
             - type: bird
               title: Berglaubsänger
               icon: webwar1
               scientific_name: Phylloscopus bonelli
               english_name: Western Bonelli's Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/berglaubsaenger/
+              anytag_id: '3380915'
             - type: bird
               title: Gelbbrauen-Laubsänger
               icon: yebwar3
               scientific_name: Phylloscopus inornatus
               english_name: Yellow-browed Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gelbbrauen-laubsaenger/
+              anytag_id: '3380917'
             - type: bird
               title: Grünlaubsänger
               icon: grewar3
               scientific_name: Phylloscopus trochiloides
               english_name: Greenish Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenlaubsaenger/
+              anytag_id: '3380919'
+          anytag_id: '1975993'
         - type: group
           title: Lerche
           icon: skylar
@@ -397,25 +460,31 @@ profile:
               scientific_name: Alauda arvensis
               english_name: Eurasian Skylark
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/feldlerche/
+              anytag_id: '1972240'
             - type: bird
               title: Heidelerche
               icon: woolar1
               scientific_name: Lullula arborea
               english_name: Wood Lark
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/heidelerche/
+              anytag_id: '1976005'
             - type: bird
               title: Haubenlerche
               icon: crelar1
               scientific_name: Galerida cristata
               english_name: Crested Lark
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haubenlerche/
+              anytag_id: '1976007'
             - type: bird
               title: Ohrenlerche
               icon: horlar
               scientific_name: Eremophila alpestris
               english_name: Horned Lark
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ohrenlerche/
+              anytag_id: '1976009'
             - type: uncertain
+              anytag_id: '1976011'
+          anytag_id: '1976001'
         - type: group
           title: Sperling
           icon: houspa
@@ -426,18 +495,21 @@ profile:
               scientific_name: Passer domesticus
               english_name: House Sparrow
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haussperling/
+              anytag_id: '1971342'
             - type: bird
               title: Feldsperling
               icon: eutspa
               scientific_name: Passer montanus
               english_name: Eurasian Tree Sparrow
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/feldsperling/
+              anytag_id: '1969722'
             - type: bird
               title: Schneesperling
               icon: whwsno1
               scientific_name: Montifringilla nivalis
               english_name: White-winged Snowfinch
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schneesperling/
+              anytag_id: '3380921'
             - type: bird
               title: Keniasperling
               icon: kerspa2
@@ -445,6 +517,8 @@ profile:
               english_name: Kenya Rufous Sparrow
               exotic: true
               country: TZ
+              anytag_id: '3380923'
+          anytag_id: '1976013'
         - type: group
           title: Schwirl
           icon: savwar1
@@ -455,18 +529,22 @@ profile:
               scientific_name: Locustella luscinioides
               english_name: Savi's Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrschwirl/
+              anytag_id: '1976021'
             - type: bird
               title: Feldschwirl
               icon: cogwar1
               scientific_name: Locustella naevia
               english_name: Common Grasshopper Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/feldschwirl/
+              anytag_id: '1976023'
             - type: bird
               title: Schlagschwirl
               icon: eurwar2
               scientific_name: Locustella fluviatilis
               english_name: River Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schlagschwirl/
+              anytag_id: '3380925'
+          anytag_id: '1976019'
         - type: group
           title: Ammer
           icon: yellow2
@@ -477,54 +555,64 @@ profile:
               scientific_name: Emberiza citrinella
               english_name: Yellowhammer
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/goldammer/
+              anytag_id: '1976027'
             - type: bird
               title: Ortolan
               icon: ortbun1
               scientific_name: Emberiza hortulana
               english_name: Ortolan Bunting
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ortolan/
+              anytag_id: '1976029'
             - type: bird
               title: Grauammer
               icon: corbun1
               scientific_name: Emberiza calandra
               english_name: Corn Bunting
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grauammer/
+              anytag_id: '1976031'
             - type: bird
               title: Rohrammer
               icon: reebun
               scientific_name: Emberiza schoeniclus
               english_name: Reed Bunting
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrammer/
+              anytag_id: '1976033'
             - type: bird
               title: Zaunammer
               icon: cirbun1
               scientific_name: Emberiza cirlus
               english_name: Cirl Bunting
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zaunammer/
+              anytag_id: '1976035'
             - type: bird
               title: Zippammer
               icon: rocbun1
               scientific_name: Emberiza cia
               english_name: Rock Bunting
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zippammer/
+              anytag_id: '3380927'
             - type: bird
               title: Schneeammer
               icon: snobun
               scientific_name: Plectrophenax nivalis
               english_name: Snow Bunting
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schneeammer/
+              anytag_id: '3380929'
             - type: bird
               title: Spornammer
               icon: laplon
               scientific_name: Calcarius lapponicus
               english_name: Lapland Longspur
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spornammer/
+              anytag_id: '3380931'
+          anytag_id: '1976025'
         - type: bird
           title: Zaunkönig
           icon: winwre4
           scientific_name: Troglodytes troglodytes
           english_name: Eurasian Wren
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zaunkoenig/
+          anytag_id: '1976037'
         - type: group
           title: Goldhähnchen
           icon: goldcr1
@@ -535,18 +623,22 @@ profile:
               scientific_name: Regulus regulus
               english_name: Goldcrest
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wintergoldhaehnchen/
+              anytag_id: '1969482'
             - type: bird
               title: Sommergoldhähnchen
               icon: firecr1
               scientific_name: Regulus ignicapilla
               english_name: Common Firecrest
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sommergoldhaehnchen/
+              anytag_id: '1976043'
+          anytag_id: '1976039'
         - type: bird
           title: Kleiber
           icon: eurnut2
           scientific_name: Sitta europaea
           english_name: Eurasian Nuthatch
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kleiber/
+          anytag_id: '1971822'
         - type: group
           title: Baumläufer
           icon: eurtre1
@@ -557,36 +649,43 @@ profile:
               scientific_name: Certhia brachydactyla
               english_name: Short-toed Treecreeper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gartenbaumlaeufer/
+              anytag_id: '1976051'
             - type: bird
               title: Waldbaumläufer
               icon: eurtre1
               scientific_name: Certhia familiaris
               english_name: Eurasian Treecreeper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldbaumlaeufer/
+              anytag_id: '1976053'
+          anytag_id: '1976049'
         - type: bird
           title: Seidenschwanz
           icon: bohwax
           scientific_name: Bombycilla garrulus
           english_name: Bohemian Waxwing
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seidenschwanz/
+          anytag_id: '1976055'
         - type: bird
           title: Mauerläufer
           icon: wallcr1
           scientific_name: Tichodroma muraria
           english_name: Wallcreeper
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mauerlaeufer/
+          anytag_id: '1976057'
         - type: bird
           title: Pirol
           icon: eugori2
           scientific_name: Oriolus oriolus
           english_name: Eurasian Golden Oriole
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/pirol/
+          anytag_id: '1976059'
         - type: bird
           title: Kuckuck
           icon: comcuc
           scientific_name: Cuculus canorus
           english_name: Common Cuckoo
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kuckuck/
+          anytag_id: '1971462'
         - type: group
           title: Schwalbe
           icon: barswa
@@ -597,36 +696,42 @@ profile:
               scientific_name: Delichon urbicum
               english_name: Western House-Martin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mehlschwalbe/
+              anytag_id: '1976065'
             - type: bird
               title: Rauchschwalbe
               icon: barswa
               scientific_name: Hirundo rustica
               english_name: Barn Swallow
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rauchschwalbe/
+              anytag_id: '1976067'
             - type: bird
               title: Uferschwalbe
               icon: banswa
               scientific_name: Riparia riparia
               english_name: Bank Swallow
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/uferschwalbe/
+              anytag_id: '1976069'
             - type: bird
               title: Mauersegler
               icon: comswi
               scientific_name: Apus apus
               english_name: Common Swift
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mauersegler/
+              anytag_id: '1969708'
             - type: bird
               title: Alpensegler
               icon: alpswi1
               scientific_name: Tachymarptis melba
               english_name: Alpine Swift
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpensegler/
+              anytag_id: '3380933'
             - type: bird
               title: Felsenschwalbe
               icon: eurcrm1
               scientific_name: Ptyonoprogne rupestris
               english_name: Eurasian Crag-Martin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/felsenschwalbe/
+              anytag_id: '3380935'
             - type: bird
               title: Pazifiksegler
               icon: fotswi
@@ -634,6 +739,8 @@ profile:
               english_name: Pacific Swift
               exotic: true
               country: KR
+              anytag_id: '3380937'
+          anytag_id: '1976063'
         - type: group
           title: Rohrsänger
           icon: eurwar1
@@ -644,42 +751,50 @@ profile:
               scientific_name: Acrocephalus scirpaceus
               english_name: Common Reed Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/teichrohrsaenger/
+              anytag_id: '1972302'
             - type: bird
               title: Sumpfrohrsänger
               icon: marwar3
               scientific_name: Acrocephalus palustris
               english_name: Marsh Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpfrohrsaenger/
+              anytag_id: '1976077'
             - type: bird
               title: Schilfrohrsänger
               icon: sedwar1
               scientific_name: Acrocephalus schoenobaenus
               english_name: Sedge Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schilfrohrsaenger/
+              anytag_id: '1976079'
             - type: bird
               title: Drosselrohrsänger
               icon: grrwar1
               scientific_name: Acrocephalus arundinaceus
               english_name: Great Reed Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/drosselrohrsaenger/
+              anytag_id: '1976081'
             - type: bird
               title: Seggenrohrsänger
               icon: aquwar1
               scientific_name: Acrocephalus paludicola
               english_name: Aquatic Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seggenrohrsaenger/
+              anytag_id: '3380939'
             - type: bird
               title: Gelbspötter
               icon: ictwar1
               scientific_name: Hippolais icterina
               english_name: Icterine Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gelbspoetter/
+              anytag_id: '3380941'
             - type: bird
               title: Orpheusspötter
               icon: melwar1
               scientific_name: Hippolais polyglotta
               english_name: Melodious Warbler
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/orpheusspoetter/
+              anytag_id: '3380943'
+          anytag_id: '1976073'
         - type: group
           title: Stelzen
           icon: whiwag
@@ -690,29 +805,35 @@ profile:
               scientific_name: Motacilla alba
               english_name: White Wagtail
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bachstelze/
+              anytag_id: '1969534'
             - type: bird
               title: Gebirgsstelze
               icon: grywag
               scientific_name: Motacilla cinerea
               english_name: Gray Wagtail
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gebirgsstelze/
+              anytag_id: '3380949'
             - type: bird
               title: Schafstelze
               icon: eaywag1
               scientific_name: Motacilla flava
               english_name: Western Yellow Wagtail
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schafstelze/
+              anytag_id: '1971556'
             - type: bird
               title: Zitronenstelze
               icon: citwag
               scientific_name: Motacilla citreola
               english_name: Citrine Wagtail
+              anytag_id: '3380953'
+          anytag_id: '3380945'
         - type: bird
           title: Wasseramsel
           icon: whtdip1
           scientific_name: Cinclus cinclus
           english_name: White-throated Dipper
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wasseramsel/
+          anytag_id: '1976095'
         - type: group
           title: Racke
           icon: eubeat1
@@ -723,6 +844,7 @@ profile:
               scientific_name: Merops apiaster
               english_name: European Bee-eater
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bienenfresser/
+              anytag_id: '1976101'
             - type: bird
               title: Blauracke
               exotic: true
@@ -730,6 +852,7 @@ profile:
               scientific_name: Coracias garrulus
               english_name: European Roller
               country: TZ
+              anytag_id: '1976103'
             - type: bird
               title: Gabelracke
               exotic: true
@@ -738,6 +861,8 @@ profile:
               scientific_name: Coracias caudatus
               english_name: Lilac-breasted Roller
               country: TZ
+              anytag_id: '1976105'
+          anytag_id: '1976097'
         - type: group
           title: Braunellen
           icon: dunnoc1
@@ -749,13 +874,16 @@ profile:
               english_name: Dunnock
               favorite: true
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/heckenbraunelle/
+              anytag_id: '1971576'
             - type: bird
               title: Alpenbraunelle
               icon: alpacc1
               scientific_name: Prunella collaris
               english_name: Alpine Accentor
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpenbraunelle/
+              anytag_id: '3380959'
           tag: Braunelle
+          anytag_id: '3380955'
         - type: group
           title: Würger
           icon: rebshr1
@@ -766,17 +894,20 @@ profile:
               scientific_name: Lanius collurio
               english_name: Red-backed Shrike
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/neuntoeter/
+              anytag_id: '1969680'
             - type: bird
               title: Raubwürger
               icon: norshr1
               scientific_name: Lanius excubitor
               english_name: Great Gray Shrike
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raubwuerger/
+              anytag_id: '3380965'
             - type: bird
               title: Isabellwürger
               icon: isashr1
               scientific_name: Lanius isabellinus
               english_name: Isabelline Shrike
+              anytag_id: '3380967'
             - type: bird
               title: Braunwürger
               icon: brnshr
@@ -784,13 +915,16 @@ profile:
               english_name: Brown Shrike
               exotic: true
               country: KR
+              anytag_id: '3311137'
             - type: bird
               title: Rotkopfwürger
               icon: wooshr1
               scientific_name: Lanius senator
               english_name: Woodchat Shrike
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotkopfwuerger/
+              anytag_id: '3380971'
           tag: Würger
+          anytag_id: '3380961'
         - type: group
           title: Stare
           icon: eursta
@@ -801,6 +935,7 @@ profile:
               scientific_name: Sturnus vulgaris
               english_name: European Starling
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/star/
+              anytag_id: '1970148'
             - type: bird
               title: Rosenstar
               icon: rossta2
@@ -808,6 +943,7 @@ profile:
               english_name: Rosy Starling
               exotic: true
               country: RU
+              anytag_id: '3380975'
             - type: bird
               title: Dreifarben-Glanzstar
               icon: supsta1
@@ -815,6 +951,7 @@ profile:
               english_name: Superb Starling
               exotic: true
               country: TZ
+              anytag_id: '3380977'
             - type: bird
               title: Rotschwingenstar
               icon: rewsta1
@@ -822,6 +959,7 @@ profile:
               english_name: Red-winged Starling
               exotic: true
               country: TZ
+              anytag_id: '3380979'
             - type: bird
               title: Hildebrandtglanzstar
               icon: hilsta1
@@ -829,6 +967,7 @@ profile:
               english_name: Hildebrandt's Starling
               exotic: true
               country: TZ
+              anytag_id: '3380981'
             - type: bird
               title: Grauglanzstar
               icon: ashsta2
@@ -836,6 +975,7 @@ profile:
               english_name: Ashy Starling
               exotic: true
               country: TZ
+              anytag_id: '3380983'
             - type: bird
               title: Lappenstar
               icon: watsta1
@@ -843,6 +983,7 @@ profile:
               english_name: Wattled Starling
               exotic: true
               country: TZ
+              anytag_id: '3380985'
           tag: Star
         - type: group
           title: Pieper
@@ -854,43 +995,51 @@ profile:
               scientific_name: Anthus spinoletta
               english_name: Water Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bergpieper/
+              anytag_id: '3380989'
             - type: bird
               title: Brachpieper
               icon: tawpip1
               scientific_name: Anthus campestris
               english_name: Tawny Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brachpieper/
+              anytag_id: '3380991'
             - type: bird
               title: Rotkehlpieper
               icon: retpip
               scientific_name: Anthus cervinus
               english_name: Red-throated Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotkehlpieper/
+              anytag_id: '3380993'
             - type: bird
               title: Wiesenpieper
               icon: meapip1
               scientific_name: Anthus pratensis
               english_name: Meadow Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wiesenpieper/
+              anytag_id: '1976091'
             - type: bird
               title: Baumpieper
               icon: trepip
               scientific_name: Anthus trivialis
               english_name: Tree Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/baumpieper/
+              anytag_id: '3380997'
             - type: bird
               title: Spornpieper
               icon: ricpip1
               scientific_name: Anthus richardi
               english_name: Richard's Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spornpieper/
+              anytag_id: '3380999'
             - type: bird
               title: Strandpieper
               icon: rocpip1
               scientific_name: Anthus petrosus
               english_name: Rock Pipit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/strandpieper/
+              anytag_id: '3381001'
           tag: Pieper
+          anytag_id: '3380987'
         - type: group
           title: Lieste
           icon: comkin1
@@ -901,6 +1050,7 @@ profile:
               scientific_name: Alcedo atthis
               english_name: Common Kingfisher
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eisvogel/
+              anytag_id: '1976099'
             - type: bird
               title: Braunkopfliest
               icon: brhkin1
@@ -908,6 +1058,7 @@ profile:
               english_name: Brown-hooded Kingfisher
               exotic: true
               country: TZ
+              anytag_id: '3381007'
             - type: bird
               title: Streifenliest
               icon: strkin1
@@ -915,7 +1066,9 @@ profile:
               english_name: Striped Kingfisher
               exotic: true
               country: TZ
+              anytag_id: '3381009'
           tag: Liest
+          anytag_id: '3381003'
         - type: bird
           title: Japanbrillenvogel
           icon: warwhe1
@@ -923,6 +1076,7 @@ profile:
           english_name: Warbling White-eye
           exotic: true
           country: KR
+          anytag_id: '3308225'
         - type: bird
           title: Orpheusbülbü
           icon: brebul1
@@ -930,6 +1084,8 @@ profile:
           english_name: Brown-eared Bulbul
           exotic: true
           country: KR
+          anytag_id: '3303261'
+      anytag_id: '1963273'
     - type: group
       title: Wasser-vögel
       tag: Wasservogel
@@ -949,36 +1105,43 @@ profile:
                   scientific_name: Aythya ferina
                   english_name: Common Pochard
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tafelente/
+                  anytag_id: '1976109'
                 - type: bird
                   title: Reiherente
                   icon: tufduc
                   scientific_name: Aythya fuligula
                   english_name: Tufted Duck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/reiherente/
+                  anytag_id: '1976111'
                 - type: bird
                   title: Kolbenente
                   icon: recpoc
                   scientific_name: Netta rufina
                   english_name: Red-crested Pochard
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kolbenente/
+                  anytag_id: '1976113'
                 - type: bird
                   title: Bergente
                   icon: gresca
                   scientific_name: Aythya marila
                   english_name: Greater Scaup
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bergente/
+                  anytag_id: '1976115'
                 - type: bird
                   title: Schellente
                   icon: comgol
                   scientific_name: Bucephala clangula
                   english_name: Common Goldeneye
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schellente/
+                  anytag_id: '1976117'
                 - type: bird
                   title: Moorente
                   icon: ferduc
                   scientific_name: Aythya nyroca
                   english_name: Ferruginous Duck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/moorente/
+                  anytag_id: '1981641'
+              anytag_id: '1976107'
             - type: group
               title: Schwimmente
               icon: mallar3
@@ -989,42 +1152,49 @@ profile:
                   scientific_name: Anas platyrhynchos
                   english_name: Mallard
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/stockente/
+                  anytag_id: '1972748'
                 - type: bird
                   title: Krickente
                   icon: gnwtea
                   scientific_name: Anas crecca
                   english_name: Green-winged Teal
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/krickente/
+                  anytag_id: '1970308'
                 - type: bird
                   title: Schnatterente
                   icon: gadwal
                   scientific_name: Mareca strepera
                   english_name: Gadwall
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schnatterente/
+                  anytag_id: '1976125'
                 - type: bird
                   title: Löffelente
                   icon: norsho
                   scientific_name: Spatula clypeata
                   english_name: Northern Shoveler
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/loeffelente/
+                  anytag_id: '1970076'
                 - type: bird
                   title: Spießente
                   icon: norpin
                   scientific_name: Anas acuta
                   english_name: Northern Pintail
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spiessente/
+                  anytag_id: '1976129'
                 - type: bird
                   title: Pfeifente
                   icon: eurwig
                   scientific_name: Mareca penelope
                   english_name: Eurasian Wigeon
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/pfeifente/
+                  anytag_id: '1976131'
                 - type: bird
                   title: Knäkente
                   icon: gargan
                   scientific_name: Spatula querquedula
                   english_name: Garganey
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/knaekente/
+                  anytag_id: '1976133'
                 - type: bird
                   title: China-Fleckschnabelente
                   scientific_name: Anas zonorhyncha
@@ -1032,6 +1202,8 @@ profile:
                   icon: spbduc
                   exotic: true
                   country: KR
+                  anytag_id: '3308817'
+              anytag_id: '1976119'
             - type: group
               title: Meerente
               icon: comeid
@@ -1042,24 +1214,29 @@ profile:
                   scientific_name: Somateria mollissima
                   english_name: Common Eider
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eiderente/
+                  anytag_id: '1976137'
                 - type: bird
                   title: Samtente
                   icon: whwsco3
                   scientific_name: Melanitta fusca
                   english_name: Velvet Scoter
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/samtente/
+                  anytag_id: '1976139'
                 - type: bird
                   title: Trauerente
                   icon: blksco1
                   scientific_name: Melanitta nigra
                   english_name: Common Scoter
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trauerente/
+                  anytag_id: '1976141'
                 - type: bird
                   title: Eisente
                   icon: lotduc
                   scientific_name: Clangula hyemalis
                   english_name: Long-tailed Duck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eisente/
+                  anytag_id: '1971442'
+              anytag_id: '1976135'
             - type: group
               title: Säger
               icon: commer
@@ -1070,18 +1247,22 @@ profile:
                   scientific_name: Mergus merganser
                   english_name: Common Merganser
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gaensesaeger/
+                  anytag_id: '1976147'
                 - type: bird
                   title: Mittelsäger
                   icon: rebmer
                   scientific_name: Mergus serrator
                   english_name: Red-breasted Merganser
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mittelsaeger/
+                  anytag_id: '1976149'
                 - type: bird
                   title: Zwergsäger
                   icon: smew
                   scientific_name: Mergellus albellus
                   english_name: Smew
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergsaeger/
+                  anytag_id: '1976151'
+              anytag_id: '1976145'
             - type: group
               title: Neozoon Ente
               icon: manduc
@@ -1092,17 +1273,22 @@ profile:
                   scientific_name: Aix galericulata
                   english_name: Mandarin Duck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mandarinente/
+                  anytag_id: '1976155'
                 - type: bird
                   title: Brautente
                   icon: wooduc
                   scientific_name: Aix sponsa
                   english_name: Wood Duck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brautente/
+                  anytag_id: '1976157'
                 - type: bird
                   title: Moschusente
                   icon: musduc
                   scientific_name: Cairina moschata
                   english_name: Muscovy Duck
+                  anytag_id: '1976159'
+              anytag_id: '1976153'
+          anytag_id: '1970924'
         - type: group
           title: Gans
           icon: gragoo
@@ -1117,36 +1303,42 @@ profile:
                   scientific_name: Anser anser
                   english_name: Graylag Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/graugans/
+                  anytag_id: '1969954'
                 - type: bird
                   title: Blässgans
                   icon: gwfgoo
                   scientific_name: Anser albifrons
                   english_name: Greater White-fronted Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaessgans/
+                  anytag_id: '3381015'
                 - type: bird
                   title: Kurzschnabelgans
                   icon: pifgoo
                   scientific_name: Anser brachyrhynchus
                   english_name: Pink-footed Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kurzschnabelgans/
+                  anytag_id: '3381017'
                 - type: bird
                   icon: taibeg1
                   scientific_name: Anser fabalis
                   english_name: Taiga Bean-Goose
                   title: Waldsaatgans
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldsaatgans/
+                  anytag_id: '3381019'
                 - type: bird
                   title: Zwerggans
                   icon: lwfgoo
                   scientific_name: Anser erythropus
                   english_name: Lesser White-fronted Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwerggans/
+                  anytag_id: '3381021'
                 - type: bird
                   title: Tundrasaatgans
                   icon: tunbeg1
                   scientific_name: Anser serrirostris
                   english_name: Tundra Bean-Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tundrasaatgans/
+                  anytag_id: '3381023'
                 - type: bird
                   title: Schneegans
                   icon: snogoo
@@ -1154,7 +1346,9 @@ profile:
                   english_name: Snow Goose
                   exotic: true
                   country: GB
+                  anytag_id: '3381025'
               tag: Feldgans
+              anytag_id: '3381011'
             - type: group
               title: Meergänse
               icon: cangoo
@@ -1165,25 +1359,30 @@ profile:
                   scientific_name: Branta canadensis
                   english_name: Canada Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kanadagans/
+                  anytag_id: '1976167'
                 - type: bird
                   title: Nonnengans
                   icon: bargoo
                   scientific_name: Branta leucopsis
                   english_name: Barnacle Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weisswangengans/
+                  anytag_id: '1969964'
                 - type: bird
                   title: Ringelgans
                   icon: brant
                   scientific_name: Branta bernicla
                   english_name: Brant
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ringelgans/
+                  anytag_id: '3381033'
                 - type: bird
                   title: Rothalsgans
                   icon: rebgoo1
                   scientific_name: Branta ruficollis
                   english_name: Red-breasted Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rothalsgans/
+                  anytag_id: '3381035'
               tag: Meergans
+              anytag_id: '3381027'
             - type: group
               title: Halbgänse
               icon: rudshe
@@ -1194,18 +1393,23 @@ profile:
                   scientific_name: Tadorna ferruginea
                   english_name: Ruddy Shelduck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rostgans/
+                  anytag_id: '3381039'
                 - type: bird
                   title: Nilgans
                   icon: egygoo
                   scientific_name: Alopochen aegyptiaca
                   english_name: Egyptian Goose
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nilgans/
+                  anytag_id: '1973022'
                 - type: bird
                   title: Brandgans
                   icon: comshe
                   scientific_name: Tadorna tadorna
                   english_name: Common Shelduck
                   nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brandgans/
+                  anytag_id: '1970286'
+              anytag_id: '3381037'
+          anytag_id: '1970988'
         - type: group
           title: Schwan
           icon: mutswa
@@ -1216,24 +1420,29 @@ profile:
               scientific_name: Cygnus olor
               english_name: Mute Swan
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/hoeckerschwan/
+              anytag_id: '1971450'
             - type: bird
               title: Singschwan
               icon: whoswa
               scientific_name: Cygnus cygnus
               english_name: Whooper Swan
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/singschwan/
+              anytag_id: '1976181'
             - type: bird
               title: Zwergschwan
               icon: tunswa
               scientific_name: Cygnus columbianus
               english_name: Tundra Swan
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergschwan/
+              anytag_id: '1976183'
             - type: bird
               title: Schwarzschwan
               icon: blkswa
               scientific_name: Cygnus atratus
               english_name: Black Swan
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzschwan/
+              anytag_id: '3381045'
+          anytag_id: '1976177'
         - type: group
           title: Reiher
           icon: graher1
@@ -1244,47 +1453,56 @@ profile:
               scientific_name: Ardea cinerea
               english_name: Gray Heron
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/graureiher/
+              anytag_id: '1963669'
             - type: bird
               title: Silberreiher
               icon: greegr
               scientific_name: Ardea alba
               english_name: Great Egret
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/silberreiher/
+              anytag_id: '1976185'
             - type: bird
               title: Seidenreiher
               icon: litegr
               scientific_name: Egretta garzetta
               english_name: Little Egret
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seidenreiher/
+              anytag_id: '1976187'
             - type: bird
               title: Nachtreiher
               icon: bcnher
               scientific_name: Nycticorax nycticorax
               english_name: Black-crowned Night Heron
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nachtreiher/
+              anytag_id: '1976189'
             - type: bird
               title: Purpurreiher
               icon: purher1
               scientific_name: Ardea purpurea
               english_name: Purple Heron
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/purpurreiher/
+              anytag_id: '1976191'
             - type: bird
               title: Kuhreiher
               icon: categr1
               scientific_name: Ardea ibis
               english_name: Western Cattle-Egret
+              anytag_id: '1976193'
             - type: bird
               title: Rohrdommel
               icon: grebit1
               scientific_name: Botaurus stellaris
               english_name: Eurasian Bittern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrdommel/
+              anytag_id: '1976195'
             - type: bird
               title: Zwergdommel
               icon: litbit1
               scientific_name: Botaurus minutus
               english_name: Little Bittern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergdommel/
+              anytag_id: '1976197'
+          anytag_id: '1963859'
         - type: group
           title: Möwe
           icon: bkhgul
@@ -1295,61 +1513,73 @@ profile:
               scientific_name: Chroicocephalus ridibundus
               english_name: Black-headed Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/lachmoewe/
+              anytag_id: '1973010'
             - type: bird
               title: Sturmmöwe
               icon: mewgul
               scientific_name: Larus canus
               english_name: Common Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sturmmoewe/
+              anytag_id: '1970100'
             - type: bird
               title: Silbermöwe
               icon: euhgul1
               scientific_name: Larus argentatus
               english_name: European Herring Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/silbermoewe/
+              anytag_id: '1970120'
             - type: bird
               title: Mantelmöwe
               icon: gbbgul
               scientific_name: Larus marinus
               english_name: Great Black-backed Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mantelmoewe/
+              anytag_id: '1976201'
             - type: bird
               title: Heringsmöwe
               icon: lbbgul
               scientific_name: Larus fuscus
               english_name: Lesser Black-backed Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/heringsmoewe/
+              anytag_id: '1976203'
             - type: bird
               title: Dreizehenmöwe
               icon: bklkit
               scientific_name: Rissa tridactyla
               english_name: Black-legged Kittiwake
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dreizehenmoewe/
+              anytag_id: '1976205'
             - type: bird
               title: Mittelmeermöwe
               icon: yelgul1
               scientific_name: Larus michahellis
               english_name: Yellow-legged Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mittelmeermoewe/
+              anytag_id: '1976207'
             - type: bird
               title: Schwarzkopfmöwe
               icon: medgul1
               scientific_name: Ichthyaetus melanocephalus
               english_name: Mediterranean Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzkopfmoewe/
+              anytag_id: '3381047'
             - type: bird
               title: Zwergmöwe
               icon: litgul
               scientific_name: Hydrocoloeus minutus
               english_name: Little Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergmoewe/
+              anytag_id: '2138498'
             - type: uncertain
+              anytag_id: '1976209'
             - type: bird
               title: Steppenmöwe
               icon: casgul2
               scientific_name: Larus cachinnans
               english_name: Caspian Gull
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steppenmoewe/
+              anytag_id: '3381049'
+          anytag_id: '1970990'
         - type: group
           title: Ralle
           icon: commoo3
@@ -1360,42 +1590,50 @@ profile:
               scientific_name: Gallinula chloropus
               english_name: Eurasian Moorhen
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/teichhuhn/
+              anytag_id: '1976213'
             - type: bird
               title: Blässhuhn
               icon: eurcoo
               scientific_name: Fulica atra
               english_name: Eurasian Coot
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/blaesshuhn/
+              anytag_id: '1970270'
             - type: bird
               title: Wasserralle
               icon: watrai1
               scientific_name: Rallus aquaticus
               english_name: Water Rail
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wasserralle/
+              anytag_id: '1976217'
             - type: bird
               title: Tüpfelsumpfhuhn
               icon: spocra1
               scientific_name: Porzana porzana
               english_name: Spotted Crake
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tuepfelsumpfhuhn/
+              anytag_id: '1976219'
             - type: bird
               title: Zwergsumpfhuhn
               icon: baicra1
               scientific_name: Zapornia pusilla
               english_name: Baillon's Crake
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergsumpfhuhn/
+              anytag_id: '3381051'
             - type: bird
               title: Kleinsumpfhuhn
               icon: litcra1
               scientific_name: Zapornia parva
               english_name: Little Crake
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kleinsumpfhuhn/
+              anytag_id: '3381053'
             - type: bird
               title: Wachtelkönig
               icon: corcra
               scientific_name: Crex crex
               english_name: Corn Crake
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wachtelkoenig/
+              anytag_id: '3381055'
+          anytag_id: '1976211'
         - type: group
           title: Lappentaucher
           icon: grcgre1
@@ -1406,30 +1644,36 @@ profile:
               scientific_name: Tachybaptus ruficollis
               english_name: Little Grebe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergtaucher/
+              anytag_id: '1976223'
             - type: bird
               title: Rothalstaucher
               icon: rengre
               scientific_name: Podiceps grisegena
               english_name: Red-necked Grebe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rothalstaucher/
+              anytag_id: '1976225'
             - type: bird
               title: Haubentaucher
               icon: grcgre1
               scientific_name: Podiceps cristatus
               english_name: Great Crested Grebe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haubentaucher/
+              anytag_id: '1976227'
             - type: bird
               title: Schwarzhalstaucher
               icon: eargre
               scientific_name: Podiceps nigricollis
               english_name: Eared Grebe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzhalstaucher/
+              anytag_id: '1976229'
             - type: bird
               title: Ohrentaucher
               icon: horgre
               scientific_name: Podiceps auritus
               english_name: Horned Grebe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ohrentaucher/
+              anytag_id: '3381057'
+          anytag_id: '1976221'
         - type: group
           title: Taucher
           icon: retloo
@@ -1440,18 +1684,22 @@ profile:
               scientific_name: Gavia stellata
               english_name: Red-throated Loon
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sterntaucher/
+              anytag_id: '1976233'
             - type: bird
               title: Eistaucher
               icon: comloo
               scientific_name: Gavia immer
               english_name: Common Loon
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eistaucher/
+              anytag_id: '1976235'
             - type: bird
               title: Prachttaucher
               icon: arcloo
               scientific_name: Gavia arctica
               english_name: Arctic Loon
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/prachttaucher/
+              anytag_id: '1976237'
+          anytag_id: '1976231'
         - type: group
           title: Seeschwalbe
           icon: comter
@@ -1462,55 +1710,66 @@ profile:
               scientific_name: Sterna hirundo
               english_name: Common Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/flussseeschwalbe/
+              anytag_id: '1976241'
             - type: bird
               title: Küstenseeschwalbe
               icon: arcter
               scientific_name: Sterna paradisaea
               english_name: Arctic Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kuestenseeschwalbe/
+              anytag_id: '1976243'
             - type: bird
               title: Trauerseeschwalbe
               icon: blkter
               scientific_name: Chlidonias niger
               english_name: Black Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trauerseeschwalbe/
+              anytag_id: '1976245'
             - type: bird
               title: Zwergseeschwalbe
               icon: litter1
               scientific_name: Sternula albifrons
               english_name: Little Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergseeschwalbe/
+              anytag_id: '1976247'
             - type: bird
               title: Brandseeschwalbe
               icon: santer1
               scientific_name: Thalasseus sandvicensis
               english_name: Sandwich Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brandseeschwalbe/
+              anytag_id: '1976249'
             - type: uncertain
+              anytag_id: '1976251'
             - type: bird
               title: Weißbart-Seeschwalbe
               icon: whiter2
               scientific_name: Chlidonias hybrida
               english_name: Whiskered Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissbart-seeschwalbe/
+              anytag_id: '3381059'
             - type: bird
               title: Weißflügel-Seeschwalbe
               icon: whwter
               scientific_name: Chlidonias leucopterus
               english_name: White-winged Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissfluegel-seeschwalbe/
+              anytag_id: '3381061'
             - type: bird
               title: Lachseeschwalbe
               icon: gubter2
               scientific_name: Gelochelidon nilotica
               english_name: Gull-billed Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/lachseeschwalbe/
+              anytag_id: '3381063'
             - type: bird
               title: Raubseeschwalbe
               icon: caster1
               scientific_name: Hydroprogne caspia
               english_name: Caspian Tern
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raubseeschwalbe/
+              anytag_id: '3381065'
+          anytag_id: '1976239'
         - type: group
           title: Alkenvogel
           icon: horpuf
@@ -1521,18 +1780,21 @@ profile:
               scientific_name: Uria aalge
               english_name: Common Murre
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/trottellumme/
+              anytag_id: '1976255'
             - type: bird
               title: Tordalk
               icon: razorb
               scientific_name: Alca torda
               english_name: Razorbill
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tordalk/
+              anytag_id: '1976257'
             - type: bird
               title: Gryllteiste
               icon: blkgui
               scientific_name: Cepphus grylle
               english_name: Black Guillemot
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gryllteiste/
+              anytag_id: '1976259'
             - type: bird
               title: Papageitaucher
               icon: horpuf
@@ -1540,6 +1802,7 @@ profile:
               english_name: Horned Puffin
               exotic: true
               country: IS
+              anytag_id: '1976261'
             - type: bird
               title: Krabbentaucher
               icon: doveki
@@ -1547,12 +1810,15 @@ profile:
               english_name: Dovekie
               exotic: true
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/krabbentaucher/
+              anytag_id: '3381067'
+          anytag_id: '1976253'
         - type: bird
           title: Basstölpel
           icon: norgan
           scientific_name: Morus bassanus
           english_name: Northern Gannet
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/basstoelpel/
+          anytag_id: '1976263'
         - type: group
           title: Kormorane
           icon: grecor
@@ -1563,12 +1829,14 @@ profile:
               scientific_name: Phalacrocorax carbo
               english_name: Great Cormorant
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kormoran/
+              anytag_id: '1970276'
             - type: bird
               title: Japankormoran
               icon: japcor1
               scientific_name: Phalacrocorax capillatus
               english_name: Japanese Cormorant
               exotic: true
+              anytag_id: '3308437'
             - type: bird
               title: Krähenscharbe
               icon: eursha1
@@ -1576,6 +1844,7 @@ profile:
               english_name: European Shag
               exotic: true
               country: IS
+              anytag_id: '3381073'
           tag: Kormoran
         - type: group
           title: Raubmöwen
@@ -1589,26 +1858,32 @@ profile:
               exotic: true
               country: IS
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/skua/
+              anytag_id: '3381077'
             - type: bird
               title: Schmarotzerraubmöwe
               icon: parjae
               scientific_name: Stercorarius parasiticus
               english_name: Parasitic Jaeger
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schmarotzerraubmoewe/
+              anytag_id: '3381079'
             - type: bird
               title: Falkenraubmöwe
               icon: lotjae
               scientific_name: Stercorarius longicaudus
               english_name: Long-tailed Jaeger
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/falkenraubmoewe/
+              anytag_id: '3381081'
             - type: uncertain
+              anytag_id: '3381083'
             - type: bird
               title: Spatelraubmöwe
               icon: pomjae
               scientific_name: Stercorarius pomarinus
               english_name: Pomarine Jaeger
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/spatelraubmoewe/
+              anytag_id: '3381085'
           tag: Raubmöwe
+          anytag_id: '3381075'
         - type: group
           title: Sturmvögel
           icon: lcspet
@@ -1619,20 +1894,26 @@ profile:
               scientific_name: Hydrobates leucorhous
               english_name: Leach's Storm-Petrel
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wellenlaeufer/
+              anytag_id: '3381089'
             - type: bird
               title: Dunkelsturmtaucher
               icon: sooshe
               scientific_name: Ardenna grisea
               english_name: Sooty Shearwater
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dunkler-sturmtaucher/
+              anytag_id: '3381091'
             - type: bird
               title: Eissturmvogel
               icon: norful
               scientific_name: Fulmarus glacialis
               english_name: Northern Fulmar
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eissturmvogel/
+              anytag_id: '3381093'
             - type: uncertain
+              anytag_id: '3381095'
           tag: Sturmvogel
+          anytag_id: '3381087'
+      anytag_id: '1963285'
     - type: group
       title: Wat-vögel
       tag: Watvogel
@@ -1644,12 +1925,14 @@ profile:
           scientific_name: Himantopus himantopus
           english_name: Black-winged Stilt
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/stelzenlaeufer/
+          anytag_id: '1976269'
         - type: bird
           title: Säbelschnäbler
           icon: pieavo1
           scientific_name: Recurvirostra avosetta
           english_name: Pied Avocet
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/saebelschnaebler/
+          anytag_id: '1963647'
         - type: group
           title: Regenpfeifer
           icon: corplo
@@ -1660,36 +1943,43 @@ profile:
               scientific_name: Charadrius hiaticula
               english_name: Common Ringed Plover
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sandregenpfeifer/
+              anytag_id: '1976275'
             - type: bird
               title: Goldregenpfeifer
               icon: eugplo
               scientific_name: Pluvialis apricaria
               english_name: European Golden-Plover
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/goldregenpfeifer/
+              anytag_id: '1976277'
             - type: bird
               title: Flussregenpfeifer
               icon: lirplo
               scientific_name: Thinornis dubius
               english_name: Little Ringed Plover
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/flussregenpfeifer/
+              anytag_id: '1976279'
             - type: bird
               title: Mornellregenpfeifer
               icon: eurdot
               scientific_name: Eudromias morinellus
               english_name: Eurasian Dotterel
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mornellregenpfeifer/
+              anytag_id: '1976281'
             - type: bird
               title: Seeregenpfeifer
               icon: kenplo1
               scientific_name: Anarhynchus alexandrinus
               english_name: Kentish Plover
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seeregenpfeifer/
+              anytag_id: '1976283'
             - type: bird
               title: Kiebitzregenpfeifer
               icon: bkbplo
               scientific_name: Pluvialis squatarola
               english_name: Black-bellied Plover
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kiebitzregenpfeifer/
+              anytag_id: '1976285'
+          anytag_id: '1976273'
         - type: group
           title: Wasserläufer und Uferläufer
           icon: comgre
@@ -1700,42 +1990,50 @@ profile:
               scientific_name: Tringa nebularia
               english_name: Common Greenshank
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenschenkel/
+              anytag_id: '1963241'
             - type: bird
               title: Waldwasserläufer
               icon: grnsan
               scientific_name: Tringa ochropus
               english_name: Green Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldwasserlaeufer/
+              anytag_id: '3381101'
             - type: bird
               title: Rotschenkel
               icon: comred1
               scientific_name: Tringa totanus
               english_name: Common Redshank
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotschenkel/
+              anytag_id: '1976293'
             - type: bird
               title: Bruchwasserläufer
               icon: woosan
               scientific_name: Tringa glareola
               english_name: Wood Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bruchwasserlaeufer/
+              anytag_id: '3381105'
             - type: bird
               title: Flussuferläufer
               icon: comsan
               scientific_name: Actitis hypoleucos
               english_name: Common Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/flussuferlaeufer/
+              anytag_id: '1976297'
             - type: bird
               title: Dunkelwasserläufer
               icon: spored
               scientific_name: Tringa erythropus
               english_name: Spotted Redshank
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dunkelwasserlaeufer/
+              anytag_id: '3381109'
             - type: bird
               title: Teichwasserläufer
               icon: marsan
               scientific_name: Tringa stagnatilis
               english_name: Marsh Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/teichwasserlaeufer/
+              anytag_id: '3381111'
+          anytag_id: '3381097'
         - type: group
           title: Strandläufer
           icon: dunlin
@@ -1746,54 +2044,64 @@ profile:
               scientific_name: Calidris alpina
               english_name: Dunlin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpenstrandlaeufer/
+              anytag_id: '1963261'
             - type: bird
               title: Sanderling
               icon: sander
               scientific_name: Calidris alba
               english_name: Sanderling
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sanderling/
+              anytag_id: '1976303'
             - type: bird
               title: Knutt
               icon: redkno
               scientific_name: Calidris canutus
               english_name: Red Knot
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/knutt/
+              anytag_id: '1972742'
             - type: bird
               title: Sichelstrandläufer
               icon: cursan
               scientific_name: Calidris ferruginea
               english_name: Curlew Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sichelstrandlaeufer/
+              anytag_id: '1976311'
             - type: bird
               title: Zwergstrandläufer
               icon: litsti
               scientific_name: Calidris minuta
               english_name: Little Stint
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergstrandlaeufer/
+              anytag_id: '1976313'
             - type: bird
               title: Temminckstrandläufer
               icon: temsti
               scientific_name: Calidris temminckii
               english_name: Temminck's Stint
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/temminckstrandlaeufer/
+              anytag_id: '1976315'
             - type: bird
               title: Meerstrandläufer
               icon: pursan
               scientific_name: Calidris maritima
               english_name: Purple Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/meerstrandlaeufer/
+              anytag_id: '3381113'
             - type: bird
               title: Sumpfläufer
               icon: brbsan
               scientific_name: Calidris falcinellus
               english_name: Broad-billed Sandpiper
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpflaeufer/
+              anytag_id: '3381115'
+          anytag_id: '1976299'
         - type: bird
           title: Austernfischer
           icon: euroys1
           scientific_name: Haematopus ostralegus
           english_name: Eurasian Oystercatcher
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/austernfischer/
+          anytag_id: '1976317'
         - type: group
           title: Schnepfen und Bekassinen
           icon: comsni
@@ -1804,24 +2112,29 @@ profile:
               scientific_name: Gallinago gallinago
               english_name: Common Snipe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bekassine/
+              anytag_id: '1976321'
             - type: bird
               title: Waldschnepfe
               icon: eurwoo
               scientific_name: Scolopax rusticola
               english_name: Eurasian Woodcock
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldschnepfe/
+              anytag_id: '1976323'
             - type: bird
               title: Zwergschnepfe
               icon: jacsni
               scientific_name: Lymnocryptes minimus
               english_name: Jack Snipe
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/zwergschnepfe/
+              anytag_id: '3381117'
             - type: bird
               title: Doppelschnepfe
               icon: gresni1
               scientific_name: Gallinago media
               english_name: Great Snipe
+              anytag_id: '3381119'
           tag: Schnepfe
+          anytag_id: '1976319'
         - type: group
           title: Brachvogel
           icon: eurcur
@@ -1832,12 +2145,15 @@ profile:
               scientific_name: Numenius arquata
               english_name: Eurasian Curlew
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/brachvogel/
+              anytag_id: '1969992'
             - type: bird
               title: Regenbrachvogel
               icon: whimbr
               scientific_name: Numenius hudsonicus/phaeopus
               english_name: Hudsonian/Eurasian Whimbrel
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/regenbrachvogel/
+              anytag_id: '1971484'
+          anytag_id: '1976329'
         - type: group
           title: Kiebitze
           icon: norlap
@@ -1848,6 +2164,7 @@ profile:
               scientific_name: Vanellus vanellus
               english_name: Northern Lapwing
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kiebitz/
+              anytag_id: '1975241'
             - type: bird
               title: Kronenkiebitz
               icon: crolap1
@@ -1855,6 +2172,7 @@ profile:
               english_name: Crowned Lapwing
               exotic: true
               country: TZ
+              anytag_id: '3381123'
             - type: bird
               title: Schmiedekiebitz
               icon: blaplo1
@@ -1862,6 +2180,7 @@ profile:
               english_name: Blacksmith Lapwing
               exotic: true
               country: TZ
+              anytag_id: '3381125'
             - type: bird
               title: Spornkiebitz
               icon: spwlap1
@@ -1869,6 +2188,7 @@ profile:
               english_name: Spur-winged Lapwing
               exotic: true
               country: TZ
+              anytag_id: '3381127'
           tag: Kiebitz
         - type: bird
           title: Kampfläufer
@@ -1876,6 +2196,7 @@ profile:
           scientific_name: Calidris pugnax
           english_name: Ruff
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kampflaeufer/
+          anytag_id: '1972736'
         - type: group
           title: Uferschnepfen
           icon: bktgod
@@ -1886,30 +2207,36 @@ profile:
               scientific_name: Limosa lapponica
               english_name: Bar-tailed Godwit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/pfuhlschnepfe/
+              anytag_id: '1972866'
             - type: bird
               title: Uferschnepfe
               icon: bktgod
               scientific_name: Limosa limosa
               english_name: Black-tailed Godwit
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/uferschnepfe/
+              anytag_id: '1970292'
+          anytag_id: '3381131'
         - type: bird
           title: Odinshühnchen
           icon: renpha
           scientific_name: Phalaropus lobatus
           english_name: Red-necked Phalarope
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/odinshuehnchen/
+          anytag_id: '3381137'
         - type: bird
           title: Thorshühnchen
           icon: redpha1
           scientific_name: Phalaropus fulicarius
           english_name: Red Phalarope
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/thorshuehnchen/
+          anytag_id: '3381139'
         - type: bird
           title: Steinwälzer
           icon: rudtur
           scientific_name: Arenaria interpres
           english_name: Ruddy Turnstone
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinwaelzer/
+          anytag_id: '3381141'
         - type: group
           title: Triele
           icon: eutkne1
@@ -1920,6 +2247,7 @@ profile:
               scientific_name: Burhinus oedicnemus
               english_name: Eurasian Thick-knee
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/triel/
+              anytag_id: '3381145'
             - type: bird
               title: Kaptriel
               icon: sptkne1
@@ -1927,7 +2255,10 @@ profile:
               english_name: Spotted Thick-knee
               exotic: true
               country: TZ
+              anytag_id: '3381147'
           tag: Triel
+          anytag_id: '3381143'
+      anytag_id: '1976265'
     - type: group
       title: Spechte
       tag: Specht
@@ -1940,12 +2271,14 @@ profile:
           english_name: Great Spotted Woodpecker
           rotation: -25
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/buntspecht/
+          anytag_id: '1971418'
         - type: bird
           title: Grünspecht
           icon: eugwoo2
           scientific_name: Picus viridis
           english_name: Eurasian Green Woodpecker
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/gruenspecht/
+          anytag_id: '1976339'
         - type: bird
           title: Kleinspecht
           icon: leswoo1
@@ -1953,6 +2286,7 @@ profile:
           english_name: Lesser Spotted Woodpecker
           rotation: -20
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kleinspecht/
+          anytag_id: '1976341'
         - type: bird
           title: Mittelspecht
           icon: miswoo1
@@ -1960,6 +2294,7 @@ profile:
           english_name: Middle Spotted Woodpecker
           rotation: -20
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/mittelspecht/
+          anytag_id: '1976343'
         - type: bird
           title: Schwarzspecht
           icon: blawoo1
@@ -1967,12 +2302,14 @@ profile:
           english_name: Black Woodpecker
           rotation: -20
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzspecht/
+          anytag_id: '1976345'
         - type: bird
           title: Wendehals
           icon: eurwry
           scientific_name: Jynx torquilla
           english_name: Eurasian Wryneck
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wendehals/
+          anytag_id: '1976347'
         - type: bird
           title: Grauspecht
           icon: gyfwoo1
@@ -1980,6 +2317,7 @@ profile:
           scientific_name: Picus canus
           english_name: Gray-headed Woodpecker
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grauspecht/
+          anytag_id: '1976349'
         - type: bird
           title: Dreizehenspecht
           icon: ettwoo1
@@ -1987,6 +2325,7 @@ profile:
           english_name: Eurasian Three-toed Woodpecker
           rotation: -25
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dreizehenspecht/
+          anytag_id: '3381149'
         - type: bird
           title: Weißrückenspecht
           icon: whbwoo1
@@ -1994,6 +2333,8 @@ profile:
           english_name: White-backed Woodpecker
           rotation: -24
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissrueckenspecht/
+          anytag_id: '3381151'
+      anytag_id: '1976335'
     - type: group
       title: Raben-vögel
       tag: Rabenvogel
@@ -2006,12 +2347,14 @@ profile:
           english_name: Common Raven
           favorite: true
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kolkrabe/
+          anytag_id: '1976353'
         - type: bird
           title: Saatkrähe
           icon: rook1
           scientific_name: Corvus frugilegus
           english_name: Rook
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/saatkraehe/
+          anytag_id: '1976355'
         - type: bird
           title: Rabenkrähe
           favorite: true
@@ -2019,6 +2362,7 @@ profile:
           scientific_name: Corvus corone
           english_name: Carrion Crow
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rabenkraehe/
+          anytag_id: '1969818'
         - type: bird
           title: Dohle
           favorite: true
@@ -2026,12 +2370,14 @@ profile:
           scientific_name: Coloeus monedula
           english_name: Eurasian Jackdaw
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/dohle/
+          anytag_id: '1972418'
         - type: bird
           title: Alpendohle
           icon: yebcho1
           scientific_name: Pyrrhocorax graculus
           english_name: Yellow-billed Chough
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpendohle/
+          anytag_id: '1976361'
         - type: bird
           title: Elster
           favorite: true
@@ -2039,18 +2385,21 @@ profile:
           scientific_name: Pica pica
           english_name: Eurasian Magpie
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/elster/
+          anytag_id: '1969896'
         - type: bird
           title: Eichelhäher
           icon: eurjay1
           scientific_name: Garrulus glandarius
           english_name: Eurasian Jay
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/eichelhaeher/
+          anytag_id: '1976365'
         - type: bird
           title: Tannenhäher
           icon: eurnut3
           scientific_name: Nucifraga caryocatactes
           english_name: Northern Nutcracker
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tannenhaeher/
+          anytag_id: '1976367'
         - type: bird
           title: Nebelkrähe
           icon: hoocro1
@@ -2058,6 +2407,7 @@ profile:
           scientific_name: Corvus cornix
           english_name: Hooded Crow
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nebelkraehe/
+          anytag_id: '1976369'
         - type: bird
           title: Orientelster
           scientific_name: Pica serica
@@ -2065,6 +2415,7 @@ profile:
           icon: orimag1
           exotic: true
           country: KR
+          anytag_id: '3303103'
         - type: bird
           title: Dschungelkrähe
           icon: labcro1
@@ -2072,6 +2423,8 @@ profile:
           english_name: Large-billed Crow
           exotic: true
           country: KR
+          anytag_id: '3381155'
+      anytag_id: '1976351'
     - type: group
       title: Greif-vögel
       tag: Greifvogel
@@ -2083,12 +2436,14 @@ profile:
           scientific_name: Astur gentilis
           english_name: Eurasian Goshawk
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/habicht/
+          anytag_id: '1964843'
         - type: bird
           title: Sperber
           icon: eurspa1
           scientific_name: Accipiter nisus
           english_name: Eurasian Sparrowhawk
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sperber/
+          anytag_id: '1976377'
         - type: group
           title: Adler
           icon: whteag
@@ -2099,29 +2454,35 @@ profile:
               scientific_name: Haliaeetus albicilla
               english_name: White-tailed Eagle
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/seeadler/
+              anytag_id: '1976385'
             - type: bird
               title: Steinadler
               icon: goleag
               scientific_name: Aquila chrysaetos
               english_name: Golden Eagle
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinadler/
+              anytag_id: '1976387'
             - type: bird
               title: Fischadler
               icon: osprey
               scientific_name: Pandion haliaetus
               english_name: Osprey
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/fischadler/
+              anytag_id: '1976389'
             - type: bird
               title: Schreiadler
               icon: leseag1
               scientific_name: Clanga pomarina
               english_name: Lesser Spotted Eagle
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schreiadler/
+              anytag_id: '1976391'
             - type: bird
               title: Schlangenadler
               icon: shteag1
               scientific_name: Circaetus gallicus
               english_name: Short-toed Snake-Eagle
+              anytag_id: '1976393'
+          anytag_id: '1976383'
         - type: group
           title: Weihe
           icon: wemhar1
@@ -2132,24 +2493,29 @@ profile:
               scientific_name: Circus aeruginosus
               english_name: Western Marsh Harrier
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rohrweihe/
+              anytag_id: '1971550'
             - type: bird
               title: Kornweihe
               icon: norhar1
               scientific_name: Circus cyaneus
               english_name: Hen Harrier
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kornweihe/
+              anytag_id: '1976399'
             - type: bird
               title: Wiesenweihe
               icon: monhar1
               scientific_name: Circus pygargus
               english_name: Montagu's Harrier
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wiesenweihe/
+              anytag_id: '1976401'
             - type: bird
               title: Steppenweihe
               icon: palhar1
 
               scientific_name: Circus macrourus
               english_name: Pallid Harrier
+              anytag_id: '1976403'
+          anytag_id: '1976395'
         - type: group
           title: Falken
           icon: eurkes
@@ -2160,30 +2526,35 @@ profile:
               scientific_name: Falco subbuteo
               english_name: Eurasian Hobby
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/baumfalke/
+              anytag_id: '3381159'
             - type: bird
               title: Turmfalke
               icon: eurkes
               scientific_name: Falco tinnunculus
               english_name: Eurasian Kestrel
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/turmfalke/
+              anytag_id: '1970170'
             - type: bird
               title: Wanderfalke
               icon: perfal
               scientific_name: Falco peregrinus
               english_name: Peregrine Falcon
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wanderfalke/
+              anytag_id: '3381163'
             - type: bird
               title: Rotfußfalke
               icon: reffal1
               scientific_name: Falco vespertinus
               english_name: Red-footed Falcon
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotfussfalke/
+              anytag_id: '3381165'
             - type: bird
               title: Merlin
               icon: merlin
               scientific_name: Falco columbarius
               english_name: Merlin
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/merlin/
+              anytag_id: '3381167'
             - type: bird
               title: Halsband-Zwergfalke
               icon: pygfal1
@@ -2191,8 +2562,10 @@ profile:
               english_name: Pygmy Falcon
               exotic: true
               country: TZ
+              anytag_id: '3381169'
           tag: Falke
           favorite: true
+          anytag_id: '3381157'
         - type: group
           title: Bussarde
           icon: combuz1
@@ -2203,20 +2576,24 @@ profile:
               scientific_name: Buteo buteo
               english_name: Common Buzzard
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/maeusebussard/
+              anytag_id: '1971426'
             - title: Raufußbussard
               type: bird
               icon: rolhaw
               scientific_name: Buteo lagopus
               english_name: Rough-legged Hawk
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raufussbussard/
+              anytag_id: '3381175'
             - type: bird
               title: Wespenbussard
               icon: euhbuz1
               scientific_name: Pernis apivorus
               english_name: European Honey-buzzard
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wespenbussard/
+              anytag_id: '3381177'
           tag: Bussard
           favorite: true
+          anytag_id: '3381171'
         - type: group
           title: Milane
           icon: redkit1
@@ -2227,12 +2604,14 @@ profile:
               scientific_name: Milvus milvus
               english_name: Red Kite
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rotmilan/
+              anytag_id: '1965055'
             - type: bird
               title: Schwarzmilan
               icon: blakit1
               scientific_name: Milvus migrans
               english_name: Black Kite
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzmilan/
+              anytag_id: '1965195'
             - type: bird
               title: Gleitaar
               icon: bkskit1
@@ -2240,7 +2619,9 @@ profile:
               english_name: Black-winged Kite
               exotic: true
               country: TZ
+              anytag_id: '3381185'
           tag: Milan
+          anytag_id: '3381179'
         - type: group
           title: Geier
           icon: eurgri1
@@ -2252,12 +2633,16 @@ profile:
               english_name: Eurasian Griffon
               exotic: true
               country: TZ
+              anytag_id: '3381189'
             - type: bird
               title: Bartgeier
               icon: lammer1
               scientific_name: Gypaetus barbatus
               english_name: Bearded Vulture
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/bartgeier/
+              anytag_id: '3381191'
+          anytag_id: '3381187'
+      anytag_id: '1964881'
     - type: group
       title: Eulen
       tag: Eule
@@ -2270,12 +2655,14 @@ profile:
           english_name: Tawny Owl
           favorite: true
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldkauz/
+          anytag_id: '1971832'
         - type: bird
           title: Schleiereule
           icon: webowl1
           scientific_name: Tyto alba
           english_name: Western Barn Owl
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schleiereule/
+          anytag_id: '1976409'
         - type: bird
           title: Steinkauz
           icon: litowl1
@@ -2283,41 +2670,48 @@ profile:
           english_name: Little Owl
           favorite: true
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinkauz/
+          anytag_id: '1976411'
         - type: bird
           title: Uhu
           icon: eueowl1
           scientific_name: Bubo bubo
           english_name: Eurasian Eagle-Owl
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/uhu/
+          anytag_id: '1976413'
         - type: bird
           title: Sumpfohreule
           icon: sheowl
           scientific_name: Asio flammeus
           english_name: Short-eared Owl
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sumpfohreule/
+          anytag_id: '1976415'
         - type: bird
           title: Raufußkauz
           icon: borowl
           scientific_name: Aegolius funereus
           english_name: Boreal Owl
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/raufusskauz/
+          anytag_id: '1976417'
         - type: bird
           title: Sperlingskauz
           icon: eupowl1
           scientific_name: Glaucidium passerinum
           english_name: Eurasian Pygmy-Owl
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/sperlingskauz/
+          anytag_id: '1976419'
         - type: bird
           title: Waldohreule
           icon: loeowl
           scientific_name: Asio otus
           english_name: Long-eared Owl
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldohreule/
+          anytag_id: '1976421'
         - type: bird
           title: Zwergohreule
           icon: eursco1
           scientific_name: Otus scops
           english_name: Eurasian Scops-Owl
+          anytag_id: '3381193'
         - type: bird
           title: Habichtskauz
           icon: uraowl1
@@ -2326,6 +2720,8 @@ profile:
           exotic: true
           country: SE
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/Habichtskauz/
+          anytag_id: '3381195'
+      anytag_id: '1976405'
     - type: group
       title: Hühner-vögel
       tag: Hühnervogel
@@ -2337,54 +2733,64 @@ profile:
           scientific_name: Phasianus colchicus
           english_name: Ring-necked Pheasant
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/jagdfasan/
+          anytag_id: '1971570'
         - type: bird
           title: Rebhuhn
           icon: grypar
           scientific_name: Perdix perdix
           english_name: Gray Partridge
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/rebhuhn/
+          anytag_id: '1976427'
         - type: bird
           title: Auerhuhn
           icon: wescap1
           scientific_name: Tetrao urogallus
           english_name: Western Capercaillie
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/auerhuhn/
+          anytag_id: '1976429'
         - type: bird
           title: Birkhuhn
           icon: blagro1
           scientific_name: Lyrurus tetrix
           english_name: Black Grouse
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/birkhuhn/
+          anytag_id: '1976431'
         - type: bird
           title: Alpenschneehuhn
           icon: rocpta1
           scientific_name: Lagopus muta
           english_name: Rock Ptarmigan
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/alpenschneehuhn/
+          anytag_id: '1976433'
         - type: bird
           title: Wachtel
           icon: comqua1
           scientific_name: Coturnix coturnix
           english_name: Common Quail
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wachtel/
+          anytag_id: '1976435'
         - type: bird
           title: Silberfasan
           icon: silphe
           scientific_name: Lophura nycthemera
           english_name: Silver Pheasant
           exotic: true
+          anytag_id: '3381197'
         - type: bird
           title: Steinhuhn
           icon: rocpar2
           scientific_name: Alectoris graeca
           english_name: Rock Partridge
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/steinhuhn/
+          anytag_id: '3381199'
         - type: bird
           title: Haselhuhn
           icon: hazgro1
           scientific_name: Tetrastes bonasia
           english_name: Hazel Grouse
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/haselhuhn/
+          anytag_id: '3381201'
+      anytag_id: '1976423'
     - type: group
       title: Tauben
       tag: Taube
@@ -2396,24 +2802,28 @@ profile:
           scientific_name: Columba palumbus
           english_name: Common Wood-Pigeon
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ringeltaube/
+          anytag_id: '1969942'
         - type: bird
           title: Türkentaube
           icon: eucdov
           scientific_name: Streptopelia decaocto
           english_name: Eurasian Collared-Dove
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/tuerkentaube/
+          anytag_id: '1969736'
         - type: bird
           title: Hohltaube
           icon: stodov1
           scientific_name: Columba oenas
           english_name: Stock Dove
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/hohltaube/
+          anytag_id: '1976455'
         - type: bird
           title: Turteltaube
           icon: eutdov
           scientific_name: Streptopelia turtur
           english_name: European Turtle-Dove
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/turteltaube/
+          anytag_id: '1976457'
         - type: bird
           title: Straßentaube
           icon: rocpig
@@ -2421,6 +2831,7 @@ profile:
           scientific_name: Columba livia
           english_name: Rock Pigeon
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/strassentaube/
+          anytag_id: '1976459'
         - type: bird
           title: Orientturteltaube
           icon: ortdov
@@ -2428,6 +2839,7 @@ profile:
           english_name: Oriental Turtle-Dove
           exotic: true
           country: KR
+          anytag_id: '3305631'
         - type: bird
           title: Bronzeflecktaube
           icon: eswdov1
@@ -2435,6 +2847,7 @@ profile:
           english_name: Emerald-spotted Wood-Dove
           exotic: true
           country: TZ
+          anytag_id: '3381207'
         - type: bird
           title: Guineataube
           icon: spepig1
@@ -2442,6 +2855,8 @@ profile:
           english_name: Speckled Pigeon
           exotic: true
           country: TZ
+          anytag_id: '2734872'
+      anytag_id: '1970662'
     - type: group
       title: Papageien
       tag: Papagei
@@ -2453,17 +2868,21 @@ profile:
           scientific_name: Psittacula krameri
           english_name: Rose-ringed Parakeet
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/halsbandsittich/
+          anytag_id: '1976463'
         - type: bird
           title: Alexandersittich
           icon: alepar2
           scientific_name: Psittacula eupatria
           english_name: Alexandrine Parakeet
+          anytag_id: '1976465'
         - type: bird
           title: Wellensittich
           icon: budger
 
           scientific_name: Melopsittacus undulatus
           english_name: Budgerigar
+          anytag_id: '1976467'
+      anytag_id: '1976461'
     - type: group
       title: Horn-vögel
       tag: Hornvogel
@@ -2476,6 +2895,7 @@ profile:
           scientific_name: Upupa epops
           english_name: Common Hoopoe
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/wiedehopf/
+          anytag_id: '1969854'
         - type: bird
           title: Silberwangen-Hornvogel
           icon: sichor1
@@ -2483,8 +2903,11 @@ profile:
           english_name: Silvery-cheeked Hornbill
           exotic: true
           country: TZ
+          anytag_id: '3381209'
+      anytag_id: '1976469'
     - type: group
       title: Lauf-vögel
+      tag: Laufvögel
       items:
         - type: bird
           title: Nandu
@@ -2492,6 +2915,7 @@ profile:
           scientific_name: Rhea americana
           english_name: Greater Rhea
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/nandu/
+          anytag_id: '3381213'
         - type: bird
           title: Strauß
           icon: ostric2
@@ -2499,7 +2923,9 @@ profile:
           english_name: Common Ostrich
           exotic: true
           country: TZ
+          anytag_id: '3381215'
       bg: assets/img/habitat-savanne.png
+      anytag_id: '3381211'
     - type: group
       title: Schreit-vögel
       items:
@@ -2514,13 +2940,16 @@ profile:
               scientific_name: Ciconia ciconia
               english_name: White Stork
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/weissstorch/
+              anytag_id: '1976451'
             - type: bird
               title: Schwarzstorch
               icon: blasto1
               scientific_name: Ciconia nigra
               english_name: Black Stork
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/schwarzstorch/
+              anytag_id: '3381223'
           icon: whisto1
+          anytag_id: '3381219'
         - type: group
           title: Ibisse
           tag: Ibis
@@ -2532,17 +2961,20 @@ profile:
               scientific_name: Platalea leucorodia
               english_name: Eurasian Spoonbill
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/loeffler/
+              anytag_id: '1963251'
             - type: bird
               title: Sichler
               icon: gloibi
               scientific_name: Plegadis falcinellus
               english_name: Glossy Ibis
+              anytag_id: '3381229'
             - type: bird
               title: Waldrapp
               icon: waldra1
               scientific_name: Geronticus eremita
               english_name: Northern Bald Ibis
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/waldrapp/
+              anytag_id: '1963205'
             - type: bird
               title: Pharaonenibis
               icon: sacibi2
@@ -2550,7 +2982,9 @@ profile:
               english_name: African Sacred Ibis
               exotic: true
               country: TZ
+              anytag_id: '3381233'
           icon: sacibi2
+          anytag_id: '3381225'
         - type: group
           title: Kraniche
           tag: Kranich
@@ -2562,6 +2996,7 @@ profile:
               scientific_name: Grus grus
               english_name: Common Crane
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/kranich/
+              anytag_id: '1976439'
             - type: bird
               title: Grauhals-Kronenkranich
               icon: grccra1
@@ -2569,7 +3004,9 @@ profile:
               english_name: Gray Crowned-Crane
               exotic: true
               country: TZ
+              anytag_id: '3381239'
           icon: comcra
+          anytag_id: '3381235'
         - type: group
           title: Trappen
           icon: grebus1
@@ -2580,6 +3017,7 @@ profile:
               scientific_name: Otis tarda
               english_name: Great Bustard
               nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/grosstrappe/
+              anytag_id: '3381243'
             - type: bird
               title: Riesentrappe
               icon: korbus1
@@ -2587,9 +3025,12 @@ profile:
               english_name: Kori Bustard
               exotic: true
               country: TZ
+              anytag_id: '3381245'
           tag: Trappe
+          anytag_id: '3381241'
       tag: Schreitvogel
       bg: assets/img/habitat-marsh.png
+      anytag_id: '3381217'
     - type: group
       title: Nacht-schwalben
       items:
@@ -2599,5 +3040,9 @@ profile:
           scientific_name: Caprimulgus europaeus
           english_name: Eurasian Nightjar
           nabu: https://www.nabu.de/tiere-und-pflanzen/voegel/portraets/ziegenmelker/
+          anytag_id: '3381249'
       tag: Nachtschwalbe
       bg: assets/img/habitat-night-heathland.png
+      anytag_id: '3381247'
+  anytag_id: '1963195'
+  anytag_catalog: F:\Lightroom\Lightroom\Lightroom Catalog-v13-4.lrcat

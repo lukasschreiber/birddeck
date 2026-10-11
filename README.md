@@ -16,6 +16,53 @@ Import `output/BirdDeck.streamDeckProfile` into Stream Deck. Lightroom keywords
 are regenerated in `output/LightroomKeywords.txt` whenever a profile is created.
 Custom `--config` and `--output-dir` options apply to both generated files.
 
+## Updating a Lightroom hierarchy with Any Tag
+
+Export the catalog with **File > Plug-in Extras > Any Tag > Export Keywords**.
+Before renaming or moving entries, bind the current YAML entries to catalog IDs:
+
+```powershell
+uv run python cli.py anytag --catalog-keywords examples/anytag.csv --bind
+```
+
+This creates `output/AnyTagKeywords.csv` and stores `anytag_id` values and
+`profile.anytag_catalog` in YAML. The browser editor preserves these fields when
+renaming or moving entries. IDs belong to that specific Lightroom catalog.
+Exact hierarchy paths are matched first, then unique names, then unique names
+with display hyphens removed. Ambiguous names stop the command; set the correct
+`anytag_id` from the export on that YAML entry to resolve them.
+
+After editing the hierarchy, export a fresh CSV from the same catalog and run:
+
+```powershell
+uv run python cli.py anytag --catalog-keywords examples/anytag.csv --bind
+```
+
+Import `output/AnyTagKeywords.csv` with **File > Plug-in Extras > Any Tag >
+Import Keywords**. Existing keyword IDs, attributes, photo counts, synonyms,
+and the catalog path are retained. New entries have blank IDs; after importing,
+export again and use `--bind` to record their assigned IDs. Use `--config` and
+`--output` for custom paths. Without `--bind`, YAML is left unchanged.
+
+The YAML hierarchy is authoritative under `Vogel`. Keywords outside `Vogel`
+are preserved. When the selected bird keyword has no photos and exactly one
+older keyword of the same name under `Vogel` has photos, the older ID is moved
+to the configured position and bound in YAML. Multiple populated alternatives
+stop generation because CSV cannot merge their photo assignments. A former flat
+bird that now has a same-name group retains its ID on the bird child; the group
+is created separately.
+
+Obsolete entries and empty duplicates under `Vogel` are omitted. When importing,
+enable **Delete keywords that are not referenced in the imported file**.
+Any Tag moves those omitted entries under `_Any Tag To Delete`, preserving
+their photo assignments until you explicitly delete them in Lightroom.
+The plain-text
+`LightroomKeywords.txt` remains available for initial imports; use the CSV
+workflow for catalog renames and moves. A keyword renamed before its first
+binding needs its old catalog ID set explicitly in YAML to retain assignments.
+
+See [Any Tag's batch editing documentation](https://johnrellis.com/lightroom/anytag.htm#batch).
+
 ## Single-file installation on another laptop
 
 Install Elgato's packaging CLI once on the build laptop (requires Node.js/npm):

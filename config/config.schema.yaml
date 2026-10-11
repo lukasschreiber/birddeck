@@ -14,6 +14,10 @@ $defs:
     properties:
       name:
         type: string
+      anytag_id: { $ref: "#/$defs/anytag_id" }
+      anytag_catalog:
+        type: string
+        description: Catalog path from Any Tag Export Keywords; IDs are specific to this catalog.
       lightroom:
         type: string
       model:
@@ -303,11 +307,17 @@ $defs:
       - "ZW"
     description: Optional two-letter country code from data/countries.json. Exotic entries show its flag at the bottom-left, behind the bird. Omit or leave empty for no flag.
 
+  anytag_id:
+    type: string
+    pattern: '^[0-9]+$'
+    description: Existing Lightroom keyword ID from Any Tag; retained across renames and moves.
+
   group:
     type: object
     required: [type, title, items]
     properties:
       type: { const: group }
+      anytag_id: { $ref: "#/$defs/anytag_id" }
       title: { type: string }
       tag: { type: string }
       bg: { type: string }
@@ -326,6 +336,7 @@ $defs:
     required: [type, title]
     properties:
       type: { const: bird }
+      anytag_id: { $ref: "#/$defs/anytag_id" }
       title: { type: string }
       english_name:
         type: string
@@ -351,4 +362,5 @@ $defs:
     required: [type]
     properties:
       type: { const: uncertain }
+      anytag_id: { $ref: "#/$defs/anytag_id" }
     additionalProperties: false
