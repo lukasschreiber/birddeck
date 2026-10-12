@@ -2,7 +2,8 @@
 local uuid = '00000000-0000-4000-8000-000000000001'
 local active = 'E:\\Old.lrcat'
 local photosAdded, response = {}, nil
-local queueRequest, mappings
+local queueRequest
+local metadata = {keywordBindings=uuid..'\t7\n'}
 local task
 local roots = {}
 local function keyword(id)
@@ -10,6 +11,7 @@ local function keyword(id)
         getParent=function() return roots[id] end}
 end
 local catalog = {
+    getPropertyForPlugin=function(_, plugin, field) return metadata[field] end,
     getPath=function() return active end,
     getTargetPhoto=function() return {} end,
     getTargetPhotos=function() return {{addKeyword=function(_, k) photosAdded[#photosAdded+1]=k.localIdentifier end}} end,
@@ -20,7 +22,7 @@ local root = {getName=function() return 'Vogel' end, getParent=function() return
 roots[7], roots[99] = root, root
 local Files = {
     createAllDirectories=function() end,
-    readFile=function(path) return path:match('keyword%-bindings%.tsv$') and mappings or queueRequest end,
+    readFile=function(path) assert(not path:match('keyword%-bindings')); return queueRequest end,
     delete=function() return true end,
     move=function() _G.BirdDeckState.running = false end,
     directoryEntries=function()
@@ -40,11 +42,13 @@ function import(name)
 end
 _PLUGIN = {path='plugin'}
 local previousDofile, previousOpen = dofile, io.open
-dofile = function() return function() error('Unexpected hierarchy dispatch') end end
+dofile = function(path)
+    assert(path:match('CatalogBindings%.lua$'))
+    return assert(load(bindingsSource))()
+end
 io.open = function(path)
     return {write=function(_, text) if path:match('%.response%.tmp$') then response=text end end, close=function() end}
 end
-mappings = 'e%3A%2Fold.lrcat\t'..uuid..'\t7\n'..'f%3A%2Ffresh.lrcat\t'..uuid..'\t99\n'
 local function run(identity)
     response = nil
     queueRequest = 'UUIDTAG\n'..(os.time()+60)..'\n'..identity..'\n'
@@ -54,16 +58,23 @@ local function run(identity)
 end
 assert(run(uuid) == 'OK\t1')
 assert(photosAdded[1] == 7)
-active = 'F:\\Fresh.lrcat'
+-- Moving the same catalog requires no local bindings file or synchronization.
+active = 'F:\\Old.lrcat'
 assert(run(uuid) == 'OK\t1')
-assert(photosAdded[2] == 99)
-active = 'G:\\Unbound.lrcat'
-assert(run(uuid):match('not bound in the active catalog'))
-assert(#photosAdded == 2)
+assert(photosAdded[2] == 7)
 active = 'F:\\Fresh.lrcat'
+metadata = {keywordBindings=uuid..'\t99\n'}
+assert(run(uuid) == 'OK\t1')
+assert(photosAdded[3] == 99)
+active = 'G:\\Unbound.lrcat'
+metadata = {}
+assert(run(uuid):match('not bound in the active catalog'))
+assert(#photosAdded == 3)
+active = 'F:\\Fresh.lrcat'
+metadata = {keywordBindings=uuid..'\t99\n'}
 assert(run('00000000-0000-4000-8000-000000000002'):match('not bound'))
-assert(#photosAdded == 2)
+assert(#photosAdded == 3)
 roots[99] = {getName=function() return '_BirdDeck Obsolete' end,getParent=function() return nil end}
 assert(run(uuid):match('outside Vogel'))
-assert(#photosAdded == 2)
+assert(#photosAdded == 3)
 dofile, io.open = previousDofile, previousOpen

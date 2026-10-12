@@ -96,15 +96,22 @@ accept the bundled-profile installation prompt. The command rebuilds the
 profile from your configuration each time.
 
 On another computer, install `output/BirdDeckTagging.lrplugin` separately in
-Lightroom and run `lightroom-sync --apply` there to establish catalog bindings.
+Lightroom. The same catalog is ready to tag, even with a different drive letter.
+For a fresh catalog, run `lightroom-sync --apply` first.
 
 ## Files to keep
 
-Back up `config/config.yaml` and `config/config.lightroom.json`.
-The bindings file is maintained automatically; normally, edit only the YAML
-or use the editor. If you move or rename an existing catalog file, update its
-saved `catalog` path and the corresponding key under `catalogs` in the bindings
-file before synchronizing.
+Back up `config/config.yaml` and your Lightroom catalog. Synchronization stores
+the catalog identity and keyword bindings inside the catalog, so they travel
+with it. `.cache/lightroom/` holds the automatic local bindings cache; no manual
+editing or copying to another computer is needed.
+
+An independent copy of a catalog initially shares its identity. To give that
+copy its own identity, open it in Lightroom and run:
+
+```powershell
+uv run python cli.py lightroom-sync --apply --reset-catalog-identity
+```
 
 ## If Tag shows an alert
 

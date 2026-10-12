@@ -1,6 +1,8 @@
 -- Direct catalog keyword synchronization. Never deletes keywords or photo links.
 local Application = import 'LrApplication'
 local Tasks = import 'LrTasks'
+local Paths = import 'LrPathUtils'
+local Bindings = dofile(Paths.child(_PLUGIN.path, 'CatalogBindings.lua'))
 local function decode(s)
     return (s:gsub('%%(%x%x)', function(h) return string.char(tonumber(h, 16)) end))
 end
@@ -52,8 +54,37 @@ return function(contents)
     local expiry, mode, catalogPath, body = contents:match('^HIERARCHY\n(%d+)\n([^\n]+)\n([^\n]*)\n(.*)$')
     if not expiry or os.time() >= tonumber(expiry) then error('Hierarchy request expired or invalid') end
     local catalog = Application.activeCatalog()
+    if mode == 'STATE' then
+        if normalized(catalog:getPath()) ~= normalized(decode(catalogPath)) then error('Wrong Lightroom catalog is open') end
+        local identity, state = Bindings.read(catalog)
+        return 'OK\tSTATE\n' .. identity .. '\n' .. encode(state) .. '\n'
+    end
     local live, fingerprint = snapshot(catalog)
-    if mode == 'SNAPSHOT' then return 'OK\tSNAPSHOT\tINCREMENTAL-2\n' .. encode(catalog:getPath()) .. '\n' .. fingerprint end
+    if mode == 'SNAPSHOT' then return 'OK\tSNAPSHOT\tCATALOG-3\n' .. encode(catalog:getPath()) .. '\n' .. fingerprint end
+    if mode == 'STORE' or mode == 'RESET' then
+        if normalized(catalog:getPath()) ~= normalized(decode(catalogPath)) then error('Wrong Lightroom catalog is open') end
+        local identity, expected, serialized, mappings = body:match('^([%x%-]+)\nEXPECTED\n(.-)STATE\n([^\n]*)\n(.*)$')
+        if not identity or #identity ~= 36 or expected ~= fingerprint then error('Catalog changed before storing bindings') end
+        local existing = Bindings.read(catalog)
+        if mode ~= 'RESET' and existing ~= '' and existing ~= identity then error('Catalog identity changed; synchronize again') end
+        local seenUuids, seenIds = {}, {}
+        for row in mappings:gmatch('[^\n]+') do
+            local uuid, id = row:match('^([%x%-]+)\t(%d+)$')
+            if not uuid or #uuid ~= 36 or seenUuids[uuid] or seenIds[id] then error('Invalid or repeated binding') end
+            seenUuids[uuid], seenIds[id] = true, true
+            local found
+            for _, node in ipairs(live) do if node.id == id and node.scoped then found = true end end
+            if not found then error('Cannot bind a keyword missing from Vogel: ' .. id) end
+        end
+        write(catalog, 'BirdDeck: store catalog identity and bindings', function()
+            local _, current = snapshot(catalog)
+            if current ~= expected then error('Catalog changed before metadata write') end
+            local currentIdentity = Bindings.read(catalog)
+            if currentIdentity ~= existing then error('Catalog identity changed before metadata write') end
+            Bindings.store(catalog, identity, decode(serialized), mappings)
+        end)
+        return 'OK\tSTORED\n'
+    end
     if mode ~= 'APPLY' then error('Unknown hierarchy operation') end
     if normalized(catalog:getPath()) ~= normalized(decode(catalogPath)) then error('Wrong Lightroom catalog is open') end
     local expected, rows = body:match('^EXPECTED\n(.-)NODES\n(.*)$')

@@ -29,13 +29,14 @@ def main(argv=None):
     lightroom = commands.add_parser("lightroom-sync", help="Preview or apply the YAML hierarchy directly in Lightroom.")
     lightroom.add_argument("--config", type=Path, default=ROOT_DIR / "config" / "config.yaml")
     lightroom.add_argument("--apply", action="store_true", help="Apply changes; otherwise preview only.")
+    lightroom.add_argument("--reset-catalog-identity", action="store_true", help="Give an independent catalog copy a new identity; requires --apply.")
     args = parser.parse_args(argv)
 
     try:
         import yaml
         if args.command == "lightroom-sync":
             from lightroom_hierarchy import sync
-            sync(args.config, args.apply)
+            sync(args.config, args.apply, args.reset_catalog_identity)
             return 0
         if args.command == "edit":
             from web_editor import run_editor

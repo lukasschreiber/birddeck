@@ -1,5 +1,5 @@
 -- Mock enforces catalog write access, committed parents, uniqueness and cycles.
-local catalog = { nodes = {}, nextId = 100, writing = false }
+local catalog = { nodes = {}, nextId = 100, writing = false, metadata = {} }
 local failureName
 local operations = { renames = {}, moves = {} }
 local Keyword = {}
@@ -53,6 +53,11 @@ function catalog:getKeywords()
     return roots
 end
 function catalog:getPath() return 'E:\\Catalog.lrcat' end
+function catalog:getPropertyForPlugin(plugin, field) return self.metadata[field] end
+function catalog:setPropertyForPlugin(plugin, field, value)
+    assert(self.writing)
+    self.metadata[field] = value
+end
 function catalog:createKeyword(name, synonyms, export, parent, returnExisting)
     assert(self.writing)
     for _, node in ipairs(self.nodes) do
@@ -78,12 +83,19 @@ end
 function import(name)
     if name == 'LrApplication' then return {activeCatalog=function() return catalog end} end
     if name == 'LrTasks' then return {pcall=pcall} end
+    if name == 'LrPathUtils' then return {child=function(a,b) return a..'/'..b end} end
     error(name)
+end
+_PLUGIN = {path='plugin'}
+dofile = function(path)
+    assert(path:match('CatalogBindings%.lua$'))
+    return assert(load(bindingsSource))()
 end
 local handler = assert(load(hierarchySource))()
 local function reset()
     catalog.nodes, catalog.nextId = {}, 100
     failureName = nil
+    catalog.metadata = {}
     operations = { renames = {}, moves = {} }
 end
 local function request(mode, body)
@@ -91,7 +103,7 @@ local function request(mode, body)
 end
 local function apply(rows)
     local snap = request('SNAPSHOT')
-    local fingerprint = snap:match('^OK\tSNAPSHOT\tINCREMENTAL%-2\n[^\n]+\n(.*)$')
+    local fingerprint = snap:match('^OK\tSNAPSHOT\tCATALOG%-3\n[^\n]+\n(.*)$')
     return request('APPLY', 'EXPECTED\n' .. fingerprint .. 'NODES\n' .. rows)
 end
 
@@ -208,3 +220,24 @@ assert(result:match('OK\tAPPLIED'))
 assert(#operations.renames == 1 and operations.renames[1].id == 10001)
 assert(#operations.moves == 1 and operations.moves[1].id == 10001)
 assert(operations.renames[1].name == 'Schreiseeadler')
+
+-- Catalog metadata travels with the catalog and writes never rename keywords.
+reset()
+root = add(1, 'Vogel')
+a = add(2, 'Star', root, 17)
+local identity = '00000000-0000-4000-8000-000000000001'
+local replacement = '00000000-0000-4000-8000-000000000002'
+local fingerprint = request('SNAPSHOT'):match('^OK\tSNAPSHOT\tCATALOG%-3\n[^\n]+\n(.*)$')
+local function storeBody(id, expected)
+    return id..'\nEXPECTED\n'..(expected or fingerprint)..'STATE\n%7B%7D\n'..identity..'\t2\n'
+end
+assert(request('STORE', storeBody(identity)) == 'OK\tSTORED\n')
+assert(catalog.metadata.catalogUuid == identity)
+assert(catalog.metadata.bindingState == '{}')
+assert(request('STATE'):find(identity, 1, true))
+assert(not pcall(function() request('STORE', storeBody(replacement)) end))
+assert(not pcall(function() request('STORE', storeBody(identity, 'stale\n')) end))
+assert(catalog.metadata.catalogUuid == identity)
+assert(request('RESET', storeBody(replacement)) == 'OK\tSTORED\n')
+assert(catalog.metadata.catalogUuid == replacement)
+assert(#operations.renames == 0 and #operations.moves == 0 and #a.photos == 17)

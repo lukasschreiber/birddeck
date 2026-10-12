@@ -30,11 +30,7 @@ local function apply(contents)
         expiry, identity = contents:match('^UUIDTAG\n(%d+)\n([%x%-]+)\n$')
         if not identity then error('Invalid keyword UUID request') end
         catalogPath = Application.activeCatalog():getPath()
-        local mappings = Files.readFile(Paths.child(queue, 'keyword-bindings.tsv')) or ''
-        for row in mappings:gmatch('[^\n]+') do
-            local savedCatalog, savedUuid, savedId = row:match('^([^\t]+)\t([^\t]+)\t(%d+)$')
-            if savedUuid == identity:lower() and normalized(decode(savedCatalog)) == normalized(catalogPath) then id = savedId end
-        end
+        id = dofile(Paths.child(_PLUGIN.path, 'CatalogBindings.lua')).resolve(Application.activeCatalog(), identity)
         if not id then error('Keyword UUID is not bound in the active catalog; run lightroom-sync --apply') end
         catalogPath = catalogPath:gsub('%%', '%%25') -- normal tagging validation decodes below
     end

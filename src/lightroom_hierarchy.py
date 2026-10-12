@@ -1,5 +1,6 @@
 """Catalog bindings outside YAML and direct Lightroom hierarchy synchronization."""
 import json
+import hashlib
 from pathlib import Path
 import time
 from urllib.parse import quote, unquote
@@ -7,12 +8,18 @@ import uuid
 
 import yaml
 from entry_identity import ensure_file_uuids
+from paths import CACHE_DIR, CONFIG_DIR
 
 QUEUE = Path.home() / 'AppData' / 'Local' / 'BirdDeckTagging'
 
 
 def state_path(config_path):
-    return Path(config_path).with_suffix('.lightroom.json')
+    config_path = Path(config_path).resolve()
+    name = 'config.lightroom.json'
+    if config_path != (CONFIG_DIR / 'config.yaml').resolve():
+        digest = hashlib.sha256(str(config_path).encode('utf-8')).hexdigest()[:16]
+        name = f'{config_path.stem}-{digest}.lightroom.json'
+    return CACHE_DIR / 'lightroom' / name
 
 
 def entries(config):
@@ -71,15 +78,19 @@ def catalog_key(catalog):
 
 def load_states(config_path):
     path = state_path(config_path)
+    if not path.exists():
+        path = Path(config_path).with_suffix('.lightroom.json')
     data = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
-    if data.get('version') == 2:
+    if data.get('version') in (2, 3):
         return data['catalogs']
     return {catalog_key(data['catalog']): data} if data else {}
 
 
 def load_state(config_path, catalog=None):
     states = load_states(config_path)
-    return states.get(catalog_key(catalog), {}) if catalog is not None else next(iter(states.values()), {})
+    if catalog is None:
+        return next(iter(states.values()), {})
+    return next((state for state in states.values() if catalog_key(state['catalog']) == catalog_key(catalog)), {})
 
 
 def attach_bindings(config, config_path):
@@ -116,7 +127,7 @@ def exchange(mode, catalog='', body='', timeout=120):
 def snapshot():
     text = exchange('SNAPSHOT')
     version, catalog, *rows = text.splitlines()
-    if version != 'OK\tSNAPSHOT\tINCREMENTAL-2':
+    if version != 'OK\tSNAPSHOT\tCATALOG-3':
         raise ValueError('Lightroom is running an older hierarchy updater. Reload BirdDeck Tagging, then use Start / Restart BirdDeck Tagging before syncing.')
     nodes = []
     for row in rows:
@@ -138,7 +149,7 @@ def snapshot():
 
 
 def make_plan(config, state, catalog, live):
-    if state.get('catalog', catalog).replace('\\', '/').casefold() != catalog.replace('\\', '/').casefold():
+    if not state.get('catalog_uuid') and state.get('catalog', catalog).replace('\\', '/').casefold() != catalog.replace('\\', '/').casefold():
         raise ValueError('Open catalog differs from saved bindings')
     desired = bind_entries(config, state)
     scoped = [n for n in live if n['path'][0] == 'Vogel']
@@ -179,11 +190,18 @@ def make_plan(config, state, catalog, live):
     return desired, changes
 
 
-def sync(config_path, apply=False):
+def sync(config_path, apply=False, reset_catalog_identity=False):
+    if reset_catalog_identity and not apply:
+        raise ValueError('--reset-catalog-identity requires --apply')
     config_path = Path(config_path)
     config = ensure_file_uuids(config_path)
     catalog, live, fingerprint = snapshot()
-    state = load_state(config_path, catalog)
+    catalog_uuid, state = catalog_state(catalog)
+    if not catalog_uuid:
+        # One-time import from the existing path-keyed cache.
+        state = load_state(config_path, catalog)
+    if reset_catalog_identity or not catalog_uuid:
+        catalog_uuid = str(uuid.uuid4())
     desired, changes = make_plan(config, state, catalog, live)
     print('\n'.join(changes) if changes else 'Hierarchy already matches config.')
     print(f'{len(changes)} changes; {len(desired)} desired keywords.')
@@ -197,8 +215,8 @@ def sync(config_path, apply=False):
         for node in desired:
             node['id'] = assigned[str(node['index'])]
         # Persist new IDs before verification so a later interrupted request is recoverable.
-        save_state(config_path, catalog, desired)
-        actual_catalog, actual, _ = snapshot()
+        save_state(config_path, catalog, desired, catalog_uuid)
+        actual_catalog, actual, fingerprint = snapshot()
         if actual_catalog != catalog:
             raise ValueError('Catalog changed during verification')
         expected = {n['id']: n['path'] for n in desired}
@@ -208,35 +226,48 @@ def sync(config_path, apply=False):
         counts = {n['id']: n['photos'] for n in actual}
         if any(counts.get(n['id']) != n['photos'] for n in live if n['photos']):
             raise ValueError('Post-sync photo-assignment verification failed')
-    save_state(config_path, catalog, desired)
-    publish_bindings(config_path)
+    store_catalog_state(catalog, catalog_uuid, desired, fingerprint, reset_catalog_identity)
+    save_state(config_path, catalog, desired, catalog_uuid)
     print(f'Bindings saved: {state_path(config_path)}')
 
 
-def save_state(config_path, catalog, desired):
+def save_state(config_path, catalog, desired, catalog_uuid=None):
     states = load_states(config_path)
-    states[catalog_key(catalog)] = {'catalog': catalog, 'entries': desired}
-    data = {'version': 2, 'catalogs': states}
+    key = catalog_uuid or catalog_key(catalog)
+    if catalog_uuid:
+        states.pop(catalog_key(catalog), None)
+    states[key] = {'catalog': catalog, 'entries': desired}
+    if catalog_uuid:
+        states[key]['catalog_uuid'] = catalog_uuid
+    data = {'version': 3 if catalog_uuid else 2, 'catalogs': states}
     target = state_path(config_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
     temporary = target.with_suffix('.tmp')
     temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     temporary.replace(target)
+    legacy = Path(config_path).with_suffix('.lightroom.json')
+    if legacy.exists():
+        legacy.unlink()
 
 
-def publish_bindings(config_path):
-    """Publish UUID resolution for every known catalog to the Lightroom listener."""
-    QUEUE.mkdir(parents=True, exist_ok=True)
-    target = QUEUE / 'keyword-bindings.tsv'
-    mappings = {}
-    if target.exists():
-        for row in target.read_text(encoding='utf-8').splitlines():
-            catalog, identity, keyword = row.split('\t')
-            mappings[(catalog, identity)] = keyword
-    for state in load_states(config_path).values():
-        catalog = quote(catalog_key(state['catalog']), safe='')
-        for node in state['entries']:
-            if node.get('uuid') and node['id']:
-                mappings[(catalog, node['uuid'])] = node['id']
-    temporary = target.with_suffix('.tmp')
-    temporary.write_text(''.join(f'{c}\t{u}\t{k}\n' for (c, u), k in sorted(mappings.items())), encoding='utf-8', newline='\n')
-    temporary.replace(target)
+def catalog_state(catalog):
+    response = exchange('STATE', catalog).splitlines()
+    if len(response) < 2 or response[0] != 'OK\tSTATE':
+        raise ValueError('Invalid catalog metadata response; reload BirdDeck Tagging')
+    identity = response[1]
+    state = json.loads(unquote(response[2])) if len(response) > 2 and response[2] else {}
+    if identity:
+        uuid.UUID(identity)
+        if state and state.get('catalog_uuid') != identity:
+            raise ValueError('Catalog identity and stored bindings disagree')
+    return identity, state
+
+
+def store_catalog_state(catalog, identity, desired, fingerprint, reset=False):
+    state = {'catalog_uuid': identity, 'catalog': catalog, 'entries': desired}
+    serialized = quote(json.dumps(state, ensure_ascii=False, separators=(',', ':')), safe='')
+    mappings = ''.join(f'{n["uuid"]}\t{n["id"]}\n' for n in desired)
+    body = identity + '\nEXPECTED\n' + fingerprint + 'STATE\n' + serialized + '\n' + mappings
+    result = exchange('RESET' if reset else 'STORE', catalog, body)
+    if result.strip() != 'OK\tSTORED':
+        raise ValueError('Lightroom did not confirm stored catalog bindings')

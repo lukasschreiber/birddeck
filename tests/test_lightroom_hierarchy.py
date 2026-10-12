@@ -13,6 +13,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from lightroom_hierarchy import attach_bindings, bind_entries, entries, exchange, load_state, make_plan, save_state, snapshot, sync
 from entry_identity import ensure_uuids
+from lightroom_hierarchy import catalog_state, store_catalog_state, state_path
 
 
 def config():
@@ -21,6 +22,55 @@ def config():
 
 
 class HierarchyTests(unittest.TestCase):
+    def test_legacy_bindings_migrate_to_cache_without_losing_catalogs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'config.yaml'
+            legacy = path.with_suffix('.lightroom.json')
+            states = {'first': {'catalog': 'A.lrcat', 'entries': [{'id': '7'}]},
+                      'second': {'catalog': 'B.lrcat', 'entries': [{'id': '99'}]}}
+            legacy.write_text(json.dumps({'version': 3, 'catalogs': states}))
+            self.assertEqual(load_state(path, 'B.lrcat')['entries'][0]['id'], '99')
+            save_state(path, 'A.lrcat', [{'id': '7'}], 'first')
+            self.assertFalse(legacy.exists())
+            self.assertTrue(state_path(path).is_relative_to(Path(self.queue.name) / '.cache'))
+            self.assertEqual(load_state(path, 'B.lrcat')['entries'][0]['id'], '99')
+            self.assertNotEqual(state_path(path), state_path(Path(directory) / 'other' / 'config.yaml'))
+
+    def test_catalog_metadata_round_trip_and_reset_protocol(self):
+        from urllib.parse import quote
+        identity = '00000000-0000-4000-8000-000000000001'
+        desired = [{'uuid': identity, 'id': '7'}]
+        state = {'catalog_uuid': identity, 'catalog': 'E:\\Catalog.lrcat', 'entries': desired}
+        with patch('lightroom_hierarchy.exchange', return_value='OK\tSTORED\n') as request:
+            store_catalog_state('F:\\Catalog.lrcat', identity, desired, 'fingerprint\n', True)
+            self.assertEqual(request.call_args.args[:2], ('RESET', 'F:\\Catalog.lrcat'))
+            self.assertTrue(request.call_args.args[2].endswith(identity + '\t7\n'))
+        response = 'OK\tSTATE\n' + identity + '\n' + quote(json.dumps(state)) + '\n'
+        with patch('lightroom_hierarchy.exchange', return_value=response):
+            self.assertEqual(catalog_state('F:\\Catalog.lrcat'), (identity, state))
+
+    def test_catalog_owned_bindings_survive_path_change_without_cache(self):
+        data = config()
+        ensure_uuids(data)
+        saved = entries(data)
+        for i, node in enumerate(saved): node['id'] = str(i + 1)
+        state = {'catalog_uuid': '00000000-0000-4000-8000-000000000001',
+                 'catalog': 'E:\\Catalog.lrcat', 'entries': saved}
+        live = [dict(id=n['id'], path=n['path'], name=n['name'], photos=17) for n in saved]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'config.yaml'
+            path.write_text(yaml.safe_dump(data), encoding='utf-8')
+            with patch('lightroom_hierarchy.catalog_state', return_value=(state['catalog_uuid'], state)), \
+                 patch('lightroom_hierarchy.snapshot', return_value=('F:\\Catalog.lrcat', live, 'fingerprint\n')), \
+                 patch('lightroom_hierarchy.exchange') as request:
+                sync(path, True)
+                request.assert_not_called()
+                self.store_patch.target.store_catalog_state.assert_called_once()
+            cached = json.loads(state_path(path).read_text(encoding='utf-8'))
+            self.assertEqual(cached['version'], 3)
+            self.assertEqual(list(cached['catalogs']), [state['catalog_uuid']])
+            self.assertEqual(cached['catalogs'][state['catalog_uuid']]['entries'][-1]['id'], '3')
+
     def test_stale_lightroom_updater_is_rejected_before_applying_changes(self):
         with patch('lightroom_hierarchy.exchange', return_value='OK\tSNAPSHOT\ncatalog\n'):
             with self.assertRaisesRegex(ValueError, 'older hierarchy updater'): snapshot()
@@ -31,6 +81,15 @@ class HierarchyTests(unittest.TestCase):
         self.queue_patch.start()
         self.addCleanup(self.queue.cleanup)
         self.addCleanup(self.queue_patch.stop)
+        self.cache_patch = patch('lightroom_hierarchy.CACHE_DIR', Path(self.queue.name) / '.cache')
+        self.cache_patch.start()
+        self.addCleanup(self.cache_patch.stop)
+        self.metadata_patch = patch('lightroom_hierarchy.catalog_state', return_value=('', {}))
+        self.store_patch = patch('lightroom_hierarchy.store_catalog_state')
+        self.metadata_patch.start()
+        self.store_patch.start()
+        self.addCleanup(self.metadata_patch.stop)
+        self.addCleanup(self.store_patch.stop)
 
     def test_queue_uses_lf_and_empty_catalog_has_empty_fingerprint(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -42,7 +101,7 @@ class HierarchyTests(unittest.TestCase):
                     requests = list(queue.glob('*.request'))
                     if requests:
                         captured.append(requests[0].read_bytes())
-                        requests[0].with_suffix('.response').write_bytes(b'OK\tSNAPSHOT\tINCREMENTAL-2\ncatalog\n')
+                        requests[0].with_suffix('.response').write_bytes(b'OK\tSNAPSHOT\tCATALOG-3\ncatalog\n')
                         return
                     time.sleep(.01)
             worker = Thread(target=respond)
@@ -166,7 +225,7 @@ class HierarchyTests(unittest.TestCase):
             with patch('lightroom_hierarchy.snapshot', return_value=('catalog', live, 'fingerprint\n')), patch('lightroom_hierarchy.exchange') as request:
                 sync(path)
                 request.assert_not_called()
-                self.assertFalse(path.with_suffix('.lightroom.json').exists())
+                self.assertFalse(state_path(path).exists())
             with patch('lightroom_hierarchy.snapshot', side_effect=[('catalog', live, 'fingerprint\n'), ('catalog', actual, '')]), patch('lightroom_hierarchy.exchange', return_value='OK\tAPPLIED\n1\t1\n2\t2\n'):
                 sync(path, True)
                 saved = load_state(path, 'catalog')
@@ -181,7 +240,7 @@ class HierarchyTests(unittest.TestCase):
             path.write_text(yaml.safe_dump(data))
             with patch('lightroom_hierarchy.snapshot', side_effect=[('catalog', live, ''), ('catalog', actual, '')]), patch('lightroom_hierarchy.exchange', return_value='OK\tAPPLIED\n1\t1\n2\t2\n'):
                 with self.assertRaisesRegex(ValueError, 'photo-assignment'): sync(path, True)
-            self.assertTrue(path.with_suffix('.lightroom.json').exists())
+            self.assertTrue(state_path(path).exists())
 
 
 if __name__ == '__main__': unittest.main()

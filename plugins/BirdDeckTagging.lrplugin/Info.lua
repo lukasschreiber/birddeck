@@ -11,5 +11,5 @@ return {
         { title = 'Start / Restart BirdDeck Tagging', file = 'Init.lua' },
     },
     LrShutdownPlugin = 'Shutdown.lua',
-    VERSION = { major = 0, minor = 2, revision = 0, build = 1 },
+    VERSION = { major = 0, minor = 3, revision = 0, build = 1 },
 }
